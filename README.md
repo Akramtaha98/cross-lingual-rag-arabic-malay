@@ -172,7 +172,7 @@ PhD Candidate\
 Faculty of Information Science and Technology\
 Universiti Kebangsaan Malaysia (UKM)
 
-Email: akramtaha20@gmail.com
+Email: akram.t.zeyad@uotechnology.edu.iq
 
 GitHub: https://github.com/Akramtaha98
 
