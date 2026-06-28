@@ -1,0 +1,45 @@
+
+ANNOTATOR INSTRUCTIONS — Cross-Lingual RAG Faithfulness Evaluation
+===================================================================
+
+Thank you for participating in this evaluation. You will assess 50 question-answer
+pairs per language (Arabic and Malay).
+
+For each item you will see:
+  1. QUESTION       — The question that was asked
+  2. RETRIEVED CONTEXT — Up to 3 passages retrieved from Wikipedia
+  3. GENERATED ANSWER — An answer produced by the RAG system
+
+You must rate each item on TWO dimensions:
+
+── FAITHFULNESS (1–5) ─────────────────────────────────────────────
+Does the generated answer only contain information from the retrieved context?
+  5 = Completely faithful: every claim in the answer is supported by the context
+  4 = Largely faithful: very minor paraphrasing or omission
+  3 = Mostly faithful: some unsupported claims but the core is grounded
+  2 = Partially faithful: significant unsupported claims
+  1 = Mostly unfaithful: the answer contradicts or ignores the context
+  N/A if the answer is empty or "<extra_id_0>" — rate this 1
+
+── ADEQUACY (1–5) ─────────────────────────────────────────────────
+Does the generated answer actually address the question?
+  5 = Fully answers the question
+  4 = Mostly answers with minor gaps
+  3 = Partially answers — some relevant information missing
+  2 = Barely addresses the question
+  1 = Does not address the question at all
+
+── NOTES ──────────────────────────────────────────────────────────
+• You do NOT need to know the correct answer. Focus on what the context says.
+• Short answers (1–3 words) can still be faithful if grounded in the context.
+• Empty answers and "<extra_id_0>" should receive Faithfulness=1, Adequacy=1.
+• Use the comment field to flag anything unusual.
+
+── SUBMITTING ─────────────────────────────────────────────────────
+Click "Download Annotations (JSON)" when done.
+Email the JSON file to the research team along with your annotator ID.
+
+Inter-annotator agreement will be measured with Krippendorff's alpha.
+Each item will be rated by 2 annotators independently.
+
+Thank you.

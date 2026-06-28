@@ -1,0 +1,319 @@
+{
+  "communities": {
+    "0": [
+      "bm25_retriever_retriever",
+      "config_settings",
+      "dense_retriever_retriever",
+      "faiss_index_index",
+      "how_to_run_document",
+      "how_to_run_exp1",
+      "how_to_run_exp2",
+      "how_to_run_exp3",
+      "how_to_run_exp4",
+      "how_to_run_exp5",
+      "load_mkqa_loader",
+      "load_wikipedia_builder",
+      "metrics_evaluator",
+      "mt5_generator_generator",
+      "mt5_lora_readme_loraadapter",
+      "mt5_lora_readme_modelcard",
+      "mt5_lora_readme_mt5small",
+      "rag_pipeline_pipeline",
+      "requirements_bert_score",
+      "requirements_datasets",
+      "requirements_document",
+      "requirements_evaluate",
+      "requirements_faiss_cpu",
+      "requirements_nltk",
+      "requirements_openai",
+      "requirements_peft",
+      "requirements_rank_bm25",
+      "requirements_rouge_score",
+      "requirements_sacrebleu",
+      "requirements_sentence_transformers",
+      "requirements_torch",
+      "requirements_transformers",
+      "run_all_experiments_entrypoint"
+    ],
+    "1": [
+      "ndarray",
+      "retrieval_dense_retriever",
+      "retrieval_dense_retriever_denseretriever",
+      "retrieval_dense_retriever_denseretriever_batch_retrieve",
+      "retrieval_dense_retriever_denseretriever_encode",
+      "retrieval_dense_retriever_denseretriever_index_corpus",
+      "retrieval_dense_retriever_denseretriever_init",
+      "retrieval_dense_retriever_denseretriever_prefix",
+      "retrieval_dense_retriever_denseretriever_retrieve",
+      "retrieval_dense_retriever_rationale_1",
+      "retrieval_dense_retriever_rationale_100",
+      "retrieval_dense_retriever_rationale_113",
+      "retrieval_dense_retriever_rationale_28",
+      "retrieval_dense_retriever_rationale_45",
+      "retrieval_dense_retriever_rationale_68",
+      "retrieval_faiss_index",
+      "retrieval_faiss_index_faissindex",
+      "retrieval_faiss_index_faissindex_add",
+      "retrieval_faiss_index_faissindex_init",
+      "retrieval_faiss_index_faissindex_load",
+      "retrieval_faiss_index_faissindex_save",
+      "retrieval_faiss_index_faissindex_search",
+      "retrieval_faiss_index_rationale_1",
+      "retrieval_faiss_index_rationale_23",
+      "retrieval_faiss_index_rationale_38",
+      "retrieval_faiss_index_rationale_53",
+      "retrieval_faiss_index_rationale_67"
+    ],
+    "2": [
+      "config",
+      "config_experimentconfig",
+      "config_rationale_1",
+      "generation_mt5_generator",
+      "generation_mt5_generator_build_input",
+      "generation_mt5_generator_mt5generator",
+      "generation_mt5_generator_mt5generator_batch_generate",
+      "generation_mt5_generator_mt5generator_generate",
+      "generation_mt5_generator_mt5generator_init",
+      "generation_mt5_generator_rationale_1",
+      "generation_mt5_generator_rationale_114",
+      "generation_mt5_generator_rationale_31",
+      "generation_mt5_generator_rationale_43",
+      "generation_mt5_generator_rationale_75",
+      "pipeline_rag_pipeline",
+      "pipeline_rag_pipeline_build_pipeline",
+      "pipeline_rag_pipeline_ragpipeline",
+      "pipeline_rag_pipeline_ragpipeline_init",
+      "pipeline_rag_pipeline_ragpipeline_run_batch",
+      "pipeline_rag_pipeline_ragpipeline_run_single",
+      "pipeline_rag_pipeline_rationale_1",
+      "pipeline_rag_pipeline_rationale_111",
+      "pipeline_rag_pipeline_rationale_21",
+      "pipeline_rag_pipeline_rationale_36",
+      "pipeline_rag_pipeline_rationale_68"
+    ],
+    "3": [
+      "evaluation_metrics",
+      "evaluation_metrics_compute_bertscore",
+      "evaluation_metrics_compute_bleu",
+      "evaluation_metrics_compute_faithfulness",
+      "evaluation_metrics_compute_generation_metrics",
+      "evaluation_metrics_compute_retrieval_metrics",
+      "evaluation_metrics_compute_rouge_l",
+      "evaluation_metrics_ndcg_at_k",
+      "evaluation_metrics_precision_at_k",
+      "evaluation_metrics_rationale_1",
+      "evaluation_metrics_rationale_114",
+      "evaluation_metrics_rationale_125",
+      "evaluation_metrics_rationale_144",
+      "evaluation_metrics_rationale_173",
+      "evaluation_metrics_rationale_199",
+      "evaluation_metrics_rationale_35",
+      "evaluation_metrics_rationale_48",
+      "evaluation_metrics_rationale_61",
+      "evaluation_metrics_rationale_74",
+      "evaluation_metrics_rationale_93",
+      "evaluation_metrics_recall_at_k",
+      "evaluation_metrics_reciprocal_rank"
+    ],
+    "4": [
+      "data_load_mkqa",
+      "data_load_mkqa_download_mkqa",
+      "data_load_mkqa_iter_mkqa",
+      "data_load_mkqa_load_mkqa",
+      "data_load_mkqa_rationale_1",
+      "data_load_mkqa_rationale_29",
+      "data_load_mkqa_rationale_60",
+      "data_load_mkqa_rationale_73",
+      "dataset",
+      "train_lora",
+      "train_lora_build_pairs",
+      "train_lora_collate_fn",
+      "train_lora_mkqadataset",
+      "train_lora_mkqadataset_getitem",
+      "train_lora_mkqadataset_init",
+      "train_lora_mkqadataset_len",
+      "train_lora_rationale_1",
+      "train_lora_rationale_52",
+      "train_lora_rationale_65",
+      "train_lora_train"
+    ],
+    "5": [
+      "data_load_mkqa_rationale_126",
+      "data_load_mkqa_split_mkqa",
+      "data_load_wikipedia",
+      "data_load_wikipedia_build_corpus",
+      "data_load_wikipedia_chunk_text",
+      "data_load_wikipedia_clean_text",
+      "data_load_wikipedia_load_both_corpora",
+      "data_load_wikipedia_rationale_1",
+      "data_load_wikipedia_rationale_119",
+      "data_load_wikipedia_rationale_24",
+      "data_load_wikipedia_rationale_37",
+      "data_load_wikipedia_rationale_59",
+      "evaluation_metrics_full_evaluation_report",
+      "evaluation_metrics_rationale_226",
+      "run_all_experiments",
+      "run_all_experiments_get_relevant_passage_ids",
+      "run_all_experiments_main",
+      "run_all_experiments_parse_args",
+      "run_all_experiments_rationale_1",
+      "run_all_experiments_rationale_40"
+    ],
+    "6": [
+      "retrieval_bm25_retriever",
+      "retrieval_bm25_retriever_bm25retriever",
+      "retrieval_bm25_retriever_bm25retriever_batch_retrieve",
+      "retrieval_bm25_retriever_bm25retriever_index_corpus",
+      "retrieval_bm25_retriever_bm25retriever_init",
+      "retrieval_bm25_retriever_bm25retriever_retrieve",
+      "retrieval_bm25_retriever_rationale_1",
+      "retrieval_bm25_retriever_rationale_20",
+      "retrieval_bm25_retriever_rationale_33",
+      "retrieval_bm25_retriever_rationale_44",
+      "retrieval_bm25_retriever_rationale_59",
+      "retrieval_bm25_retriever_tokenize"
+    ],
+    "7": [
+      "data_init"
+    ],
+    "8": [
+      "evaluation_init"
+    ],
+    "9": [
+      "generation_init"
+    ],
+    "10": [
+      "pipeline_init"
+    ],
+    "11": [
+      "retrieval_init"
+    ]
+  },
+  "cohesion": {
+    "0": 0.11931818181818182,
+    "1": 0.10256410256410256,
+    "2": 0.11666666666666667,
+    "3": 0.12554112554112554,
+    "4": 0.1368421052631579,
+    "5": 0.14210526315789473,
+    "6": 0.21212121212121213,
+    "7": 1.0,
+    "8": 1.0,
+    "9": 1.0,
+    "10": 1.0,
+    "11": 1.0
+  },
+  "gods": [
+    {
+      "id": "requirements_document",
+      "label": "requirements.txt - Python Dependencies",
+      "degree": 13
+    },
+    {
+      "id": "retrieval_dense_retriever_denseretriever",
+      "label": "DenseRetriever",
+      "degree": 12
+    },
+    {
+      "id": "pipeline_rag_pipeline_ragpipeline",
+      "label": "RAGPipeline",
+      "degree": 10
+    },
+    {
+      "id": "retrieval_faiss_index_faissindex",
+      "label": "FaissIndex",
+      "degree": 10
+    },
+    {
+      "id": "how_to_run_document",
+      "label": "HOW_TO_RUN.md - Project Runbook",
+      "degree": 10
+    },
+    {
+      "id": "pipeline_rag_pipeline_build_pipeline",
+      "label": "build_pipeline()",
+      "degree": 9
+    },
+    {
+      "id": "retrieval_bm25_retriever_bm25retriever",
+      "label": "BM25Retriever",
+      "degree": 9
+    },
+    {
+      "id": "rag_pipeline_pipeline",
+      "label": "RAG Pipeline Orchestrator",
+      "degree": 9
+    },
+    {
+      "id": "data_load_mkqa_load_mkqa",
+      "label": "load_mkqa()",
+      "degree": 8
+    },
+    {
+      "id": "generation_mt5_generator_mt5generator",
+      "label": "MT5Generator",
+      "degree": 8
+    }
+  ],
+  "surprises": [
+    {
+      "source": "EXP 2: Language Direction (Monolingual vs Cross-lingual)",
+      "target": "BM25 Sparse Retriever Baseline",
+      "source_files": [
+        "HOW_TO_RUN.md",
+        "retrieval/bm25_retriever.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code \u2194 doc); connects across different repos/directories; peripheral node `EXP 2: Language Direction (Monolingual vs Cross-lingual)` unexpectedly reaches hub `BM25 Sparse Retriever Baseline`"
+    },
+    {
+      "source": "EXP 5: Transfer Direction Gap (AR\u2192MS vs MS\u2192AR)",
+      "target": "Dense Retriever (LaBSE + mE5)",
+      "source_files": [
+        "HOW_TO_RUN.md",
+        "retrieval/dense_retriever.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code \u2194 doc); connects across different repos/directories; peripheral node `EXP 5: Transfer Direction Gap (AR\u2192MS vs MS\u2192AR)` unexpectedly reaches hub `Dense Retriever (LaBSE + mE5)`"
+    },
+    {
+      "source": "EXP 4: Top-K Ablation (K=3 vs K=5 vs K=10)",
+      "target": "FAISS Index (Build / Save / Load)",
+      "source_files": [
+        "HOW_TO_RUN.md",
+        "retrieval/faiss_index.py"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code \u2194 doc); connects across different repos/directories; peripheral node `EXP 4: Top-K Ablation (K=3 vs K=5 vs K=10)` unexpectedly reaches hub `FAISS Index (Build / Save / Load)`"
+    },
+    {
+      "source": "mT5-small + LoRA Generator",
+      "target": "PyTorch (>=2.1.0)",
+      "source_files": [
+        "generation/mt5_generator.py",
+        "requirements.txt"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code \u2194 doc); connects across different repos/directories; peripheral node `PyTorch (>=2.1.0)` unexpectedly reaches hub `mT5-small + LoRA Generator`"
+    },
+    {
+      "source": "mT5-small + LoRA Generator",
+      "target": "HuggingFace Transformers (>=4.40.0)",
+      "source_files": [
+        "generation/mt5_generator.py",
+        "requirements.txt"
+      ],
+      "confidence": "INFERRED",
+      "relation": "references",
+      "why": "inferred connection - not explicitly stated in source; crosses file types (code \u2194 doc); connects across different repos/directories; peripheral node `HuggingFace Transformers (>=4.40.0)` unexpectedly reaches hub `mT5-small + LoRA Generator`"
+    }
+  ],
+  "tokens": {
+    "input": 14336,
+    "output": 18897
+  }
+}

@@ -1,0 +1,1480 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+<meta charset="UTF-8">
+<title>Arabic QA Faithfulness Evaluation</title>
+<style>
+  body { font-family: Arial, sans-serif; max-width: 900px; margin: 40px auto; padding: 0 20px; }
+  h1 { color: #2c3e50; }
+  .card { border: 1px solid #ddd; border-radius: 8px; padding: 20px; margin: 20px 0;
+           background: #fafafa; }
+  .item-num { font-weight: bold; color: #7f8c8d; margin-bottom: 10px; }
+  .field { margin: 10px 0; }
+  .text-block { background: #fff; border: 1px solid #eee; padding: 10px; border-radius: 4px;
+                 white-space: pre-wrap; font-size: 0.95em; }
+  .query  { color: #2980b9; font-weight: bold; }
+  .ctx    { color: #555; font-size: 0.9em; max-height: 150px; overflow-y: auto; }
+  .ans    { color: #27ae60; }
+  .rating { margin: 12px 0; }
+  label   { font-weight: bold; }
+  input[type=radio] { margin: 0 4px 0 8px; }
+  button  { background: #2980b9; color: white; padding: 12px 30px; border: none;
+             border-radius: 6px; font-size: 1em; cursor: pointer; margin-top: 20px; }
+  button:hover { background: #1a6698; }
+  .progress { background: #ecf0f1; padding: 10px; border-radius: 4px; margin: 10px 0; }
+</style>
+</head>
+<body>
+<h1>Arabic QA Faithfulness Evaluation</h1>
+<div class="progress" id="progress">
+  Completed: <strong id="done">0</strong> / 50
+</div>
+<form id="eval-form">
+
+<div class="card" id="item-1">
+  <div class="item-num">Item 1 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من مبدع مسلسل ذا فويس</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] ذا فويس - أحلى صوت الموسم الثاني 2014. ذا فويس - أحلى صوت الموسم الثالث 2015. ذا فويس كيدز الموسم الأول 2016. ذا فويس كيدز الموسم الثاني 2017. تكريماته كُرّم من إنجلترا وفرنسا وإيطاليا وأمريكا وكندا وماليزيا والجزائر والمغرب ومصر وتونس وكُرِّم من شعبه العراقي. وهنا بعض تكريماته: حصل على أوسكار الأغن<br>[2] الاقتصادية عام 1977. فلاديمير نابوكوف، كاتب روسي / أمريكي. 1902 - هالدور لاكسنس، أديب آيسلندي حاصل على جائزة نوبل في الأدب عام 1955. 1907 - بدر لاما، ممثل فلسطيني. 1941 - راي توملينسون، مبرمج أمريكي وصاحب فكرة البريد الإلكتروني. 1943 - فايتنغ هارادا، ملاكم ياباني. 1951 - مسعد نور، لاعب كرة قدم مصري.<br>[3] أمريكية. عبد الحسين الصالحي، مؤرخ إيراني عراقي. 1938 - أنتوني غيدنز، عالم اجتماع إنجليزي. ليلى فهمي، ممثلة مصرية. 1942 - جونيتشيرو كويزومي، رئيس وزراء اليابان. ستيفن هوكينغ، عالم فيزياء إنجليزي. 1944 - تيري بروكس، كاتب أدب خيالي أمريكي. 1947 - صموئيل شميد، سياسي سويسري. ديفيد بوي، ممثل ومغني روك بري</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">نوفمبر</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_1" value="1" required> 1</label> <label><input type="radio" name="faith_1" value="2" required> 2</label> <label><input type="radio" name="faith_1" value="3" required> 3</label> <label><input type="radio" name="faith_1" value="4" required> 4</label> <label><input type="radio" name="faith_1" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_1" value="1" required> 1</label> <label><input type="radio" name="adeq_1" value="2" required> 2</label> <label><input type="radio" name="adeq_1" value="3" required> 3</label> <label><input type="radio" name="adeq_1" value="4" required> 4</label> <label><input type="radio" name="adeq_1" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_1" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-2">
+  <div class="item-num">Item 2 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">كم عدد مواسم ملكات الصراخ</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] الأنواع المشهورة بِهذا هي الناخرة الفرنسيَّة ، وصريرُها تُصدره من خلال فرك أسنانها ببعضها. ويُلاحظ أنَّها لا تأتي على هذا الفعل إلَّا حينما تكون مُضطربة أو خائفة. يصلُ تردُّد صرير هذا النوع من السُمُوك إلى 700 هرتز، ويدوم لِقُرابة 47 ملِّي ثانية. وأقصى تردُّدٍ سُجِّل لِهذا الصرير وصل إلى 1000 هرتز، <br>[2] الحقبة ما بين 1200 - 1550 من تاريخ إنكلترا، وتحديداً الحرب الأهلية التي دارت رحاها بين عائلتي لانكستر ويورك، مثل ثلاثيته «الملك هنري السادس» 1590 ـ 1592، «والملك رتشارد الثالث» 1593، التي صور فيها النتائج السلبية لحكم ملك ضعيف. وتغطي هذه المسرحيات الأربع المرحلة الممتدة منذ حكم هنري السادس وحتى هنري<br>[3] 20 إلى 30 دقيقة بمجرد أن تنتهي الأنثى من التنظيف. لا تحدث الإباضة دائما من تزاوج واحد، لذلك قد لا تحبل الإناث من الذكر الأول الذي تتزاوج معه، والقطط متعددة الإخصاب، أي أن الأنثى قد تتزاوج مع أكثر من ذكر واحد عندما تكون في دورتها مما يترتب عليه اختلاف آباء القطيطات الناتجة عن البطن الواحد. تتكون التو</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">نوفمبر</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_2" value="1" required> 1</label> <label><input type="radio" name="faith_2" value="2" required> 2</label> <label><input type="radio" name="faith_2" value="3" required> 3</label> <label><input type="radio" name="faith_2" value="4" required> 4</label> <label><input type="radio" name="faith_2" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_2" value="1" required> 1</label> <label><input type="radio" name="adeq_2" value="2" required> 2</label> <label><input type="radio" name="adeq_2" value="3" required> 3</label> <label><input type="radio" name="adeq_2" value="4" required> 4</label> <label><input type="radio" name="adeq_2" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_2" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-3">
+  <div class="item-num">Item 3 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من الذي يغني أحبك مثل لا يوجد غدا</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] من فيلم الماضي المجهول)، "أروح لمين" (فيلم شاطئ الغرام)، "جواب حبيبي"، "الشهيد"، (وكلاهما من فيلم الحياة الحب)، "أرق النسيم"، "يا قلبي مالك" (وكلاهما من فيلم "يحيا الحب)، إضافة إلى أغاني فيلمي "عنبر"، و"غزل البنات". لحن لفايزة أحمد «حمال الأسية»، «بريئة»، «ست الحبايب» (وهي من أشهر، وأجمل أغانيها)، «<br>[2] سمير محبوب سونيل دوت شلومو أرجوف شمس بدران شوقي حبيب صباح الأحمد الجابر الصباح صالح النصر الله صلاح التيزاني صلاح ستيتية طلال مداح عاموس رابوبورت عبد الحليم حافظ عبد الرحمن بن عبد العزيز آل سعود عبد العزيز البدري عبد العظيم الديب عبد الغفار محمد عبد الغني شيخ أحمد آدم عبد القادر علولة عبد اللطيف أبو<br>[3] كلمات عزيز الرسام. «سلامتك حبيبي» من كلمات كريم العراقي. «موال اعصر الممه عصر» من كلمات خضير هادي. «هله يالناذر عمره» من كلمات كريم العراقي. لم يبقى سوانا في المطعم" كلمات نزار قباني نسيت بغداد: وهي من كلمات الشاعر عبد الرزاق عبد الواحد انظر أيضًا قائمة أعمال كاظم الساهر المراجع وصلات خارجية أشخاص ع</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">نوفمبر</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_3" value="1" required> 1</label> <label><input type="radio" name="faith_3" value="2" required> 2</label> <label><input type="radio" name="faith_3" value="3" required> 3</label> <label><input type="radio" name="faith_3" value="4" required> 4</label> <label><input type="radio" name="faith_3" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_3" value="1" required> 1</label> <label><input type="radio" name="adeq_3" value="2" required> 2</label> <label><input type="radio" name="adeq_3" value="3" required> 3</label> <label><input type="radio" name="adeq_3" value="4" required> 4</label> <label><input type="radio" name="adeq_3" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_3" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-4">
+  <div class="item-num">Item 4 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">متى بدأ وانتهى الغرب المتوحش؟</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] مثل: البرابرة أو المتوحشين. تقسيم الحضارات صامويل هنتنجتون قسم أستاذ العلوم السياسية صامويل هنتنجتون حضارات العالم الحالية إلى تسعة مناطق نفوذ ثقافي وهي: الحضارة الغربية ذات الخلفية الثقافية المسيحية الغربية بشكليها الكاثوليكية-البروتستانتية، تمتد هذه الحضارة من أوروبا الغربية إلى دول البلطيق، وأنغل<br>[2] في الغرب. صدّق الإمبراطور مرقيان على قرارت المجمع، وأمر بنفي أوطاخي وبابا الكنيسة القبطية ديوسقورس الأول لمعارضتهما إياه. خسارة الإمبراطورية الرومانية الغربية بعد موت أتيلا تمتعت الإمبراطورية الشرقية بفترة من السلام، بينما استمرت الإمبراطورية الغربية في التدهور بسبب توسع هجرة وغزوات البرابرة، وعلى ا<br>[3] الغربية في عام 1972. في الانتخابات المتنازع عليها في عام 1974، فاز الجنرال كخيل لوغيرود غارسيا على الجنرال إفراين ريوس مونت مرشح الحزب الديمقراطي المسيحي والذي زعم أنه تعرض للغش وحرم النصر عبر الاحتيال. في 4 فبراير 1976، دمر زلزال كبير عدداً من المدن وتسبب في أكثر من 25,000 حالة وفاة. في عام 1978، و</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">البحرين</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_4" value="1" required> 1</label> <label><input type="radio" name="faith_4" value="2" required> 2</label> <label><input type="radio" name="faith_4" value="3" required> 3</label> <label><input type="radio" name="faith_4" value="4" required> 4</label> <label><input type="radio" name="faith_4" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_4" value="1" required> 1</label> <label><input type="radio" name="adeq_4" value="2" required> 2</label> <label><input type="radio" name="adeq_4" value="3" required> 3</label> <label><input type="radio" name="adeq_4" value="4" required> 4</label> <label><input type="radio" name="adeq_4" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_4" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-5">
+  <div class="item-num">Item 5 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] إلى أن وصلت إلى أكثر من حلقة، وبذلك يحتل المركز الخامس عشر في قائمة أكثر الأنميات من حيث عدد الحلقات. يتم عرض حلقة واحدة من الأنمي أسبوعيًّا على شبكة تلفزيون نيبون إلا في حالات عرض الأفلام فإنها قد تتأجل إلى أسبوعين أو أكثر. بشكل عام، تبلغ مدة عرض كل حلقة حوالي 25 دقيقة، لكن في بعض الأحيان يعرض الاس<br>[2] وحقق كل واحد منها أرقاماً مذهلة تزيد عن سابقه، وأُخرجت 7 أفلام من السلسلة ذات الكتب السبعة، ولكن الجزء الأخير من سلسلة الكتب قُسم إلى جزئين في سلسلة الأفلام، فكان مجموع الكتب 7 ومجموع الأفلام 8، فتكونت إمبراطورية هاري بوتر الضخمة. يُعتقد أن كُتب هاري بوتر قد باعت أكثر من ثلاثمائة مليون نسخة حول العا<br>[3] ثورنتون في عام 1999. وحصلت على دور في فيلم الدراما الكوميدي بوشينج تين للمنتج مايك نيويل. وباقي الممثلين معها في الفيلم هم جون كيوزاك، وكيت بلانشيت. وقد حصل الفيلم على أراء مختلفة ومتناقضة من النقاد، وتعرضت شخصية أنجلينا للنقد على وجه الخصوص. وكتبت صحيفة واشنطن بوست عن أنجلينا " بكاء على الزهور المي</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">نوفمبر</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_5" value="1" required> 1</label> <label><input type="radio" name="faith_5" value="2" required> 2</label> <label><input type="radio" name="faith_5" value="3" required> 3</label> <label><input type="radio" name="faith_5" value="4" required> 4</label> <label><input type="radio" name="faith_5" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_5" value="1" required> 1</label> <label><input type="radio" name="adeq_5" value="2" required> 2</label> <label><input type="radio" name="adeq_5" value="3" required> 3</label> <label><input type="radio" name="adeq_5" value="4" required> 4</label> <label><input type="radio" name="adeq_5" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_5" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-6">
+  <div class="item-num">Item 6 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من الذي يغني أحبك مثل لا يوجد غدا</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] لجائزة أفضل فيلم وثائقي وكان كاظم الساهر قد وضع موسيقى وأغنية «يا وطني يسعد صباحك» للفيلم بعد أن اختاره فريق العمل خصيصاً لذلك. وكاظم الساهر هو الفنان العربي الوحيد الذي غنّى في القاعة الملكية في بريطانيا، وهو الفنان الثاني في العالم بعد مادونا الذي حصل على مفتاح مدينة سيدني. الأسلوب الغنائي يتمتع ص<br>[2] النحاتين الرئيسيين في زيمبابوي. الفنانين المعاصرين مثل النحات النيويوركي الأمريكي سكوت جونسون والنحات الكاليفورني الأمريكي ألبانز رسل لدمج الجماليات الأفريقية والشتات الأفريقي التي تتجاوز المحاكاة المبسطة للفن الإفريقي من قبل بعض الفنانين السود من الأجيال السابقة في الولايات المتحدة. يظهر بعض الكتاب<br>[3] تركيا وغيرها من دول الشرق الأوسط التي هاجر إليها الأرمن. لربما يعتبر ريتشارد هاغوبيان الأكثر شهرة في النمط التقليدي «الكاف» كما كانت الفرقة فوسبيكيان مشهورة في الأربعينيات والخمسينيات من القرن الماضي لتطويرها أسلوبها الخاص من «موسيقى الكاف» والتي تأثرت تأثرًا كبيرًا بموسيقى الجاز الشعبية الأميركية ب</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">البحرين</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_6" value="1" required> 1</label> <label><input type="radio" name="faith_6" value="2" required> 2</label> <label><input type="radio" name="faith_6" value="3" required> 3</label> <label><input type="radio" name="faith_6" value="4" required> 4</label> <label><input type="radio" name="faith_6" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_6" value="1" required> 1</label> <label><input type="radio" name="adeq_6" value="2" required> 2</label> <label><input type="radio" name="adeq_6" value="3" required> 3</label> <label><input type="radio" name="adeq_6" value="4" required> 4</label> <label><input type="radio" name="adeq_6" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_6" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-7">
+  <div class="item-num">Item 7 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">كم عدد مواسم ملكات الصراخ</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] قائمة ملوك كندا منذ إستقلالها الذاتي في الحكم ( 1867 - حتى الآن ) انظر أيضا رؤساء وزراء كندا قادة دول قادة دولة كندا قوائم ملكات قوائم ملوك ملكية في كندا<br>[2] الذي عادة ما تكون نسبته 25 ٪ من الأجر الأساسي لأن التكاليف المعيشية ما زالت من أعلى المعدلات في البلاد رغم أنخفاضها في الفترة الأخيرة. و قد ساعد في خفض الأسعار استحداث ُ محلات التخزين كبيرة في أنكوريج وفيربانكس (كمحلات وول مارت في آذار / مارس 2004) وجانيو. ولكن مع ذلك، تعاني ألاسكا الريفية من شدة ار<br>[3] موسم 1979/1980 وفيصل الدخيل برصيد 30 هدف بنفس الموسم. أكثر مدرب وطني حقق بطولة الدوري هو محمد إبراهيم (2002/2003 - 2003/2004 - 2008/2009 - 2009/2010 - 2010/2011 - 2015/2014). حقق نادي القادسية لقب الدوري الممتاز مرتين على التولي في مواسم (74\75)(75\76). حقق نادي القادسية لقب الدوري الممتاز ثلاث مرات</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">البحرين</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_7" value="1" required> 1</label> <label><input type="radio" name="faith_7" value="2" required> 2</label> <label><input type="radio" name="faith_7" value="3" required> 3</label> <label><input type="radio" name="faith_7" value="4" required> 4</label> <label><input type="radio" name="faith_7" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_7" value="1" required> 1</label> <label><input type="radio" name="adeq_7" value="2" required> 2</label> <label><input type="radio" name="adeq_7" value="3" required> 3</label> <label><input type="radio" name="adeq_7" value="4" required> 4</label> <label><input type="radio" name="adeq_7" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_7" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-8">
+  <div class="item-num">Item 8 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من أين جاءت علامة الستاربكس</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] فيك واحد وهو أنت بالتدقيق.. قصيدته العينية في النفس والتي يقول أول أبياتها: المسألة غامضة عند ابن سينا ولكن ربما قصيدته العينية هي التي تعبر أكثر من غيرها عن رأي ابن سينا في المسائل الثلاث. قصيدته مكونة من4 أقسام. يشير ابن سينا في قسمها الأول من أين جاءت النفس ويقول أنها جاءت من محل أرفع أي من فوق و<br>[2] “سبيطلة” وكان ذلك عام 648 م (28 هـ) ثم انسحب إلى مصر فعاد البيزنطيون إليها وفي خلافة معاوية جاءت حملة بن خديج على إفريقيا عام 666 م (45هـ) فانتصر وكانت نتيجتها تسبقها الانسحاب بعد النصر. بدأ الفتح الجدّي لإفريقيا بتأسيس عقبة مدينة القيروان عام 670 م (50هـ) وتم على يد عظماء منهم عقبة وزهير وحسان وموس<br>[3] 14 كم/ساعة. يبلغ طول المجرى الملاحي للقناة 162 كم «بدون البواغيز» مع متوسط أعماق يصل إلى 24 متر، وينقسم المجرى الملاحي للقناة إلى 3 قطاعات رئيسية: القطاع الشمالي: يمتد من علامة كم 0 حتى علامة كم 50 ترقيم قناة. يمتد الجزء المزدوج من هذا القطاع بطول 17 كم (من علامة كم 0 حتى علامة كم 17 ترقيم قناة). يم</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">نوفمبر</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_8" value="1" required> 1</label> <label><input type="radio" name="faith_8" value="2" required> 2</label> <label><input type="radio" name="faith_8" value="3" required> 3</label> <label><input type="radio" name="faith_8" value="4" required> 4</label> <label><input type="radio" name="faith_8" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_8" value="1" required> 1</label> <label><input type="radio" name="adeq_8" value="2" required> 2</label> <label><input type="radio" name="adeq_8" value="3" required> 3</label> <label><input type="radio" name="adeq_8" value="4" required> 4</label> <label><input type="radio" name="adeq_8" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_8" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-9">
+  <div class="item-num">Item 9 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من أين جاءت العبارة "great scott"</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] السابق أوبين أعيادهم يحتفل عمانين بيوم الصعود في 15 أب من كل عام ويقوموا بإقامة مسيرة ضخمة بحيث يلبس المحتفون ألبسة بألوان أكاديا الوطنية ويضجون بكل أنواع الضجيج. لغتهم يتكلم الأكاديون الفرنسية بلهجة خاصة تسمى الشياك، وهي مزيج من الفرنسية والإنجليزية وبعض الكلمات من لغة المغماك السكان الأصليون بالإض<br>[2] الكود البرمجي المرفقة. العبارة طالما while، التي تنفذ مجموعة الكود البرمجية طالما تحقق الشرط. العبارة جرّب try، التي تسمح بالتعامل مع الاستثناءات المرفوعة في مجموعة الكود المرفق والتعامل معها باستثناء except البنود؛ يضمن أيضًا تشغيل كود التنظيف في مجموعة الكود البرمجية الأخيرة دائمًا بغض النظر عن كي<br>[3] العبارة تابع continue تتجاوز التكرارية الحالية وتتابع للعنصر التالي. العبارة تجاوز pass، والتي تعمل بمثابة «لا عملية». تُستعمل عندما يكون هناك حاجة نحويًا لإنشاء كتلة كود فارغة. العبارة تأكيد assert، المستخدمة أثناء تصحيح الأخطاء للتحقق من الشروط التي يجب تطبيقها. العبارة تحصيل yield تعيد قيمة من ال</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">نوفمبر</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_9" value="1" required> 1</label> <label><input type="radio" name="faith_9" value="2" required> 2</label> <label><input type="radio" name="faith_9" value="3" required> 3</label> <label><input type="radio" name="faith_9" value="4" required> 4</label> <label><input type="radio" name="faith_9" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_9" value="1" required> 1</label> <label><input type="radio" name="adeq_9" value="2" required> 2</label> <label><input type="radio" name="adeq_9" value="3" required> 3</label> <label><input type="radio" name="adeq_9" value="4" required> 4</label> <label><input type="radio" name="adeq_9" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_9" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-10">
+  <div class="item-num">Item 10 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] العمران ونادي الطرف ونادي الشروق في دوري الدرجة الثالثة. تقام المباريات الرياضية على ملعب الأمير عبد الله بن جلوي بمدينة الهفوف ويتسع الملعب لأكثر من 20 ألف متفرج. انظر أيضًا المراجع وصلات خارجية أرشيف موقع بلدية الأحساء السياحة في مدينة الأحساء فريق سفاري الأحساء لرحلات البر والبحر صحيفة الأحساء ني<br>[2] اسم هذه الهيئة ليصبح الرابطة الوطنية للطلبة الرياضيين في الكليات (الرابطة الوطنية لرياضة الجامعات) (NCAA). تم لعب أول مباراة لكرة السلة بين الجامعات الكندية داخل جمعية الشبان المسيحية (جمعية الشبان المسيحيين) في كينغستون بمقاطعة أونتاريو في 6 فبراير 1904، وذلك عندما زارت جامعة ماكجيل (جامعة مكغيل) ج<br>[3] وانتهى الموسم بالمركز الثامن برصيد 9 نقاط. وتعاقد الفريق مع رالف شوماخر ليبدأ مع بداية موسم 2005. قام الفريق بالتطور قليلاً في موسم 2005 وذلك بالمنافسة على المركز الأول، حيث قام السائق يارنو تروللي بإحراز المركز الثاني مرتين والمركز الثالث مرة واحدة في أول خمسة سباقات من ذاك الموسم. الأمر الذي ساعد </div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">البحرين</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_10" value="1" required> 1</label> <label><input type="radio" name="faith_10" value="2" required> 2</label> <label><input type="radio" name="faith_10" value="3" required> 3</label> <label><input type="radio" name="faith_10" value="4" required> 4</label> <label><input type="radio" name="faith_10" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_10" value="1" required> 1</label> <label><input type="radio" name="adeq_10" value="2" required> 2</label> <label><input type="radio" name="adeq_10" value="3" required> 3</label> <label><input type="radio" name="adeq_10" value="4" required> 4</label> <label><input type="radio" name="adeq_10" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_10" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-11">
+  <div class="item-num">Item 11 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] في نهاية موسم 1936–37، حصد الأهلي الثُنائيَّة، بالفوز ببطولتي دوري منطقة القاهرة وكأس مصر متفوقًا على منافسيه المختلط (الزمالك) والسكة الحديد، حيث حسم الأهلي الدوري في آخر أسبوع، عندما فاز بنتيجة 4–1 على المختلط (الزمالك)، ليحسم المركز الأول بفارق 3 نقاط عن المختلط (الزمالك)، وفي نهائي الكأس فاز الأ<br>[2] النفط. فاز نادي القادسية في لقب البطولة 16 مرة. أكثر فريق فاز في لقب البطولة ولقب الدوري في نفس الموسم هما نادي القادسية ونادي العربي، 5 مرات. أكبر نتيجة في تاريخ البطولة هي بين نادي القادسية ونادي الجهراء (نادي الشهداء سابقا) 9-0. امتلك نادي القادسية كأس الأمير بعد الفوز بها أربع مرات متفرقة في موا<br>[3] الرسمية هو نادي القادسية برصيد 48 بطولة رسمية. الدوري الكويتي ثاني أكثر الفرق حصولا على لقب الدوري هو نادي القادسية برصيد 17 مرة مع النادي العربي. أكثر الفرق حصولا على المركز الثاني في الدوري هو نادي القادسية ب 17 مرة. أكثر فريق حصل لاعبوه على لقب هداف الدوري هو نادي القادسية بواقع 15 مرة. نادي القا</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">نوفمبر</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_11" value="1" required> 1</label> <label><input type="radio" name="faith_11" value="2" required> 2</label> <label><input type="radio" name="faith_11" value="3" required> 3</label> <label><input type="radio" name="faith_11" value="4" required> 4</label> <label><input type="radio" name="faith_11" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_11" value="1" required> 1</label> <label><input type="radio" name="adeq_11" value="2" required> 2</label> <label><input type="radio" name="adeq_11" value="3" required> 3</label> <label><input type="radio" name="adeq_11" value="4" required> 4</label> <label><input type="radio" name="adeq_11" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_11" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-12">
+  <div class="item-num">Item 12 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] الغناء هو إصدار صوت فن يدمج بين 3 عناصر أساسية هي الموسيقى والكلمة والصوت. والغناء شكل من الأشكال الطبيعية في التعبير، ويوجد في كافة المجتمعات والثقافات في كل أنحاء العالم. ويسمى من يمتهن الغناء بالمغني أو المطرب. وقد كان الغناء منذ القدم وسيلة للتعبير عن المشاعر سواء مشاعر الحب والانتماء والتبجيل و<br>[2] الصوت هو تردد آلي، أو موجة قادرة على التحرك في وسط مادي مثل الهواء، والأجسام الصلبة، السوائل، والغازات، ولا تنتشر في الفراغ (إذا وضعنا جرسًا في ناقوس زجاجي وفرغنا الناقوس من الهواء، فإننا لا نسمع صوت الجرس عندما يدق بسبب عدم انتقال هزات (صوت) الجرس في الفراغ). وباستطاعة الكائن الحي تحسس الصوت عن طري<br>[3] الأصوات الحنجرية هي الأصوت التي تخرج من الحنجرة بتضييق الأحبال الصوتية في المزمار أو الزردمة، أو بإغلاقها. مثلا: ء، ه. مراجع حروف صامتة مخارج الحروف مخارج حروف</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">مايكرو</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_12" value="1" required> 1</label> <label><input type="radio" name="faith_12" value="2" required> 2</label> <label><input type="radio" name="faith_12" value="3" required> 3</label> <label><input type="radio" name="faith_12" value="4" required> 4</label> <label><input type="radio" name="faith_12" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_12" value="1" required> 1</label> <label><input type="radio" name="adeq_12" value="2" required> 2</label> <label><input type="radio" name="adeq_12" value="3" required> 3</label> <label><input type="radio" name="adeq_12" value="4" required> 4</label> <label><input type="radio" name="adeq_12" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_12" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-13">
+  <div class="item-num">Item 13 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">: كم من الوقت استغرق بناء البرجين التوأمين</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] من تطور الكون. وكانت درجات الحرارة في أول مللي ثانية من الانفجار الكبير قد وصلت أكثر من 10 مليار كلفن وطاقة الفوتونات أكثر من مليون إلكترون فولت. وكانت لتلك الفوتونات نشاطا يكفي بأن تتفاعل مع بعضها البعض لتشكيل أزواج الإلكترونات والبوزيترونات. وبالمقابل تفني تلك الأزواج بعضها البعض لتنفث الفوتونات ا<br>[2] والنمور، والفئران والجرذان، نفس المقدار من الوقت تقريبا لتتباعد عن أسلافها المشتركة. حيث تميز تطور البشرية المعاصرة بالسرعة: فعلى سبيل المثال لقد تطور (الأوسترالابيثاسينز) Australopithicenes منذ ما يقرب من أربعة ملايين سنة مضت، على عكس ما هو الحال بشأن الإنسان المعاصر الذي استغرق عدة مئات الآلاف من <br>[3] الانفجار العظيم في علم الكون الفيزيائي هو النظرية السائدة لتفسير نشأة وتطور الكون الحالي. تعتمد فكرة النظرية على أن الكون (المعروف اليوم في صورته المادية ويعرف اختصارا بالكون وخاصة الكون المنظور وليس كما في نماذج أخرى كالكون الأزلي ) كان بالماضي في حالة حارة شديدة الكثافة فتمدد، وأن الكون كان يومًا </div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">نوفمبر</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_13" value="1" required> 1</label> <label><input type="radio" name="faith_13" value="2" required> 2</label> <label><input type="radio" name="faith_13" value="3" required> 3</label> <label><input type="radio" name="faith_13" value="4" required> 4</label> <label><input type="radio" name="faith_13" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_13" value="1" required> 1</label> <label><input type="radio" name="adeq_13" value="2" required> 2</label> <label><input type="radio" name="adeq_13" value="3" required> 3</label> <label><input type="radio" name="adeq_13" value="4" required> 4</label> <label><input type="radio" name="adeq_13" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_13" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-14">
+  <div class="item-num">Item 14 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] أنه تم بث حلقات الأنمي والأفلام ومعظم حلقات الأوفا. وفي الولايات المتحدة ظهرت السلسلة عدة مرات في قائمة كتب الولايات المتحدة الأمريكية اليوم، وفاز المجلد الحادي عشر بجائزة كويل في عام 2006م. وقد أشاد متابعو السلسلة بالتوازن بين القتال والكوميديا، كما أبدوا إعجابهم بالسمات المميزة لشخصيات مانغا ناروت<br>[2] عليها في الدبلجة العربية بأنه مريض أو نعسان أو مصاب بالصداع. حُذفت العديد من المقاطع لاحتوائها على دماء كثيرة أو لإظهارها مناظر جريمة قتل بشعة أو تنورات قصيرة للفتيات (اللباس الموحد في المدارس اليابانية خاصةً في مدرسة ران). لا تدمج البدايات ولا النهايات الموسيقية بالحلقات (أي أن أغنية البداية تُعرض <br>[3] الثمانين من هذه السلسة، بعد أن كان الإصدار الأول لها في 1994. وفي 8 أغسطس 2017 وصلت قائمة مجلدات المحقق كونان إلى الفصل 1000 من فصول السلسلة. وقد تم الترخيص نشر سلسلة المانغا في كثير من بلدان العالم مثل الصين وفرنسا وألمانيا وإندونيسيا وفنلندا. في الولايات المتحدة وبعد حصول FUNimation للترفيه على حق</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">البحرين</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_14" value="1" required> 1</label> <label><input type="radio" name="faith_14" value="2" required> 2</label> <label><input type="radio" name="faith_14" value="3" required> 3</label> <label><input type="radio" name="faith_14" value="4" required> 4</label> <label><input type="radio" name="faith_14" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_14" value="1" required> 1</label> <label><input type="radio" name="adeq_14" value="2" required> 2</label> <label><input type="radio" name="adeq_14" value="3" required> 3</label> <label><input type="radio" name="adeq_14" value="4" required> 4</label> <label><input type="radio" name="adeq_14" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_14" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-15">
+  <div class="item-num">Item 15 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من أين جاءت العبارة "great scott"</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] إلهام عظيم للبريطانيين في خضم الأزمات والأعباء التي تواجهها بريطانيا. ويُعد خطاب تشرشل الأول بعد توليه رئاسة الوزراء هو الأشهر من بين خطاباته، حينها قال: «ليس لدي ما أقدمه سوء الدماء، الكدح، الدموع، والعرق». ووصف أحد المؤرخين تأثير تلك العبارة على البرلمان بال«مُكَهِربة»؛ فمجلس العموم الذي تجاهله في<br>[2] الرأي عن مصدر اشتقاق الاسم، ولكنه يضيف إن كاتبًا مثل فولتير قد اتخذ هذا الاسم أيضًا لما له من معنى ضمني يوحي بالسرعة والجرأة. هذا المعنى الذي يأتي من اقتران الاسم بكلمات مثل: voltige (الألعاب البهلوانية التي يتم أداؤها على أرجوحة البهلوان أو الحصان)، وvolte-face (الالتفاف لمواجهة الأعداء)، وvolatile<br>[3] لمحطة سلاح الجو الملكي أوكسبريدج (RAF). كانت تلك الكلمات هي أول ما تحدث بها تشرشل عقب خروجه من الخندق رقم 11، الموجود تحت الأرض والخاص بسلاح الجو الملكي أوكسبريدج، المعروف حاليًا باسم «خندق بريطانيا» التي كانت تستخدمه المجموعة المقاتلة رقم 11 من سلاح الجو البريطاني أوكسبريدج أثناء الحرب العالمية الث</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">محمد سليمان</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_15" value="1" required> 1</label> <label><input type="radio" name="faith_15" value="2" required> 2</label> <label><input type="radio" name="faith_15" value="3" required> 3</label> <label><input type="radio" name="faith_15" value="4" required> 4</label> <label><input type="radio" name="faith_15" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_15" value="1" required> 1</label> <label><input type="radio" name="adeq_15" value="2" required> 2</label> <label><input type="radio" name="adeq_15" value="3" required> 3</label> <label><input type="radio" name="adeq_15" value="4" required> 4</label> <label><input type="radio" name="adeq_15" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_15" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-16">
+  <div class="item-num">Item 16 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] الذي استمع إلى غنائه وأعجب به وبدأ بريسلي رحلته الجادة في عالم الموسيقى بتسجيل أولى أغانيه بعنوان ذاتس أول رايت وتبعها بأغنية بلو مون أوف كنتاكي وقد حققت الأغنيتان الكثير من النجاح، وبدأ أسلوب ألفيس الغنائي المميز في الظهور والتألق، وتوالت أعماله وعروضه المسرحية فأذهب بريسلي في أحد أفلامه لمع اسم أل<br>[2] وتسند بقية اللحن إلى بليغ حمدي، هذه الأغنية من كلمات مأمون الشناوي. والحقيقة أن مأمون الشناوي حاول التعاون معها أكثر من مرة كان أولها أغنية الربيع التي ذهبت إلى فريد الأطرش، كانت المشكلة بينهما تمسك مأمون الشناوي بكلماته وتمسك أم كلثوم بتغيير الكلمات، في هذه المرة يرضخ مأمون لطلباتها كلها معلنا فوز <br>[3] A Self-Portrait (1959) Thoughts and Meditations (1960) A Second Treasury of Kahlil Gibran (1962) Spiritual Sayings (1962) Voice of the Master (1963) Mirrors of the Soul (1965) Between Night &amp; Morn (1972) A Third Treasury of Kahlil Gibran (1975) The Storm (1994) The Beloved (1994) The Vision (1994) E</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">محمد سليمان</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_16" value="1" required> 1</label> <label><input type="radio" name="faith_16" value="2" required> 2</label> <label><input type="radio" name="faith_16" value="3" required> 3</label> <label><input type="radio" name="faith_16" value="4" required> 4</label> <label><input type="radio" name="faith_16" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_16" value="1" required> 1</label> <label><input type="radio" name="adeq_16" value="2" required> 2</label> <label><input type="radio" name="adeq_16" value="3" required> 3</label> <label><input type="radio" name="adeq_16" value="4" required> 4</label> <label><input type="radio" name="adeq_16" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_16" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-17">
+  <div class="item-num">Item 17 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">كم عدد مواسم ملكات الصراخ</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] | align=center|17 أبريل 1999 |align=center|2011 |align=center|1.45 |- ! 4 | أسيرٌ في عينيها / الشاهدة الوحيدة (名探偵コナン 瞳の中の暗殺者) | align=center|22 أبريل 2000 | align=center|2013 |align=center|2.5 |- ! 5 | العد التنازلي للجنة / العد التنازلي نحو المجهول (名探偵コナン 天国へのカウントダウン) | align=center|21 أبريل 2001<br>[2] 2007 |align=center| لم يدبلج |align=center|2.53 |- ! 12 | لحن كامل من الرعب (名探偵コナン 戦慄の楽譜) | align=center|19 أبريل 2008 |align=center| لم يدبلج |align=center|2.42 |- ! 13 | المطارِد الأسود (名探偵コナン 漆黒の追跡者) | align=center|18 أبريل 2009 |align=center| لم يدبلج |align=center|3.5 |- ! 14 | السفينة الضائع<br>[3] عليها في الدبلجة العربية بأنه مريض أو نعسان أو مصاب بالصداع. حُذفت العديد من المقاطع لاحتوائها على دماء كثيرة أو لإظهارها مناظر جريمة قتل بشعة أو تنورات قصيرة للفتيات (اللباس الموحد في المدارس اليابانية خاصةً في مدرسة ران). لا تدمج البدايات ولا النهايات الموسيقية بالحلقات (أي أن أغنية البداية تُعرض </div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">1964</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_17" value="1" required> 1</label> <label><input type="radio" name="faith_17" value="2" required> 2</label> <label><input type="radio" name="faith_17" value="3" required> 3</label> <label><input type="radio" name="faith_17" value="4" required> 4</label> <label><input type="radio" name="faith_17" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_17" value="1" required> 1</label> <label><input type="radio" name="adeq_17" value="2" required> 2</label> <label><input type="radio" name="adeq_17" value="3" required> 3</label> <label><input type="radio" name="adeq_17" value="4" required> 4</label> <label><input type="radio" name="adeq_17" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_17" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-18">
+  <div class="item-num">Item 18 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من مبدع مسلسل ذا فويس</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] ذا فويس - أحلى صوت الموسم الثاني 2014. ذا فويس - أحلى صوت الموسم الثالث 2015. ذا فويس كيدز الموسم الأول 2016. ذا فويس كيدز الموسم الثاني 2017. تكريماته كُرّم من إنجلترا وفرنسا وإيطاليا وأمريكا وكندا وماليزيا والجزائر والمغرب ومصر وتونس وكُرِّم من شعبه العراقي. وهنا بعض تكريماته: حصل على أوسكار الأغن<br>[2] «المتحررات والفلاسفة»؛ Flappers and Philosophers). استلهم هنري وادزورث لونغفيلو قصيدته الملحمية "The Song of Hiawatha" من مينيسوتا وسمى العديد من أماكن الولاية ومسطحاتها المائية. فاز ابن مينيسوتا روبرت تسيمرمان (بوب دلن) بجائزة نوبل في الأدب لعام 2016. الترفيه يشمل موسيقيو مينيسوتا بوب ديلان، إدي كو<br>[3] بطرق مختلفة ومنوعة جعلته يؤدي جانباً من هذا النوع الغنائي الفريد بشكل مبدع وخلاّق خاصتاً في أغنيتيه الحب المستحيل وقولي أحبك. إن سمات الإحساس المرهف والطاقة التعبيرية التي يتمتع بها صوت كاظم الساهر ما كان لها أن تبرز بشكل مميز لولا امتلاكه تكنيك أدائي يكاد يكون نادراً جداً ولا يتمتع به سوى الأُصلاء </div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">البحرين</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_18" value="1" required> 1</label> <label><input type="radio" name="faith_18" value="2" required> 2</label> <label><input type="radio" name="faith_18" value="3" required> 3</label> <label><input type="radio" name="faith_18" value="4" required> 4</label> <label><input type="radio" name="faith_18" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_18" value="1" required> 1</label> <label><input type="radio" name="adeq_18" value="2" required> 2</label> <label><input type="radio" name="adeq_18" value="3" required> 3</label> <label><input type="radio" name="adeq_18" value="4" required> 4</label> <label><input type="radio" name="adeq_18" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_18" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-19">
+  <div class="item-num">Item 19 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] Nama Watak Watak Utama Alexander Anderson Alucard Integra Hellsing Enrico Maxwell Seras Victoria Watak Kecil Manga Anime Kedua-duanya Rujukan dalam Hellsing Episod Lagu Tema Siri manga Madhouse (syarikat)<br>[2] Berikut ialah senarai episod dalam siri kartun The Powerpuff Girls. Pengenalan Musim 1 Musim 2 Musim 3 Musim 4 Musim 5 Musim 6 Episod khas The Powerpuff Girls<br>[3] jalan cerita siri manga dan menonjolkan beberapa babak pertarungan pendek. Ketika hampir tamatnya jalan cerita Misi Menyelamatkan Sasuke di dalam siri animasi (Episod 135), ia telah berada di satu tahap di mana siri animasi sudah hampir dengan episod jalan cerita di dalam siri manga. Sebaik sahaja j</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0>-besaran.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_19" value="1" required> 1</label> <label><input type="radio" name="faith_19" value="2" required> 2</label> <label><input type="radio" name="faith_19" value="3" required> 3</label> <label><input type="radio" name="faith_19" value="4" required> 4</label> <label><input type="radio" name="faith_19" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_19" value="1" required> 1</label> <label><input type="radio" name="adeq_19" value="2" required> 2</label> <label><input type="radio" name="adeq_19" value="3" required> 3</label> <label><input type="radio" name="adeq_19" value="4" required> 4</label> <label><input type="radio" name="adeq_19" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_19" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-20">
+  <div class="item-num">Item 20 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من أين جاءت العبارة "great scott"</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] Semantik merupakan kajian makna istilah. Perkataan ini berasal daripada perkataan Yunani Purba σημαντικός "semantikos" yang membawa maksud "erti yang penting". Selalunya terdapat perbezaan antara "semantik" dengan "sintaksis". Dalam keadaan tersebut, "semantik" merujuk kepada makna perkataan manakal<br>[2] walaupun jari bertukar kedudukan. Definisi informal Bentuk juga boleh ditakrifkan secara longgar sebagai "penampilan sesuatu, terutamanya garis besarnya". Definisi ini agak sesuai dengan definisi di atas, iaitu bentuk tidak bergantung pada kedudukan, saiz, atau arahnya. Walau bagaimanapun, definisi <br>[3] Perkataan Celt mempunyai pelbagai makna. Kadangkala perbezaan sebutan ini dikekalkan - lihat Sebutan Celt. Sebutan berikut sama ada disebutkan secara /kelt/ atau /selt/, tetapi dalam kegunaan akademik terdapat satu kecenderungan untuk /kelt/: Orang Celt Eropah, sama ada silam atau Celt Moden Bahasa </div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0>.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_20" value="1" required> 1</label> <label><input type="radio" name="faith_20" value="2" required> 2</label> <label><input type="radio" name="faith_20" value="3" required> 3</label> <label><input type="radio" name="faith_20" value="4" required> 4</label> <label><input type="radio" name="faith_20" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_20" value="1" required> 1</label> <label><input type="radio" name="adeq_20" value="2" required> 2</label> <label><input type="radio" name="adeq_20" value="3" required> 3</label> <label><input type="radio" name="adeq_20" value="4" required> 4</label> <label><input type="radio" name="adeq_20" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_20" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-21">
+  <div class="item-num">Item 21 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من أين جاءت علامة الستاربكس</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] our Flag flies high above our Country strong and free Long may our Peoples live in peace and harmony Sarawak Bahagia "Sarawak Bahagia" (Happy Sarawak) ialah lagu negeri Sarawak dari 1973 hingga 1988. Ia merupakan lagu pertama di negeri ini yang dibawakan dalam bahasa Melayu. Lirik Versi Terkini Nota<br>[2] Kumpulan Script merupakan sebuah kumpulan pemuzik dan penyanyi yang aktif di Malaysia. Kumpulan ini menyampaikan lagu-lagu rock Melayu dan mula dikenali semenjak tahun 1980-an. Kumpulan Script merupakan salah satu dari kumpulan rock yang mengambil bahagian dalam pertanding di Juara Rock Galactica, y<br>[3] Cengkih () atau nama saintifiknya Syzygium aromaticum merupakan sejenis tumbuhan yang bunganya digunakan sebagai rempah sejak zaman dahulu lagi. Ia terdapat dengan banyaknya di Zanzibar, Madagascar dan Indonesia. Rempah cengkih merupakan kuntum bunga pokok cengkih yang dikeringkan. Pokok yang berasa</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0> -</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_21" value="1" required> 1</label> <label><input type="radio" name="faith_21" value="2" required> 2</label> <label><input type="radio" name="faith_21" value="3" required> 3</label> <label><input type="radio" name="faith_21" value="4" required> 4</label> <label><input type="radio" name="faith_21" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_21" value="1" required> 1</label> <label><input type="radio" name="adeq_21" value="2" required> 2</label> <label><input type="radio" name="adeq_21" value="3" required> 3</label> <label><input type="radio" name="adeq_21" value="4" required> 4</label> <label><input type="radio" name="adeq_21" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_21" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-22">
+  <div class="item-num">Item 22 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">: كم من الوقت استغرق بناء البرجين التوأمين</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] sangat kuat sehingga penghasilan helium-4 memakan hampir semua neutron bebas dalam beberapa minit sebelum ia boleh mereput beta, dan turut meninggalkan beberapa untuk menghasilkan atom-atom yang lebih berat seperti litium, berilium atau boron. Pengikatan nuklear helium-4 setiap nukleon adalah lebih <br>[2] helium dan kemungkinan berukuran masif. Jika memang benar demikian, maka bintang-bintang yang sangat besar ini akan menghabiskan pasokan bahan bakarnya dengan cepat dan menjadi supernova, melepaskan unsur-unsur berat ke medium antarbintang. Bintang-bintang generasi pertama ini mengionisasi ulang hid<br>[3] keretapi. Walaupun dari segi seni bina penyangga selalunya mempunyai cuma satu bahagian, untuk jambatan biasanya dua bahagian (sepasang) yang serupa dibina. Satu kelebihan jambatan ini ialah ia boleh dibina dengan cuma bekerja menggunakan caisson sementara – ini dilakukan dengan membina kedua-dua ba</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0>.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_22" value="1" required> 1</label> <label><input type="radio" name="faith_22" value="2" required> 2</label> <label><input type="radio" name="faith_22" value="3" required> 3</label> <label><input type="radio" name="faith_22" value="4" required> 4</label> <label><input type="radio" name="faith_22" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_22" value="1" required> 1</label> <label><input type="radio" name="adeq_22" value="2" required> 2</label> <label><input type="radio" name="adeq_22" value="3" required> 3</label> <label><input type="radio" name="adeq_22" value="4" required> 4</label> <label><input type="radio" name="adeq_22" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_22" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-23">
+  <div class="item-num">Item 23 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من الذي يغني أحبك مثل لا يوجد غدا</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] penyanyi. (Do Re Me) Gimun Bulawi. Pemain gitar. Diskografi Album Lagu-lagu Malam pasar ria. Mencari isteri jalinan cinta Tolong balutkan Nostalgia di geylang serai Terang bulan di bandar kluang Pautan luar Group Duda38<br>[2] Padamu Warna Kehidupan Jika Kau Tiada (bersama Erra Fazira) 3 Minggu Bermimpi Lagi Hari ini Mengapa Tamat Terbang Tinggi Tertewas Lagi Jika Ku Tak Bangun Esok Pagi (Runut bunyi Cicak-Man) Dibius Cinta (bersama Melly Goeslaw) Kekasih Abadi (bersama Lisa Surihani) Filemografi Filem Drama Telefilem Tel<br>[3] Gimun Bulawi atau juga dikenali sebagai Do Re Me merupakan salah seorang daripada Kumpulan Group Duda38. Gimun Bulawi merupakan pemain gitar. Orang hidup Pemain gitar Malaysia</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0> :</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_23" value="1" required> 1</label> <label><input type="radio" name="faith_23" value="2" required> 2</label> <label><input type="radio" name="faith_23" value="3" required> 3</label> <label><input type="radio" name="faith_23" value="4" required> 4</label> <label><input type="radio" name="faith_23" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_23" value="1" required> 1</label> <label><input type="radio" name="adeq_23" value="2" required> 2</label> <label><input type="radio" name="adeq_23" value="3" required> 3</label> <label><input type="radio" name="adeq_23" value="4" required> 4</label> <label><input type="radio" name="adeq_23" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_23" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-24">
+  <div class="item-num">Item 24 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من مبدع مسلسل ذا فويس</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] شركة والت ديزني والمعروفة باسم ديزني هي إحدى شركات وسائل الإعلام والترفيه في العالم. تأسست الشركة في 16 أكتوبر، 1923، من قبل الأخوان والت وروي ديزني في شكل إستوديو لفن التحريك (الأنيمايشن)، وكما أنه أصبح واحداً من أكبر الاستوديوهات في هوليوود، وأصحاب أو مرخص لأحد عشر حدائق ملاهي والعديد من شبكات (ال<br>[2] مواقع جديدة لثاني منتزهات ديزني. في نوفمبر 1955، كشف النقاب عن «ديزني: كوكب الأرض»، مع وجود خطط لمتنزهات وفنادق، وحتى مدينة نموذجية على آلاف الدونمات من الأراضي التي تم شراؤها من خارج اورلاندو بولاية فلوريدا. واصلت شركة ديزني لتركيز طاقاتها على شاشة التلفزين خلال الخمسينات. وهو برنامج يبث كل نهاية ا<br>[3] الأدب والثقافة الأفلام الوثائقية صدرت عدة أفلام وثائقية عن حياة فيروز، سلطت الضوء على أبرز المحطات في مسيرتها الفنية وحفلاتها والجولات الغنائية التي قامت بها وحياتها الخاصة وزواجها أهمها: 1971: وثائقي بعنوان (فيروز في أمريكا)، تغطية لأول جولة رئيسية لفيروز في أمريكا الشمالية. 1998: وثائقي بعنوان (تا</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0>.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_24" value="1" required> 1</label> <label><input type="radio" name="faith_24" value="2" required> 2</label> <label><input type="radio" name="faith_24" value="3" required> 3</label> <label><input type="radio" name="faith_24" value="4" required> 4</label> <label><input type="radio" name="faith_24" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_24" value="1" required> 1</label> <label><input type="radio" name="adeq_24" value="2" required> 2</label> <label><input type="radio" name="adeq_24" value="3" required> 3</label> <label><input type="radio" name="adeq_24" value="4" required> 4</label> <label><input type="radio" name="adeq_24" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_24" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-25">
+  <div class="item-num">Item 25 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من الذي يغني أحبك مثل لا يوجد غدا</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] امض جئت تطلب نارا أم تري جئت تشعل البيت نارا 2. أغنية «سجى الليل». قيس: سجي الليل حتى هاج لي الشعرُ والهوى، وما البيدُ الا الليلُ والشعرُ والحبُ، ملأت سماء البيد عشقا وأرضها، وحُملت وحدي ذلك العشق يا ربُ، ألمّ على أبيات ليلى بيَ الهوى، وما غيرَ أبياتي دليل ولا ركبُ، وباتت خيامي خطوةً من خيامها، فلم <br>[2] أمريكي 30 يونيو - أياكا كيكوتشي ممثلة ومغنية يابانية يوليو 1 يوليو - ريني رودريجز ممثلة ومغنية أمريكية 2 يوليو - ياسين مرياح لاعب كرة قدم تونسي 3 يوليو - روي كيم مغني كوري 3 يوليو - فنسنت لاكوست ممثل فرنسي 3 يوليو - بارتي نكست دور مغني راب كندي 6 يوليو - جانا بورسيسكا مغنية مقدونية 7 يوليو - شاخرام <br>[3] يناير ليام أيكن ممثل أمريكي 7 يناير كامرين جريمز ممثلة ألمانية 8 يناير روبن أولسن لاعب كرة قدم سويدي 9 يناير نام جي هيون ممثلة كورية 12 يناير سيرغي كارياكن لاعب شطرنج أوكراني 13 يناير ليام هيمسورث ممثل أسترالي 14 يناير غرانت غستن ممثل ومغني أمريكي 18 يناير كيلي رورباش عارضة أزياء وممثلة أمريكية 18 ي</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0> الله.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_25" value="1" required> 1</label> <label><input type="radio" name="faith_25" value="2" required> 2</label> <label><input type="radio" name="faith_25" value="3" required> 3</label> <label><input type="radio" name="faith_25" value="4" required> 4</label> <label><input type="radio" name="faith_25" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_25" value="1" required> 1</label> <label><input type="radio" name="adeq_25" value="2" required> 2</label> <label><input type="radio" name="adeq_25" value="3" required> 3</label> <label><input type="radio" name="adeq_25" value="4" required> 4</label> <label><input type="radio" name="adeq_25" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_25" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-26">
+  <div class="item-num">Item 26 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] عليها في الدبلجة العربية بأنه مريض أو نعسان أو مصاب بالصداع. حُذفت العديد من المقاطع لاحتوائها على دماء كثيرة أو لإظهارها مناظر جريمة قتل بشعة أو تنورات قصيرة للفتيات (اللباس الموحد في المدارس اليابانية خاصةً في مدرسة ران). لا تدمج البدايات ولا النهايات الموسيقية بالحلقات (أي أن أغنية البداية تُعرض <br>[2] على نفسك من أعداء النجاح. البعض يولدون عظماء، والبعض يحققون العظمة والبعض تُلقى العظمة عليهم. أعماله العظماء تاجر البندقية زوجات وندسور المرحات جعجعة بلا طحن مهزلة الأغلاط ترويض النمرة العاصفة (مسرحية) الليلة الثانية عشرة السيدان الفيرونيان عذاب الحب الضائع حكاية الشتاء (مسرحية) حلم ليلة صيف كما تشا<br>[3] حملت نفس الاسم (راشومون، 1960) لـ«سيدني لوميت» بطولة «ريكاردو مونتالبان». «رجال الساموراي السبعة»:«العظماء السبعة» (1960 م) لـ«جون ستورغس». «يوجيمبو»: «حفنة من الدولارات» (A Fistful Of Dollars، 1963) لـ«سيرجيو ليوني». «الغابة المخفية»: بعض المشاهد في «حرب النجوم» (Star Wars، 1977) لـ«جورج لوكاس». أه</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0>.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_26" value="1" required> 1</label> <label><input type="radio" name="faith_26" value="2" required> 2</label> <label><input type="radio" name="faith_26" value="3" required> 3</label> <label><input type="radio" name="faith_26" value="4" required> 4</label> <label><input type="radio" name="faith_26" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_26" value="1" required> 1</label> <label><input type="radio" name="adeq_26" value="2" required> 2</label> <label><input type="radio" name="adeq_26" value="3" required> 3</label> <label><input type="radio" name="adeq_26" value="4" required> 4</label> <label><input type="radio" name="adeq_26" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_26" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-27">
+  <div class="item-num">Item 27 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] الغناء هو إصدار صوت فن يدمج بين 3 عناصر أساسية هي الموسيقى والكلمة والصوت. والغناء شكل من الأشكال الطبيعية في التعبير، ويوجد في كافة المجتمعات والثقافات في كل أنحاء العالم. ويسمى من يمتهن الغناء بالمغني أو المطرب. وقد كان الغناء منذ القدم وسيلة للتعبير عن المشاعر سواء مشاعر الحب والانتماء والتبجيل و<br>[2] الصوت هو تردد آلي، أو موجة قادرة على التحرك في وسط مادي مثل الهواء، والأجسام الصلبة، السوائل، والغازات، ولا تنتشر في الفراغ (إذا وضعنا جرسًا في ناقوس زجاجي وفرغنا الناقوس من الهواء، فإننا لا نسمع صوت الجرس عندما يدق بسبب عدم انتقال هزات (صوت) الجرس في الفراغ). وباستطاعة الكائن الحي تحسس الصوت عن طري<br>[3] الأصوات الحنجرية هي الأصوت التي تخرج من الحنجرة بتضييق الأحبال الصوتية في المزمار أو الزردمة، أو بإغلاقها. مثلا: ء، ه. مراجع حروف صامتة مخارج الحروف مخارج حروف</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0> الغناء</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_27" value="1" required> 1</label> <label><input type="radio" name="faith_27" value="2" required> 2</label> <label><input type="radio" name="faith_27" value="3" required> 3</label> <label><input type="radio" name="faith_27" value="4" required> 4</label> <label><input type="radio" name="faith_27" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_27" value="1" required> 1</label> <label><input type="radio" name="adeq_27" value="2" required> 2</label> <label><input type="radio" name="adeq_27" value="3" required> 3</label> <label><input type="radio" name="adeq_27" value="4" required> 4</label> <label><input type="radio" name="adeq_27" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_27" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-28">
+  <div class="item-num">Item 28 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">كم عدد مواسم ملكات الصراخ</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] خارجية ما هي الغزوات والحروب التي شارك فيها النبي محمد؟ ما هي غزوة الحُديبية، ومتى حدثت؟ متى كانت غزوة بدر، وما هي أسبابها، ولماذا سميت بهذا الاسم، وكم كان عدد المشاركين فيها من الطرفين؟ متى حصلت غزوة ذات السلاسل ؟ وما هو تفصيل أحداثها؟ الإسلام في القرن 7 العصر النبوي تسلسل زمني للتاريخ الإسلامي قوا<br>[2] على نفسك من أعداء النجاح. البعض يولدون عظماء، والبعض يحققون العظمة والبعض تُلقى العظمة عليهم. أعماله العظماء تاجر البندقية زوجات وندسور المرحات جعجعة بلا طحن مهزلة الأغلاط ترويض النمرة العاصفة (مسرحية) الليلة الثانية عشرة السيدان الفيرونيان عذاب الحب الضائع حكاية الشتاء (مسرحية) حلم ليلة صيف كما تشا<br>[3] العثمانية خادم الحرمين الشريفين سلاطين عثمانيون في القرن 18 ملوك ونبلاء ذوو إعاقات مواليد 1108 هـ مواليد 1696 مواليد في القسطنطينية وفيات 1168 وفيات 1168 هـ وفيات 1754 وفيات في القسطنطينية</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0> النجاح</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_28" value="1" required> 1</label> <label><input type="radio" name="faith_28" value="2" required> 2</label> <label><input type="radio" name="faith_28" value="3" required> 3</label> <label><input type="radio" name="faith_28" value="4" required> 4</label> <label><input type="radio" name="faith_28" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_28" value="1" required> 1</label> <label><input type="radio" name="adeq_28" value="2" required> 2</label> <label><input type="radio" name="adeq_28" value="3" required> 3</label> <label><input type="radio" name="adeq_28" value="4" required> 4</label> <label><input type="radio" name="adeq_28" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_28" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-29">
+  <div class="item-num">Item 29 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">كم عدد مواسم ملكات الصراخ</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] خارجية ما هي الغزوات والحروب التي شارك فيها النبي محمد؟ ما هي غزوة الحُديبية، ومتى حدثت؟ متى كانت غزوة بدر، وما هي أسبابها، ولماذا سميت بهذا الاسم، وكم كان عدد المشاركين فيها من الطرفين؟ متى حصلت غزوة ذات السلاسل ؟ وما هو تفصيل أحداثها؟ الإسلام في القرن 7 العصر النبوي تسلسل زمني للتاريخ الإسلامي قوا<br>[2] على نفسك من أعداء النجاح. البعض يولدون عظماء، والبعض يحققون العظمة والبعض تُلقى العظمة عليهم. أعماله العظماء تاجر البندقية زوجات وندسور المرحات جعجعة بلا طحن مهزلة الأغلاط ترويض النمرة العاصفة (مسرحية) الليلة الثانية عشرة السيدان الفيرونيان عذاب الحب الضائع حكاية الشتاء (مسرحية) حلم ليلة صيف كما تشا<br>[3] العثمانية خادم الحرمين الشريفين سلاطين عثمانيون في القرن 18 ملوك ونبلاء ذوو إعاقات مواليد 1108 هـ مواليد 1696 مواليد في القسطنطينية وفيات 1168 وفيات 1168 هـ وفيات 1754 وفيات في القسطنطينية</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">النجاح</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_29" value="1" required> 1</label> <label><input type="radio" name="faith_29" value="2" required> 2</label> <label><input type="radio" name="faith_29" value="3" required> 3</label> <label><input type="radio" name="faith_29" value="4" required> 4</label> <label><input type="radio" name="faith_29" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_29" value="1" required> 1</label> <label><input type="radio" name="adeq_29" value="2" required> 2</label> <label><input type="radio" name="adeq_29" value="3" required> 3</label> <label><input type="radio" name="adeq_29" value="4" required> 4</label> <label><input type="radio" name="adeq_29" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_29" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-30">
+  <div class="item-num">Item 30 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من مبدع مسلسل ذا فويس</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] شركة والت ديزني والمعروفة باسم ديزني هي إحدى شركات وسائل الإعلام والترفيه في العالم. تأسست الشركة في 16 أكتوبر، 1923، من قبل الأخوان والت وروي ديزني في شكل إستوديو لفن التحريك (الأنيمايشن)، وكما أنه أصبح واحداً من أكبر الاستوديوهات في هوليوود، وأصحاب أو مرخص لأحد عشر حدائق ملاهي والعديد من شبكات (ال<br>[2] مواقع جديدة لثاني منتزهات ديزني. في نوفمبر 1955، كشف النقاب عن «ديزني: كوكب الأرض»، مع وجود خطط لمتنزهات وفنادق، وحتى مدينة نموذجية على آلاف الدونمات من الأراضي التي تم شراؤها من خارج اورلاندو بولاية فلوريدا. واصلت شركة ديزني لتركيز طاقاتها على شاشة التلفزين خلال الخمسينات. وهو برنامج يبث كل نهاية ا<br>[3] الأدب والثقافة الأفلام الوثائقية صدرت عدة أفلام وثائقية عن حياة فيروز، سلطت الضوء على أبرز المحطات في مسيرتها الفنية وحفلاتها والجولات الغنائية التي قامت بها وحياتها الخاصة وزواجها أهمها: 1971: وثائقي بعنوان (فيروز في أمريكا)، تغطية لأول جولة رئيسية لفيروز في أمريكا الشمالية. 1998: وثائقي بعنوان (تا</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_30" value="1" required> 1</label> <label><input type="radio" name="faith_30" value="2" required> 2</label> <label><input type="radio" name="faith_30" value="3" required> 3</label> <label><input type="radio" name="faith_30" value="4" required> 4</label> <label><input type="radio" name="faith_30" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_30" value="1" required> 1</label> <label><input type="radio" name="adeq_30" value="2" required> 2</label> <label><input type="radio" name="adeq_30" value="3" required> 3</label> <label><input type="radio" name="adeq_30" value="4" required> 4</label> <label><input type="radio" name="adeq_30" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_30" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-31">
+  <div class="item-num">Item 31 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">: كم من الوقت استغرق بناء البرجين التوأمين</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] من تطور الكون. وكانت درجات الحرارة في أول مللي ثانية من الانفجار الكبير قد وصلت أكثر من 10 مليار كلفن وطاقة الفوتونات أكثر من مليون إلكترون فولت. وكانت لتلك الفوتونات نشاطا يكفي بأن تتفاعل مع بعضها البعض لتشكيل أزواج الإلكترونات والبوزيترونات. وبالمقابل تفني تلك الأزواج بعضها البعض لتنفث الفوتونات ا<br>[2] والنمور، والفئران والجرذان، نفس المقدار من الوقت تقريبا لتتباعد عن أسلافها المشتركة. حيث تميز تطور البشرية المعاصرة بالسرعة: فعلى سبيل المثال لقد تطور (الأوسترالابيثاسينز) Australopithicenes منذ ما يقرب من أربعة ملايين سنة مضت، على عكس ما هو الحال بشأن الإنسان المعاصر الذي استغرق عدة مئات الآلاف من <br>[3] الانفجار العظيم في علم الكون الفيزيائي هو النظرية السائدة لتفسير نشأة وتطور الكون الحالي. تعتمد فكرة النظرية على أن الكون (المعروف اليوم في صورته المادية ويعرف اختصارا بالكون وخاصة الكون المنظور وليس كما في نماذج أخرى كالكون الأزلي ) كان بالماضي في حالة حارة شديدة الكثافة فتمدد، وأن الكون كان يومًا </div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_31" value="1" required> 1</label> <label><input type="radio" name="faith_31" value="2" required> 2</label> <label><input type="radio" name="faith_31" value="3" required> 3</label> <label><input type="radio" name="faith_31" value="4" required> 4</label> <label><input type="radio" name="faith_31" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_31" value="1" required> 1</label> <label><input type="radio" name="adeq_31" value="2" required> 2</label> <label><input type="radio" name="adeq_31" value="3" required> 3</label> <label><input type="radio" name="adeq_31" value="4" required> 4</label> <label><input type="radio" name="adeq_31" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_31" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-32">
+  <div class="item-num">Item 32 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] عليها في الدبلجة العربية بأنه مريض أو نعسان أو مصاب بالصداع. حُذفت العديد من المقاطع لاحتوائها على دماء كثيرة أو لإظهارها مناظر جريمة قتل بشعة أو تنورات قصيرة للفتيات (اللباس الموحد في المدارس اليابانية خاصةً في مدرسة ران). لا تدمج البدايات ولا النهايات الموسيقية بالحلقات (أي أن أغنية البداية تُعرض <br>[2] على نفسك من أعداء النجاح. البعض يولدون عظماء، والبعض يحققون العظمة والبعض تُلقى العظمة عليهم. أعماله العظماء تاجر البندقية زوجات وندسور المرحات جعجعة بلا طحن مهزلة الأغلاط ترويض النمرة العاصفة (مسرحية) الليلة الثانية عشرة السيدان الفيرونيان عذاب الحب الضائع حكاية الشتاء (مسرحية) حلم ليلة صيف كما تشا<br>[3] حملت نفس الاسم (راشومون، 1960) لـ«سيدني لوميت» بطولة «ريكاردو مونتالبان». «رجال الساموراي السبعة»:«العظماء السبعة» (1960 م) لـ«جون ستورغس». «يوجيمبو»: «حفنة من الدولارات» (A Fistful Of Dollars، 1963) لـ«سيرجيو ليوني». «الغابة المخفية»: بعض المشاهد في «حرب النجوم» (Star Wars، 1977) لـ«جورج لوكاس». أه</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_32" value="1" required> 1</label> <label><input type="radio" name="faith_32" value="2" required> 2</label> <label><input type="radio" name="faith_32" value="3" required> 3</label> <label><input type="radio" name="faith_32" value="4" required> 4</label> <label><input type="radio" name="faith_32" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_32" value="1" required> 1</label> <label><input type="radio" name="adeq_32" value="2" required> 2</label> <label><input type="radio" name="adeq_32" value="3" required> 3</label> <label><input type="radio" name="adeq_32" value="4" required> 4</label> <label><input type="radio" name="adeq_32" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_32" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-33">
+  <div class="item-num">Item 33 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] في نهاية موسم 1936–37، حصد الأهلي الثُنائيَّة، بالفوز ببطولتي دوري منطقة القاهرة وكأس مصر متفوقًا على منافسيه المختلط (الزمالك) والسكة الحديد، حيث حسم الأهلي الدوري في آخر أسبوع، عندما فاز بنتيجة 4–1 على المختلط (الزمالك)، ليحسم المركز الأول بفارق 3 نقاط عن المختلط (الزمالك)، وفي نهائي الكأس فاز الأ<br>[2] النفط. فاز نادي القادسية في لقب البطولة 16 مرة. أكثر فريق فاز في لقب البطولة ولقب الدوري في نفس الموسم هما نادي القادسية ونادي العربي، 5 مرات. أكبر نتيجة في تاريخ البطولة هي بين نادي القادسية ونادي الجهراء (نادي الشهداء سابقا) 9-0. امتلك نادي القادسية كأس الأمير بعد الفوز بها أربع مرات متفرقة في موا<br>[3] الرسمية هو نادي القادسية برصيد 48 بطولة رسمية. الدوري الكويتي ثاني أكثر الفرق حصولا على لقب الدوري هو نادي القادسية برصيد 17 مرة مع النادي العربي. أكثر الفرق حصولا على المركز الثاني في الدوري هو نادي القادسية ب 17 مرة. أكثر فريق حصل لاعبوه على لقب هداف الدوري هو نادي القادسية بواقع 15 مرة. نادي القا</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">عبد الرزاق</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_33" value="1" required> 1</label> <label><input type="radio" name="faith_33" value="2" required> 2</label> <label><input type="radio" name="faith_33" value="3" required> 3</label> <label><input type="radio" name="faith_33" value="4" required> 4</label> <label><input type="radio" name="faith_33" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_33" value="1" required> 1</label> <label><input type="radio" name="adeq_33" value="2" required> 2</label> <label><input type="radio" name="adeq_33" value="3" required> 3</label> <label><input type="radio" name="adeq_33" value="4" required> 4</label> <label><input type="radio" name="adeq_33" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_33" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-34">
+  <div class="item-num">Item 34 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من أين جاءت علامة الستاربكس</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] اسم العلامة التجارية "Stripe" في أوائل الستينيات. بعد ذلك تم إدخال العلامة التجارية "Signal" إلى أوروبا في عام 1965 (براءة الاختراع البريطانية 813.514). على الرغم من أن Stripe كانت ناجحة في البداية، إلا أنها لم تحقق مرة أخرى حصتها السوقية البالغة 8% التي احتلتها خلال عامها الثاني. انظر ايضا مضخة معج<br>[2] 1991 أعلام اخترعت في 2004 أعلام اخترعت في 2008 أعلام الدول العربية أعلام العراق أعلام تتضمن نصا عربيا أعلام وطنية رموز العراق الوطنية<br>[3] عشرينيات القرن الماضي ، تم تطوير البوليمرات مثل بوليمرات الأكريليك ، وبوليمرات البوتيل وبوليمرات السيليكون لأول مرة واستخدامها في صناعة مواد منع التسرب. بحلول الستينيات من القرن الماضي ، كانت مواد منع التسرب القائمة على البوليمرات الصناعية مستخدمة على نطاق واسع. مراجع سدادات محكمة مواد</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0></div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_34" value="1" required> 1</label> <label><input type="radio" name="faith_34" value="2" required> 2</label> <label><input type="radio" name="faith_34" value="3" required> 3</label> <label><input type="radio" name="faith_34" value="4" required> 4</label> <label><input type="radio" name="faith_34" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_34" value="1" required> 1</label> <label><input type="radio" name="adeq_34" value="2" required> 2</label> <label><input type="radio" name="adeq_34" value="3" required> 3</label> <label><input type="radio" name="adeq_34" value="4" required> 4</label> <label><input type="radio" name="adeq_34" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_34" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-35">
+  <div class="item-num">Item 35 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] الغناء هو إصدار صوت فن يدمج بين 3 عناصر أساسية هي الموسيقى والكلمة والصوت. والغناء شكل من الأشكال الطبيعية في التعبير، ويوجد في كافة المجتمعات والثقافات في كل أنحاء العالم. ويسمى من يمتهن الغناء بالمغني أو المطرب. وقد كان الغناء منذ القدم وسيلة للتعبير عن المشاعر سواء مشاعر الحب والانتماء والتبجيل و<br>[2] الصوت هو تردد آلي، أو موجة قادرة على التحرك في وسط مادي مثل الهواء، والأجسام الصلبة، السوائل، والغازات، ولا تنتشر في الفراغ (إذا وضعنا جرسًا في ناقوس زجاجي وفرغنا الناقوس من الهواء، فإننا لا نسمع صوت الجرس عندما يدق بسبب عدم انتقال هزات (صوت) الجرس في الفراغ). وباستطاعة الكائن الحي تحسس الصوت عن طري<br>[3] الأصوات الحنجرية هي الأصوت التي تخرج من الحنجرة بتضييق الأحبال الصوتية في المزمار أو الزردمة، أو بإغلاقها. مثلا: ء، ه. مراجع حروف صامتة مخارج الحروف مخارج حروف</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">الغناء</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_35" value="1" required> 1</label> <label><input type="radio" name="faith_35" value="2" required> 2</label> <label><input type="radio" name="faith_35" value="3" required> 3</label> <label><input type="radio" name="faith_35" value="4" required> 4</label> <label><input type="radio" name="faith_35" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_35" value="1" required> 1</label> <label><input type="radio" name="adeq_35" value="2" required> 2</label> <label><input type="radio" name="adeq_35" value="3" required> 3</label> <label><input type="radio" name="adeq_35" value="4" required> 4</label> <label><input type="radio" name="adeq_35" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_35" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-36">
+  <div class="item-num">Item 36 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من أين جاءت العبارة "great scott"</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] في مصر القديمة منذ نحو 3100 سنة قبل الميلاد. وفي 2017، كان القط المنزلي هو ثاني أكثر الحيوانات الأليفة شعبية في الولايات المتحدة بعدد 95 مليون قط. ويُقدر عدد القطط المنزلية في المملكة المتحدة بنحو 7.3 مليون من القطط لدى أكثر من 4.8 مليون أسرة كما في 2019. أصل الكلمة واشتقاق التسمية يُعتقد أن أصل الك<br>[2] هذه الكلمة مرت بتطورات - من حيث دلالاتها - حتى وصلت إلى معنى «الأسطورة». فهي في الشعر الملحمي المبكر عند هوميروس تعني ببساطة «القول» و«الحديث» و«التصريح»، كما يتضح من عدة مواضع وسياقات في «الإلياذة» وردت فيها هذه الكلمة في صيغة الفعل «ميثيستا» ، وفي صيغة الاسم الجمع «ميثي» . كان التراث الأدبي اليونا<br>[3] واستُورِدت إلى اللاتينية ومن ثم إلى اليونانية والسريانية والعربية. قد تكون الكلمة مشتقة من اللغات الجرمانية والأوروبية الشمالية، وبالتالي يكون قد استُعيرت من اللغات الأورالية وتحديدا لغة سامي الشمالية "gáđfi" أي أنثى القاقم، واللغة المجرية "hölgy" أي الأنثى أو السيدة، ومن اللغة الأورالية الأصلية أو </div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_36" value="1" required> 1</label> <label><input type="radio" name="faith_36" value="2" required> 2</label> <label><input type="radio" name="faith_36" value="3" required> 3</label> <label><input type="radio" name="faith_36" value="4" required> 4</label> <label><input type="radio" name="faith_36" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_36" value="1" required> 1</label> <label><input type="radio" name="adeq_36" value="2" required> 2</label> <label><input type="radio" name="adeq_36" value="3" required> 3</label> <label><input type="radio" name="adeq_36" value="4" required> 4</label> <label><input type="radio" name="adeq_36" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_36" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-37">
+  <div class="item-num">Item 37 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">كم عدد مواسم ملكات الصراخ</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] Berikut ialah senarai episod dalam siri kartun The Powerpuff Girls. Pengenalan Musim 1 Musim 2 Musim 3 Musim 4 Musim 5 Musim 6 Episod khas The Powerpuff Girls<br>[2] Rencana ini adalah berkenaan dengan tahun 897. Bagi kegunaan lain, sila lihat 897 (nombor). 897 merupakan tahun lompat yang bermula pada hari Khamis dalam kalendar Gregory. Peristiwa Kelahiran Kematian 896<br>[3] Rencana ini adalah berkenaan dengan tahun 897. Bagi kegunaan lain, sila lihat 897 (nombor). 897 merupakan tahun biasa yang bermula pada hari Sabtu dalam kalendar Gregory. Peristiwa Kelahiran Kematian</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0></div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_37" value="1" required> 1</label> <label><input type="radio" name="faith_37" value="2" required> 2</label> <label><input type="radio" name="faith_37" value="3" required> 3</label> <label><input type="radio" name="faith_37" value="4" required> 4</label> <label><input type="radio" name="faith_37" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_37" value="1" required> 1</label> <label><input type="radio" name="adeq_37" value="2" required> 2</label> <label><input type="radio" name="adeq_37" value="3" required> 3</label> <label><input type="radio" name="adeq_37" value="4" required> 4</label> <label><input type="radio" name="adeq_37" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_37" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-38">
+  <div class="item-num">Item 38 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] 1984–85، 1988–89، 1990–91، 1991–92، 1992–93، 1995–96، 2000–01، 2002–03، 2005–06، 2006–07، 2016–17، 2019–20، 2021–22 كأس السوبر المصري (13 لقب، رقم قياسي): 2003، 2005، 2006، 2007، 2008، 2010، 2012، 2014، 2015، 2017، 20192022، 2023 دوري منطقة القاهرة (15 لقب، رقم قياسي): 1924–25، 1926–27، 1927–28، 193<br>[2] السفراء بين الولايات المتحدة والعراق لأول مرة منذ عام 1967. 1991 - الولايات المتحدة والمملكة المتحدة تتهمان ليبيا بالضلوع في تفجير طائرة بان أمريكان فوق اسكتلندا، وبداية ما عرف بقضية لوكربي. 2004 - الأسترالية من أصل لبناني «مها سكر» تصبح أول فتاة مسلمة محجبة تنضم لشرطة أستراليا. 2005 - انعقاد القمة <br>[3] دوري أبطال أفريقيا، بعد فوزه على الزمالك المصري في نهائي دوري أبطال أفريقيا 2020 بنتيجة 2–1 الذي سمي نهائي القرن. 2021 - نادي بالميراس البرازيلي يفوز على نادي فلامنغو البرازيلي ويتوج بلقب كوبا ليبرتادوريس 2021 للمرة الثالثة في تاريخه. مواليد 1701 - أندرس سلزيوس، عالم رياضيات وفيزياء وفلكي سويدي. 185</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">1964</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_38" value="1" required> 1</label> <label><input type="radio" name="faith_38" value="2" required> 2</label> <label><input type="radio" name="faith_38" value="3" required> 3</label> <label><input type="radio" name="faith_38" value="4" required> 4</label> <label><input type="radio" name="faith_38" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_38" value="1" required> 1</label> <label><input type="radio" name="adeq_38" value="2" required> 2</label> <label><input type="radio" name="adeq_38" value="3" required> 3</label> <label><input type="radio" name="adeq_38" value="4" required> 4</label> <label><input type="radio" name="adeq_38" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_38" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-39">
+  <div class="item-num">Item 39 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] sepak Malaysia. Namun sebelum berundur, Singapura sempat menjuarai Piala Malaysia 1994 buat kali terakhir.. Pada tahun 1999, bilangan pasukan yang memasuki Piala Malaysia bertambah sebanyak 12 pasukan. Setahun selepas itu, bilangan pasukan meningkat kepada 16 pasukan dan buat pertama kalinya pasukan<br>[2] Lee Peltier adalah seorang pemain bola sepak berbangsa Inggeris yang kini dengan skuad remaja Liverpool. Lee Peltier dilahirkan pada 11 Disember, 1986 di Liverpool. Lee boleh bermain di bahagian pertahanan sebagai bek tengah ataupun sebagai midfielder tengah. Lee sering diturunkan bermain dengan pas<br>[3] Berikut merupakan senarai pemenang liga tahap kedua di Malaysia. Mulai 2004 liga tahap kedua dikenali sebagai Liga Premier Malaysia. Senarai Pemenang Liga Semi-Pro Divisyen 2 Liga Perdana 2 Liga Premier Ringkasan Pemenang Bola sepak di Malaysia</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0> pertama.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_39" value="1" required> 1</label> <label><input type="radio" name="faith_39" value="2" required> 2</label> <label><input type="radio" name="faith_39" value="3" required> 3</label> <label><input type="radio" name="faith_39" value="4" required> 4</label> <label><input type="radio" name="faith_39" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_39" value="1" required> 1</label> <label><input type="radio" name="adeq_39" value="2" required> 2</label> <label><input type="radio" name="adeq_39" value="3" required> 3</label> <label><input type="radio" name="adeq_39" value="4" required> 4</label> <label><input type="radio" name="adeq_39" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_39" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-40">
+  <div class="item-num">Item 40 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] في نهاية موسم 1936–37، حصد الأهلي الثُنائيَّة، بالفوز ببطولتي دوري منطقة القاهرة وكأس مصر متفوقًا على منافسيه المختلط (الزمالك) والسكة الحديد، حيث حسم الأهلي الدوري في آخر أسبوع، عندما فاز بنتيجة 4–1 على المختلط (الزمالك)، ليحسم المركز الأول بفارق 3 نقاط عن المختلط (الزمالك)، وفي نهائي الكأس فاز الأ<br>[2] النفط. فاز نادي القادسية في لقب البطولة 16 مرة. أكثر فريق فاز في لقب البطولة ولقب الدوري في نفس الموسم هما نادي القادسية ونادي العربي، 5 مرات. أكبر نتيجة في تاريخ البطولة هي بين نادي القادسية ونادي الجهراء (نادي الشهداء سابقا) 9-0. امتلك نادي القادسية كأس الأمير بعد الفوز بها أربع مرات متفرقة في موا<br>[3] الرسمية هو نادي القادسية برصيد 48 بطولة رسمية. الدوري الكويتي ثاني أكثر الفرق حصولا على لقب الدوري هو نادي القادسية برصيد 17 مرة مع النادي العربي. أكثر الفرق حصولا على المركز الثاني في الدوري هو نادي القادسية ب 17 مرة. أكثر فريق حصل لاعبوه على لقب هداف الدوري هو نادي القادسية بواقع 15 مرة. نادي القا</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0> عبد الرزاق</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_40" value="1" required> 1</label> <label><input type="radio" name="faith_40" value="2" required> 2</label> <label><input type="radio" name="faith_40" value="3" required> 3</label> <label><input type="radio" name="faith_40" value="4" required> 4</label> <label><input type="radio" name="faith_40" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_40" value="1" required> 1</label> <label><input type="radio" name="adeq_40" value="2" required> 2</label> <label><input type="radio" name="adeq_40" value="3" required> 3</label> <label><input type="radio" name="adeq_40" value="4" required> 4</label> <label><input type="radio" name="adeq_40" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_40" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-41">
+  <div class="item-num">Item 41 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">: كم من الوقت استغرق بناء البرجين التوأمين</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] (الملقبون Ironworkers) المعروفون بأداء مهام خطرة في مواقع مختلفة في جميع أنحاء العالم. «رجال الجسر»، كما يحلو لهم أن يسمو، لم يقاوموا فكرة المشاركة في بناء أكبر جسر معلق في العالم. وفقا لذلك، وجد جوزيف شتراوس بسرعة نفسه مع أفضل البناة والحرفيين من العالم. انتهى بناء البرج الشمالي في غضون 11 شهرا (بم<br>[2] مكمل لسعر العمل، احتفظ بحيازته حتى انقضاء عشرين عاما من إنشائه حيث انطلق العد من 1 يناير 1890، وبعد ذلك الوقت وهذا التمتع العودة إلى مدينة باريس. وستتاح تسليم البرج بعد هذه السنوات العشرين، في حالة جيدة للاستخدام والصيانة، ودون أن تكون لدى السيد إيفل طلب أخذه اسمه الخاص.» بناء البرج في البداية، استم<br>[3] الطابق الثاني، وتحتوي في العموم على [[1 665 سوق إلى غاية القمة) متوفرة قرب الركيزة الشرقية. وأخيراً، الركيزة الجنوبية تحتوي على سلالم خاصة، محجوزة للشخصيات وزبائن مطعم الذواقة جول فيرن، الموجود في الطابق الثاني. الأقواس ممدودة بين كل عمود من الأعمدة الأربعة، ترتفع الأعمدة 39 متر فوق سطح الأرض بقطر ي</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">البحرين</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_41" value="1" required> 1</label> <label><input type="radio" name="faith_41" value="2" required> 2</label> <label><input type="radio" name="faith_41" value="3" required> 3</label> <label><input type="radio" name="faith_41" value="4" required> 4</label> <label><input type="radio" name="faith_41" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_41" value="1" required> 1</label> <label><input type="radio" name="adeq_41" value="2" required> 2</label> <label><input type="radio" name="adeq_41" value="3" required> 3</label> <label><input type="radio" name="adeq_41" value="4" required> 4</label> <label><input type="radio" name="adeq_41" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_41" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-42">
+  <div class="item-num">Item 42 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من الذي يغني أحبك مثل لا يوجد غدا</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] امض جئت تطلب نارا أم تري جئت تشعل البيت نارا 2. أغنية «سجى الليل». قيس: سجي الليل حتى هاج لي الشعرُ والهوى، وما البيدُ الا الليلُ والشعرُ والحبُ، ملأت سماء البيد عشقا وأرضها، وحُملت وحدي ذلك العشق يا ربُ، ألمّ على أبيات ليلى بيَ الهوى، وما غيرَ أبياتي دليل ولا ركبُ، وباتت خيامي خطوةً من خيامها، فلم <br>[2] أمريكي 30 يونيو - أياكا كيكوتشي ممثلة ومغنية يابانية يوليو 1 يوليو - ريني رودريجز ممثلة ومغنية أمريكية 2 يوليو - ياسين مرياح لاعب كرة قدم تونسي 3 يوليو - روي كيم مغني كوري 3 يوليو - فنسنت لاكوست ممثل فرنسي 3 يوليو - بارتي نكست دور مغني راب كندي 6 يوليو - جانا بورسيسكا مغنية مقدونية 7 يوليو - شاخرام <br>[3] يناير ليام أيكن ممثل أمريكي 7 يناير كامرين جريمز ممثلة ألمانية 8 يناير روبن أولسن لاعب كرة قدم سويدي 9 يناير نام جي هيون ممثلة كورية 12 يناير سيرغي كارياكن لاعب شطرنج أوكراني 13 يناير ليام هيمسورث ممثل أسترالي 14 يناير غرانت غستن ممثل ومغني أمريكي 18 يناير كيلي رورباش عارضة أزياء وممثلة أمريكية 18 ي</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">الله.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_42" value="1" required> 1</label> <label><input type="radio" name="faith_42" value="2" required> 2</label> <label><input type="radio" name="faith_42" value="3" required> 3</label> <label><input type="radio" name="faith_42" value="4" required> 4</label> <label><input type="radio" name="faith_42" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_42" value="1" required> 1</label> <label><input type="radio" name="adeq_42" value="2" required> 2</label> <label><input type="radio" name="adeq_42" value="3" required> 3</label> <label><input type="radio" name="adeq_42" value="4" required> 4</label> <label><input type="radio" name="adeq_42" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_42" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-43">
+  <div class="item-num">Item 43 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">متى بدأ وانتهى الغرب المتوحش؟</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] والمسيحية الغربية. تركت الثقافة المسيحية، تأثيرًا كبيرًا في الحضارة الحديثة وتاريخ البشرية على مختلف الأصعدة. لعبت المسيحية دورًا بارزًا في تطوير الحضارة الغربية، ويمتد تاريخ العالم المسيحي لما يقرب من 1700 عام ويتضمن مجموعة متنوعة من التطورات الاجتماعية والسياسية والفكرية، بالإضافة إلى التطورات في <br>[2] القديمة وروما القديمة مهد الحضارة الغربية؛ حيث أثرت الأولى على الفلسفة والديمقراطية والعلوم والفن وتصميمات المباني والهندسة المعمارية؛ في حين أثرت الأخيرة على القانون، والحرب، ونظام الحكم، والجمهورية، والهندسة والدين. كما تأسست الحضارة الغربية على الكنيسة الرومانية الكاثوليكية والكنائس البروتستانتية<br>[3] العالم الغربي أو الغرب مصطلح متعدد المعاني وفقاً لسياق الحديث (أي حسب الفترة الزمنية والمنطقة والحالة الاجتماعية). وعليه فإن التعريف الأساسي لما يشكل «الغرب» متنوع حيث يتوسع ويتقلص مع الزمن وفقاً للظروف التاريخية المختلفة. إن مفهوم الجزء الغربي من كوكب الأرض له جذوره في التقسيم اللاهوتي والمنهجي وال</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_43" value="1" required> 1</label> <label><input type="radio" name="faith_43" value="2" required> 2</label> <label><input type="radio" name="faith_43" value="3" required> 3</label> <label><input type="radio" name="faith_43" value="4" required> 4</label> <label><input type="radio" name="faith_43" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_43" value="1" required> 1</label> <label><input type="radio" name="adeq_43" value="2" required> 2</label> <label><input type="radio" name="adeq_43" value="3" required> 3</label> <label><input type="radio" name="adeq_43" value="4" required> 4</label> <label><input type="radio" name="adeq_43" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_43" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-44">
+  <div class="item-num">Item 44 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] الأجل الدعم والدعوة للانضمام إليهم. وفي أكتوبر 1944 اقتبست إحدى الصحف عن سيكيو نيشنا قوله:«روح القوات الخاصة للهجوم، هي الروح العظيمة التي تجري في دماء كل ياباني... الهجوم الذي يقتل العدو ونفساً واحدة من دون أن يفشل يُسمّى هجوماً خاصاً... وكل ياباني قادر على أن يكون عضواً في القوات الخاصة للهجوم.» و<br>[2] أسطوري وشبه بالحفلات التي تؤديها فرقة ذا رولينج ستونز الإنجليزية الشهيرة التي تتميز بالحشود الهائلة التي تأتي للإستماع إليها. حفل عام 2008 في دمشق بعد غياب دام نحو عشرين عاما أحيت فيروز في عام 2008 حفلًا في دار الاوبرا السورية في دمشق، ولعبت دور البطولة في مسرحية (صح النوم) التي تدور حول حاكم مستهتر<br>[3] باقي الحيوانات. بريا تعني الرسالة والبيتين عبارة عن كناية عن دنو أجل أحـــدهم فالرسالة التي تأتي من الغرب تعني غروب شمس المقصود بهذه الأبيات أما ذكر بوسعادة فهو المكان الذي توفي فيه أما البيت الأخير فيصف النهاية. حلها : الحمار هذه محاجية تصف حيوان كان يتواجد في المشهد اليومي للسكان قديما. أربعة طرق </div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">البحرين</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_44" value="1" required> 1</label> <label><input type="radio" name="faith_44" value="2" required> 2</label> <label><input type="radio" name="faith_44" value="3" required> 3</label> <label><input type="radio" name="faith_44" value="4" required> 4</label> <label><input type="radio" name="faith_44" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_44" value="1" required> 1</label> <label><input type="radio" name="adeq_44" value="2" required> 2</label> <label><input type="radio" name="adeq_44" value="3" required> 3</label> <label><input type="radio" name="adeq_44" value="4" required> 4</label> <label><input type="radio" name="adeq_44" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_44" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-45">
+  <div class="item-num">Item 45 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من مبدع مسلسل ذا فويس</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] ialah siri televisyen mengenai pertandingan antara peserta dari Jepun. Siri televisyen ini kemudiannya ditiru sebagai Fear Factor dan Who's Dare Win. Rujukan Program Realiti Televisyen<br>[2] Star Wars (Tulisan Jawi: ستار وارس; "Perang Bintang”) ialah sebuah nama gabungan enam filem cereka sains yang diarahkan oleh George Lucas dari Amerika Syarikat. Siri filem ini bermula pada tahun 1977 dan yang terkini pada tahun 2018. Semenjak siri ini dihasilkan, filem ini telah menjadi sebuah fenom<br>[3] Speedy Gonzales (atau González), adalah satu watak kartun animasi yang dicipta oleh Warner Brothers untuk siri kartun Looney Tunes dan Merrie Melodies. Karektor Speedy boleh berlari dengan amat pantas dan mempunyai pelat ataupun aksen percakapan gaya Mexico. Selalunya dia memakai sebuah sombrero ber</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0>:</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_45" value="1" required> 1</label> <label><input type="radio" name="faith_45" value="2" required> 2</label> <label><input type="radio" name="faith_45" value="3" required> 3</label> <label><input type="radio" name="faith_45" value="4" required> 4</label> <label><input type="radio" name="faith_45" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_45" value="1" required> 1</label> <label><input type="radio" name="adeq_45" value="2" required> 2</label> <label><input type="radio" name="adeq_45" value="3" required> 3</label> <label><input type="radio" name="adeq_45" value="4" required> 4</label> <label><input type="radio" name="adeq_45" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_45" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-46">
+  <div class="item-num">Item 46 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">متى بدأ وانتهى الغرب المتوحش؟</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] pada tahun 1993, kerajaan kulit putih telah berakhir dan perlembagaan yang baru telah memulangkan hak kerakyatan kepada kaum kulit hitam di sana dan kawasan-kawasan "homeland" telah dimansuhkan. Afrika Selatan<br>[2] astronomi, mathematicians, ahli fizik dan ahli falsafah semasa Zaman Pertengahan Sehingga awal abad ke-13, Kesultanan Delhi menguasai utara subbenua India, sementara Dinasti bangsa Turkik seperti Kesultanan Rom dan Negara Artuki menguasai Anatolia daripada Empayar Byzantine dalam abad ke-11 dan ke-1<br>[3] Perbankan Islam di Luxembourg dimulakan pada 1978 dengan penubuhan Islamic Banking Sstem atau dikenali sebagai Islamic Finance House Universal Holding S.A. sekarang. Luxembourg merupakan negara Eropah yang pertama yang memulakan institusi perbankan Islam Bank Islam di Luxembourg Islamic Finance Hous</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0>.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_46" value="1" required> 1</label> <label><input type="radio" name="faith_46" value="2" required> 2</label> <label><input type="radio" name="faith_46" value="3" required> 3</label> <label><input type="radio" name="faith_46" value="4" required> 4</label> <label><input type="radio" name="faith_46" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_46" value="1" required> 1</label> <label><input type="radio" name="adeq_46" value="2" required> 2</label> <label><input type="radio" name="adeq_46" value="3" required> 3</label> <label><input type="radio" name="adeq_46" value="4" required> 4</label> <label><input type="radio" name="adeq_46" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_46" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-47">
+  <div class="item-num">Item 47 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من أين جاءت علامة الستاربكس</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] أنها رسمياً شعار الجيش اليوناني وعلم كنيسة اليونان الأرثوذكسية. وقد تم إدراجه في شعار النبالة اليوناني بين عام 1925 وعام 1926. الألقاب والأسماء الشخصية بدأت الألقاب اليونانية بالظهور في القرن التاسع والقرن العاشر، في البداية بين الأسر الحاكمة، في نهاية المطاف حلَّ محل التقليد القديم باستخدام اسم الأ<br>[2] اسم العلامة التجارية "Stripe" في أوائل الستينيات. بعد ذلك تم إدخال العلامة التجارية "Signal" إلى أوروبا في عام 1965 (براءة الاختراع البريطانية 813.514). على الرغم من أن Stripe كانت ناجحة في البداية، إلا أنها لم تحقق مرة أخرى حصتها السوقية البالغة 8% التي احتلتها خلال عامها الثاني. انظر ايضا مضخة معج<br>[3] إلى الثقافة الإغريقية القديمة، بعض «النجوم»، والمعروفة باسم الكواكب (اليونانية πλανήτης (بلانتيس)، وتعني «الهيام»)، تمثل مجموعة من الإلهات المهمة المختلفة، والتي اخذت منها أيضا أسماء الكواكب عطارد والزهرة والمريخ والمشتري وزحل وأورانوس ونبتون كانوا أيضاً من الآلهة اليونانية والرومانية، ولكن لم يكن أ</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">البحرين</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_47" value="1" required> 1</label> <label><input type="radio" name="faith_47" value="2" required> 2</label> <label><input type="radio" name="faith_47" value="3" required> 3</label> <label><input type="radio" name="faith_47" value="4" required> 4</label> <label><input type="radio" name="faith_47" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_47" value="1" required> 1</label> <label><input type="radio" name="adeq_47" value="2" required> 2</label> <label><input type="radio" name="adeq_47" value="3" required> 3</label> <label><input type="radio" name="adeq_47" value="4" required> 4</label> <label><input type="radio" name="adeq_47" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_47" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-48">
+  <div class="item-num">Item 48 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] Boy sebagai gitaris kedua kumpulan Arena yang terkenal dengan lagu Selamat Tinggal Cinta dan Selagi Fajar Menjelma. Namun, Din tidak sempat untuk menghasilkan album bersama kumpulan tersebut. Pautan luar Malaysia Muzik Rock Database Senarai penyanyi Malaysia Rock Oo! Kumpulan Rock Malaysia Teja<br>[2] Kumpulan The Buskers merupakan sebuah kumpulan pemuzik dan penyanyi yang aktif di Malaysia. Kumpulan ini menyampaikan lagu-lagu Melayu. Ahli-ahli Kumpulan The Buskers terdiri daripada empat orang anggota lelaki. Senarai anggotanya adalah :- Azlee Lee Zan Yan Diskografi Album Lagu-lagu Bukan Suatu Do<br>[3] Nyanyian merujuk kepada aktiviti membunyikan suara dalam bentuk tertentu yang bertujuan menghasilkan nada dan melodi yang disenangi. Ia merupakan salah satu aktiviti manusia yang bertujuan untuk mengembirakan hati. Nyanyian boleh dilakukan dengan bantuan alat muzik atau hanya dengan secara bertepuk </div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0>.</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_48" value="1" required> 1</label> <label><input type="radio" name="faith_48" value="2" required> 2</label> <label><input type="radio" name="faith_48" value="3" required> 3</label> <label><input type="radio" name="faith_48" value="4" required> 4</label> <label><input type="radio" name="faith_48" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_48" value="1" required> 1</label> <label><input type="radio" name="adeq_48" value="2" required> 2</label> <label><input type="radio" name="adeq_48" value="3" required> 3</label> <label><input type="radio" name="adeq_48" value="4" required> 4</label> <label><input type="radio" name="adeq_48" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_48" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-49">
+  <div class="item-num">Item 49 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من أين جاءت العبارة "great scott"</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] الكبير في منتصف القرن الخامس قبل الميلاد، وقد أطلق كلمة العربية على البادية وشبه الجزيرة العربية كلها بما فيها صحراء سيناء والأراضي الواقعة إلى الشرق من نهر النيل. وأضحى هذا اللفظ شائعًا بعد ذلك عند جميع الكتّاب الإغريق والرومان، وصارت كلمة العربية عَلَمًا على الأراضي المأهولة بالعرب والتي تغلب عليه<br>[2] كُبرى حيث أنها أكبر مصدر للسلع وثاني أكبر مستورد لها في العالم. أصل التسمية الاسم الإنجليزي «جيرماني» (Germany) مستمد من الكلمة اللاتينية جيرمانيا التي دخلت حيز الاستخدام في عصر يوليوس قيصر، وقد اعتمد ذلك المصطلح للإشارة إلى الشعوب القاطنة شرق نهر الراين. والاسم باللغة الألمانية هو «دويتشلاند» «أرض <br>[3] السُلطَانُ الأَعظَم والخَاقَانُ المُكرَّم سُلطانُ الإسلام وكَافِت الأَنَام وَصَاحِب الزَّمان أَبُو الفَتح جَلَالُ الدِّين مُحمَّد أَكبَر پادشاه غازي بن مُحمَّد همايون بن مُحمَّد بابُر الگوركاني (بالفارسية: ، وبالأردية: ) (7 رجب 949هـ - 30 جُمادى الأولى 1014هـ المُوافق فيه 15 تشرين الأوَّل (أكتوبر) 1</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">البحرين</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_49" value="1" required> 1</label> <label><input type="radio" name="faith_49" value="2" required> 2</label> <label><input type="radio" name="faith_49" value="3" required> 3</label> <label><input type="radio" name="faith_49" value="4" required> 4</label> <label><input type="radio" name="faith_49" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_49" value="1" required> 1</label> <label><input type="radio" name="adeq_49" value="2" required> 2</label> <label><input type="radio" name="adeq_49" value="3" required> 3</label> <label><input type="radio" name="adeq_49" value="4" required> 4</label> <label><input type="radio" name="adeq_49" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_49" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<div class="card" id="item-50">
+  <div class="item-num">Item 50 / 50</div>
+  <div class="field">
+    <label>Question:</label>
+    <div class="text-block query">من أين جاءت علامة الستاربكس</div>
+  </div>
+  <div class="field">
+    <label>Retrieved Context:</label>
+    <div class="text-block ctx">[1] اسم العلامة التجارية "Stripe" في أوائل الستينيات. بعد ذلك تم إدخال العلامة التجارية "Signal" إلى أوروبا في عام 1965 (براءة الاختراع البريطانية 813.514). على الرغم من أن Stripe كانت ناجحة في البداية، إلا أنها لم تحقق مرة أخرى حصتها السوقية البالغة 8% التي احتلتها خلال عامها الثاني. انظر ايضا مضخة معج<br>[2] 1991 أعلام اخترعت في 2004 أعلام اخترعت في 2008 أعلام الدول العربية أعلام العراق أعلام تتضمن نصا عربيا أعلام وطنية رموز العراق الوطنية<br>[3] عشرينيات القرن الماضي ، تم تطوير البوليمرات مثل بوليمرات الأكريليك ، وبوليمرات البوتيل وبوليمرات السيليكون لأول مرة واستخدامها في صناعة مواد منع التسرب. بحلول الستينيات من القرن الماضي ، كانت مواد منع التسرب القائمة على البوليمرات الصناعية مستخدمة على نطاق واسع. مراجع سدادات محكمة مواد</div>
+  </div>
+  <div class="field">
+    <label>Generated Answer:</label>
+    <div class="text-block ans">&lt;extra_id_0> [SEP]</div>
+  </div>
+  <div class="rating">
+    <label>Faithfulness (1=not faithful, 5=fully faithful):</label><br>
+    <label><input type="radio" name="faith_50" value="1" required> 1</label> <label><input type="radio" name="faith_50" value="2" required> 2</label> <label><input type="radio" name="faith_50" value="3" required> 3</label> <label><input type="radio" name="faith_50" value="4" required> 4</label> <label><input type="radio" name="faith_50" value="5" required> 5</label> 
+  </div>
+  <div class="rating">
+    <label>Adequacy (1=does not answer, 5=fully answers the question):</label><br>
+    <label><input type="radio" name="adeq_50" value="1" required> 1</label> <label><input type="radio" name="adeq_50" value="2" required> 2</label> <label><input type="radio" name="adeq_50" value="3" required> 3</label> <label><input type="radio" name="adeq_50" value="4" required> 4</label> <label><input type="radio" name="adeq_50" value="5" required> 5</label> 
+  </div>
+  <div class="field">
+    <label>Comment (optional):</label>
+    <textarea name="comment_50" rows="2" style="width:100%"></textarea>
+  </div>
+</div>
+
+<button type="button" onclick="downloadAnnotations()">Download Annotations (JSON)</button>
+</form>
+
+<script>
+const ITEMS = [{"item_id": 1, "exp_name": "exp1_bgem3_ar", "query": "من مبدع مسلسل ذا فويس", "answer": "نوفمبر"}, {"item_id": 2, "exp_name": "exp1_bgem3_ar", "query": "كم عدد مواسم ملكات الصراخ", "answer": "نوفمبر"}, {"item_id": 3, "exp_name": "exp1_bgem3_ar", "query": "من الذي يغني أحبك مثل لا يوجد غدا", "answer": "نوفمبر"}, {"item_id": 4, "exp_name": "exp1_bgem3_ar", "query": "متى بدأ وانتهى الغرب المتوحش؟", "answer": "البحرين"}, {"item_id": 5, "exp_name": "exp1_bgem3_ar", "query": "كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز", "answer": "نوفمبر"}, {"item_id": 6, "exp_name": "exp1_bm25_ar", "query": "من الذي يغني أحبك مثل لا يوجد غدا", "answer": "البحرين"}, {"item_id": 7, "exp_name": "exp1_bm25_ar", "query": "كم عدد مواسم ملكات الصراخ", "answer": "البحرين"}, {"item_id": 8, "exp_name": "exp1_bm25_ar", "query": "من أين جاءت علامة الستاربكس", "answer": "نوفمبر"}, {"item_id": 9, "exp_name": "exp1_bm25_ar", "query": "من أين جاءت العبارة \"great scott\"", "answer": "نوفمبر"}, {"item_id": 10, "exp_name": "exp1_bm25_ar", "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية", "answer": "البحرين"}, {"item_id": 11, "exp_name": "exp1_labse_ar", "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية", "answer": "نوفمبر"}, {"item_id": 12, "exp_name": "exp1_labse_ar", "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي", "answer": "مايكرو"}, {"item_id": 13, "exp_name": "exp1_labse_ar", "query": ": كم من الوقت استغرق بناء البرجين التوأمين", "answer": "نوفمبر"}, {"item_id": 14, "exp_name": "exp1_me5_ar", "query": "كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز", "answer": "البحرين"}, {"item_id": 15, "exp_name": "exp1_me5_ar", "query": "من أين جاءت العبارة \"great scott\"", "answer": "محمد سليمان"}, {"item_id": 16, "exp_name": "exp1_me5large_ar", "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي", "answer": "محمد سليمان"}, {"item_id": 17, "exp_name": "exp1_me5large_ar", "query": "كم عدد مواسم ملكات الصراخ", "answer": "1964"}, {"item_id": 18, "exp_name": "exp1_me5large_ar", "query": "من مبدع مسلسل ذا فويس", "answer": "البحرين"}, {"item_id": 19, "exp_name": "exp2_ar_cross", "query": "كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز", "answer": "<extra_id_0>-besaran."}, {"item_id": 20, "exp_name": "exp2_ar_cross", "query": "من أين جاءت العبارة \"great scott\"", "answer": "<extra_id_0>."}, {"item_id": 21, "exp_name": "exp2_ar_cross", "query": "من أين جاءت علامة الستاربكس", "answer": "<extra_id_0> -"}, {"item_id": 22, "exp_name": "exp2_ar_cross", "query": ": كم من الوقت استغرق بناء البرجين التوأمين", "answer": "<extra_id_0>."}, {"item_id": 23, "exp_name": "exp2_ar_cross", "query": "من الذي يغني أحبك مثل لا يوجد غدا", "answer": "<extra_id_0> :"}, {"item_id": 24, "exp_name": "exp2_ar_mono", "query": "من مبدع مسلسل ذا فويس", "answer": "<extra_id_0>."}, {"item_id": 25, "exp_name": "exp2_ar_mono", "query": "من الذي يغني أحبك مثل لا يوجد غدا", "answer": "<extra_id_0> الله."}, {"item_id": 26, "exp_name": "exp2_ar_mono", "query": "كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز", "answer": "<extra_id_0>."}, {"item_id": 27, "exp_name": "exp2_ar_mono", "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي", "answer": "<extra_id_0> الغناء"}, {"item_id": 28, "exp_name": "exp2_ar_mono", "query": "كم عدد مواسم ملكات الصراخ", "answer": "<extra_id_0> النجاح"}, {"item_id": 29, "exp_name": "exp3_base_ar", "query": "كم عدد مواسم ملكات الصراخ", "answer": "النجاح"}, {"item_id": 30, "exp_name": "exp3_base_ar", "query": "من مبدع مسلسل ذا فويس", "answer": "."}, {"item_id": 31, "exp_name": "exp3_base_ar", "query": ": كم من الوقت استغرق بناء البرجين التوأمين", "answer": "."}, {"item_id": 32, "exp_name": "exp3_base_ar", "query": "كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز", "answer": "."}, {"item_id": 33, "exp_name": "exp3_base_ar", "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية", "answer": "عبد الرزاق"}, {"item_id": 34, "exp_name": "exp4_k3", "query": "من أين جاءت علامة الستاربكس", "answer": "<extra_id_0>"}, {"item_id": 35, "exp_name": "exp3_base_ar", "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي", "answer": "الغناء"}, {"item_id": 36, "exp_name": "exp3_base_ar", "query": "من أين جاءت العبارة \"great scott\"", "answer": "."}, {"item_id": 37, "exp_name": "exp2_ar_cross", "query": "كم عدد مواسم ملكات الصراخ", "answer": "<extra_id_0>"}, {"item_id": 38, "exp_name": "exp1_bgem3_ar", "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية", "answer": "1964"}, {"item_id": 39, "exp_name": "exp2_ar_cross", "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية", "answer": "<extra_id_0> pertama."}, {"item_id": 40, "exp_name": "exp2_ar_mono", "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية", "answer": "<extra_id_0> عبد الرزاق"}, {"item_id": 41, "exp_name": "exp1_bgem3_ar", "query": ": كم من الوقت استغرق بناء البرجين التوأمين", "answer": "البحرين"}, {"item_id": 42, "exp_name": "exp3_base_ar", "query": "من الذي يغني أحبك مثل لا يوجد غدا", "answer": "الله."}, {"item_id": 43, "exp_name": "exp3_base_ar", "query": "متى بدأ وانتهى الغرب المتوحش؟", "answer": "."}, {"item_id": 44, "exp_name": "exp1_bm25_ar", "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي", "answer": "البحرين"}, {"item_id": 45, "exp_name": "exp2_ar_cross", "query": "من مبدع مسلسل ذا فويس", "answer": "<extra_id_0>:"}, {"item_id": 46, "exp_name": "exp2_ar_cross", "query": "متى بدأ وانتهى الغرب المتوحش؟", "answer": "<extra_id_0>."}, {"item_id": 47, "exp_name": "exp1_bgem3_ar", "query": "من أين جاءت علامة الستاربكس", "answer": "البحرين"}, {"item_id": 48, "exp_name": "exp2_ar_cross", "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي", "answer": "<extra_id_0>."}, {"item_id": 49, "exp_name": "exp1_bgem3_ar", "query": "من أين جاءت العبارة \"great scott\"", "answer": "البحرين"}, {"item_id": 50, "exp_name": "exp2_ar_mono", "query": "من أين جاءت علامة الستاربكس", "answer": "<extra_id_0> [SEP]"}];
+
+// Track completion
+document.querySelectorAll('input[type=radio]').forEach(r => {
+  r.addEventListener('change', updateProgress);
+});
+
+function updateProgress() {
+  let done = 0;
+  for (let i = 1; i <= 50; i++) {
+    const f = document.querySelector(`input[name=faith_${i}]:checked`);
+    const a = document.querySelector(`input[name=adeq_${i}]:checked`);
+    if (f && a) done++;
+  }
+  document.getElementById('done').textContent = done;
+}
+
+function downloadAnnotations() {
+  const results = [];
+  for (let i = 1; i <= 50; i++) {
+    const f = document.querySelector(`input[name=faith_${i}]:checked`);
+    const a = document.querySelector(`input[name=adeq_${i}]:checked`);
+    const c = document.querySelector(`textarea[name=comment_${i}]`);
+    results.push({
+      item_id:       i,
+      exp_name:      ITEMS[i-1].exp_name,
+      query:         ITEMS[i-1].query,
+      answer:        ITEMS[i-1].answer,
+      faithfulness:  f ? parseInt(f.value) : null,
+      adequacy:      a ? parseInt(a.value) : null,
+      comment:       c ? c.value : "",
+    });
+  }
+  const blob = new Blob([JSON.stringify(results, null, 2)], {type: "application/json"});
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = 'annotations_ar.json';
+  a.click();
+}
+</script>
+</body>
+</html>

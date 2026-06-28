@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+.env
+.DS_Store
+models/
+indexes/
+*.faiss
+*.pkl
+*.pt
+*.bin
+*.safetensors
+results/*.json
+results/*.csv

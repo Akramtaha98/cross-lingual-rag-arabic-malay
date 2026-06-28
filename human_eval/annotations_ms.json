@@ -1,0 +1,452 @@
+[
+  {
+    "item_id": 1,
+    "exp_name": "exp1_bgem3_ms",
+    "query": "siapa datang dalam rancangan the voice",
+    "answer": "1964",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 2,
+    "exp_name": "exp1_bgem3_ms",
+    "query": "berapa musim yang scream queens ada",
+    "answer": "11.08.0",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 3,
+    "exp_name": "exp1_bgem3_ms",
+    "query": "siapakah yang menyanyi lagu love you like there's no tomorrow",
+    "answer": "Nwos",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 4,
+    "exp_name": "exp1_bgem3_ms",
+    "query": "bilakah wild west dimulakan dan berakhir",
+    "answer": "dana",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 5,
+    "exp_name": "exp1_bgem3_ms",
+    "query": "berapa banyak episod dalam satu musim stranger things",
+    "answer": "dana",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 6,
+    "exp_name": "exp1_bgem3_ms",
+    "query": "siapa yang menyanyi i hear you knocking but you can't come in",
+    "answer": "مايكرو",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 7,
+    "exp_name": "exp1_bgem3_ms",
+    "query": "di manakah asal logo starbucks",
+    "answer": "dana",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 8,
+    "exp_name": "exp1_bgem3_ms",
+    "query": "bilakak kali terakhir the lakers masuk ke playoffs",
+    "answer": "Nws",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 9,
+    "exp_name": "exp1_bm25_ms",
+    "query": "berapa musim yang scream queens ada",
+    "answer": "<extra_id_0>.com",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 10,
+    "exp_name": "exp1_bm25_ms",
+    "query": "berapa banyak episod dalam satu musim stranger things",
+    "answer": "<extra_id_0>.com",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 11,
+    "exp_name": "exp1_bm25_ms",
+    "query": "siapakah yang menyanyi lagu love you like there's no tomorrow",
+    "answer": "<extra_id_0> (2007)",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 12,
+    "exp_name": "exp1_bm25_ms",
+    "query": "bilakak kali terakhir the lakers masuk ke playoffs",
+    "answer": "<extra_id_0>.com.my",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 13,
+    "exp_name": "exp1_bm25_ms",
+    "query": "dari mana asal usul frasa great scott",
+    "answer": "<extra_id_0>.com",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 14,
+    "exp_name": "exp1_bm25_ms",
+    "query": "bilakah wild west dimulakan dan berakhir",
+    "answer": "<extra_id_0>.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 15,
+    "exp_name": "exp1_bm25_ms",
+    "query": "siapa datang dalam rancangan the voice",
+    "answer": "<extra_id_0>.com.my",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 16,
+    "exp_name": "exp1_bm25_ms",
+    "query": "menara berkembar petronas mengambil masa berapa lama untuk siap dibina",
+    "answer": "<extra_id_0>-besaran.",
+    "faithfulness": 2,
+    "adequacy": 2,
+    "comment": ""
+  },
+  {
+    "item_id": 17,
+    "exp_name": "exp1_labse_ms",
+    "query": "siapakah yang menyanyi lagu love you like there's no tomorrow",
+    "answer": "<extra_id_0> -",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 18,
+    "exp_name": "exp1_labse_ms",
+    "query": "dari mana asal usul frasa great scott",
+    "answer": "<extra_id_0>:-",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 19,
+    "exp_name": "exp1_labse_ms",
+    "query": "menara berkembar petronas mengambil masa berapa lama untuk siap dibina",
+    "answer": "<extra_id_0> tiga.",
+    "faithfulness": 2,
+    "adequacy": 2,
+    "comment": ""
+  },
+  {
+    "item_id": 20,
+    "exp_name": "exp1_labse_ms",
+    "query": "siapa datang dalam rancangan the voice",
+    "answer": "<extra_id_0> | - |",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 21,
+    "exp_name": "exp1_labse_ms",
+    "query": "bilakak kali terakhir the lakers masuk ke playoffs",
+    "answer": "<extra_id_0> Akhir",
+    "faithfulness": 2,
+    "adequacy": 2,
+    "comment": ""
+  },
+  {
+    "item_id": 22,
+    "exp_name": "exp1_labse_ms",
+    "query": "siapa yang menyanyi i hear you knocking but you can't come in",
+    "answer": "<extra_id_0>",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 23,
+    "exp_name": "exp1_labse_ms",
+    "query": "berapa banyak episod dalam satu musim stranger things",
+    "answer": "<extra_id_0>: Amal (Musim 13)",
+    "faithfulness": 2,
+    "adequacy": 2,
+    "comment": ""
+  },
+  {
+    "item_id": 24,
+    "exp_name": "exp1_labse_ms",
+    "query": "berapa musim yang scream queens ada",
+    "answer": "<extra_id_0> Pemenang NME",
+    "faithfulness": 2,
+    "adequacy": 2,
+    "comment": ""
+  },
+  {
+    "item_id": 25,
+    "exp_name": "exp1_me5_ms",
+    "query": "bilakah wild west dimulakan dan berakhir",
+    "answer": "<extra_id_0>)",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 26,
+    "exp_name": "exp1_me5_ms",
+    "query": "siapa datang dalam rancangan the voice",
+    "answer": "<extra_id_0> suara.",
+    "faithfulness": 2,
+    "adequacy": 2,
+    "comment": ""
+  },
+  {
+    "item_id": 27,
+    "exp_name": "exp1_me5_ms",
+    "query": "berapa banyak episod dalam satu musim stranger things",
+    "answer": "<extra_id_0> -",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 28,
+    "exp_name": "exp1_me5_ms",
+    "query": "siapakah yang menyanyi lagu love you like there's no tomorrow",
+    "answer": "<extra_id_0> :",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 29,
+    "exp_name": "exp1_me5_ms",
+    "query": "berapa musim yang scream queens ada",
+    "answer": "<extra_id_0> -",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 30,
+    "exp_name": "exp1_me5_ms",
+    "query": "dari mana asal usul frasa great scott",
+    "answer": "<extra_id_0> Gibson.",
+    "faithfulness": 2,
+    "adequacy": 2,
+    "comment": ""
+  },
+  {
+    "item_id": 31,
+    "exp_name": "exp1_me5_ms",
+    "query": "siapa yang menyanyi i hear you knocking but you can't come in",
+    "answer": "<extra_id_0> -",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 32,
+    "exp_name": "exp1_me5_ms",
+    "query": "menara berkembar petronas mengambil masa berapa lama untuk siap dibina",
+    "answer": "<extra_id_0> berkembar",
+    "faithfulness": 3,
+    "adequacy": 2,
+    "comment": ""
+  },
+  {
+    "item_id": 33,
+    "exp_name": "exp1_me5large_ms",
+    "query": "berapa banyak episod dalam satu musim stranger things",
+    "answer": "مايكرو",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 34,
+    "exp_name": "exp1_me5large_ms",
+    "query": "berapa musim yang scream queens ada",
+    "answer": "مايكرو",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 35,
+    "exp_name": "exp1_me5large_ms",
+    "query": "siapakah yang menyanyi lagu love you like there's no tomorrow",
+    "answer": "dana",
+    "faithfulness": 2,
+    "adequacy": 2,
+    "comment": ""
+  },
+  {
+    "item_id": 36,
+    "exp_name": "exp1_me5large_ms",
+    "query": "bilakah wild west dimulakan dan berakhir",
+    "answer": "1964",
+    "faithfulness": 2,
+    "adequacy": 2,
+    "comment": ""
+  },
+  {
+    "item_id": 37,
+    "exp_name": "exp1_me5large_ms",
+    "query": "di manakah asal logo starbucks",
+    "answer": "British",
+    "faithfulness": 4,
+    "adequacy": 3,
+    "comment": ""
+  },
+  {
+    "item_id": 38,
+    "exp_name": "exp1_me5large_ms",
+    "query": "siapa datang dalam rancangan the voice",
+    "answer": "مايكرو",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 39,
+    "exp_name": "exp1_me5large_ms",
+    "query": "dari mana asal usul frasa great scott",
+    "answer": "مايكرو",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 40,
+    "exp_name": "exp1_me5large_ms",
+    "query": "siapa yang menyanyi i hear you knocking but you can't come in",
+    "answer": "نوفمبر",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 41,
+    "exp_name": "exp2_ms_cross",
+    "query": "siapakah yang menyanyi lagu love you like there's no tomorrow",
+    "answer": "<extra_id_0> الوقت الحقيقي.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 42,
+    "exp_name": "exp2_ms_cross",
+    "query": "siapa yang menyanyi i hear you knocking but you can't come in",
+    "answer": "<extra_id_0> الصوت",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 43,
+    "exp_name": "exp2_ms_cross",
+    "query": "dari mana asal usul frasa great scott",
+    "answer": "<extra_id_0>.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 44,
+    "exp_name": "exp2_ms_cross",
+    "query": "siapa datang dalam rancangan the voice",
+    "answer": "<extra_id_0> |",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 45,
+    "exp_name": "exp2_ms_cross",
+    "query": "di manakah asal logo starbucks",
+    "answer": "<extra_id_0>.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 46,
+    "exp_name": "exp2_ms_cross",
+    "query": "berapa musim yang scream queens ada",
+    "answer": "<extra_id_0>.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 47,
+    "exp_name": "exp2_ms_cross",
+    "query": "berapa banyak episod dalam satu musim stranger things",
+    "answer": "<extra_id_0> .",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 48,
+    "exp_name": "exp2_ms_cross",
+    "query": "menara berkembar petronas mengambil masa berapa lama untuk siap dibina",
+    "answer": "<extra_id_0>.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 49,
+    "exp_name": "exp1_bgem3_ms",
+    "query": "dari mana asal usul frasa great scott",
+    "answer": "シングル",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 50,
+    "exp_name": "exp1_bgem3_ms",
+    "query": "menara berkembar petronas mengambil masa berapa lama untuk siap dibina",
+    "answer": "dana",
+    "faithfulness": 2,
+    "adequacy": 2,
+    "comment": ""
+  }
+]

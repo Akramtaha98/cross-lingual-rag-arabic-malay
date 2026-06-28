@@ -1,0 +1,28 @@
+# Cross-Lingual RAG — Arabic & Malay
+# Python 3.10+
+
+# Core ML
+torch>=2.1.0
+transformers>=4.40.0
+datasets>=2.18.0
+sentence-transformers>=2.7.0
+peft>=0.10.0          # LoRA fine-tuning
+
+# Retrieval
+faiss-cpu>=1.7.4      # use faiss-gpu if CUDA available
+rank-bm25>=0.2.2
+
+# Evaluation
+evaluate>=0.4.1
+rouge-score>=0.1.2
+bert-score>=0.3.13
+nltk>=3.8.1
+sacrebleu>=2.3.1
+
+# Data
+numpy>=1.26.0
+pandas>=2.2.0
+tqdm>=4.66.0
+
+# Optional: for faithfulness scoring
+openai>=1.0.0         # GPT-4 faithfulness judge (optional)

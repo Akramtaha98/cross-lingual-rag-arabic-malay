@@ -1,0 +1,452 @@
+[
+  {
+    "item_id": 1,
+    "exp_name": "exp1_bgem3_ar",
+    "query": "من مبدع مسلسل ذا فويس",
+    "answer": "نوفمبر",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 2,
+    "exp_name": "exp1_bgem3_ar",
+    "query": "كم عدد مواسم ملكات الصراخ",
+    "answer": "نوفمبر",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 3,
+    "exp_name": "exp1_bgem3_ar",
+    "query": "من الذي يغني أحبك مثل لا يوجد غدا",
+    "answer": "نوفمبر",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 4,
+    "exp_name": "exp1_bgem3_ar",
+    "query": "متى بدأ وانتهى الغرب المتوحش؟",
+    "answer": "البحرين",
+    "faithfulness": 3,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 5,
+    "exp_name": "exp1_bgem3_ar",
+    "query": "كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز",
+    "answer": "نوفمبر",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 6,
+    "exp_name": "exp1_bm25_ar",
+    "query": "من الذي يغني أحبك مثل لا يوجد غدا",
+    "answer": "البحرين",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 7,
+    "exp_name": "exp1_bm25_ar",
+    "query": "كم عدد مواسم ملكات الصراخ",
+    "answer": "البحرين",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 8,
+    "exp_name": "exp1_bm25_ar",
+    "query": "من أين جاءت علامة الستاربكس",
+    "answer": "نوفمبر",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 9,
+    "exp_name": "exp1_bm25_ar",
+    "query": "من أين جاءت العبارة \"great scott\"",
+    "answer": "نوفمبر",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 10,
+    "exp_name": "exp1_bm25_ar",
+    "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية",
+    "answer": "البحرين",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 11,
+    "exp_name": "exp1_labse_ar",
+    "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية",
+    "answer": "نوفمبر",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 12,
+    "exp_name": "exp1_labse_ar",
+    "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي",
+    "answer": "مايكرو",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 13,
+    "exp_name": "exp1_labse_ar",
+    "query": ": كم من الوقت استغرق بناء البرجين التوأمين",
+    "answer": "نوفمبر",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 14,
+    "exp_name": "exp1_me5_ar",
+    "query": "كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز",
+    "answer": "البحرين",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 15,
+    "exp_name": "exp1_me5_ar",
+    "query": "من أين جاءت العبارة \"great scott\"",
+    "answer": "محمد سليمان",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 16,
+    "exp_name": "exp1_me5large_ar",
+    "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي",
+    "answer": "محمد سليمان",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 17,
+    "exp_name": "exp1_me5large_ar",
+    "query": "كم عدد مواسم ملكات الصراخ",
+    "answer": "1964",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 18,
+    "exp_name": "exp1_me5large_ar",
+    "query": "من مبدع مسلسل ذا فويس",
+    "answer": "البحرين",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 19,
+    "exp_name": "exp2_ar_cross",
+    "query": "كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز",
+    "answer": "<extra_id_0>-besaran.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 20,
+    "exp_name": "exp2_ar_cross",
+    "query": "من أين جاءت العبارة \"great scott\"",
+    "answer": "<extra_id_0>.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 21,
+    "exp_name": "exp2_ar_cross",
+    "query": "من أين جاءت علامة الستاربكس",
+    "answer": "<extra_id_0> -",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 22,
+    "exp_name": "exp2_ar_cross",
+    "query": ": كم من الوقت استغرق بناء البرجين التوأمين",
+    "answer": "<extra_id_0>.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 23,
+    "exp_name": "exp2_ar_cross",
+    "query": "من الذي يغني أحبك مثل لا يوجد غدا",
+    "answer": "<extra_id_0> :",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 24,
+    "exp_name": "exp2_ar_mono",
+    "query": "من مبدع مسلسل ذا فويس",
+    "answer": "<extra_id_0>.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 25,
+    "exp_name": "exp2_ar_mono",
+    "query": "من الذي يغني أحبك مثل لا يوجد غدا",
+    "answer": "<extra_id_0> الله.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 26,
+    "exp_name": "exp2_ar_mono",
+    "query": "كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز",
+    "answer": "<extra_id_0>.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 27,
+    "exp_name": "exp2_ar_mono",
+    "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي",
+    "answer": "<extra_id_0> الغناء",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 28,
+    "exp_name": "exp2_ar_mono",
+    "query": "كم عدد مواسم ملكات الصراخ",
+    "answer": "<extra_id_0> النجاح",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 29,
+    "exp_name": "exp3_base_ar",
+    "query": "كم عدد مواسم ملكات الصراخ",
+    "answer": "النجاح",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 30,
+    "exp_name": "exp3_base_ar",
+    "query": "من مبدع مسلسل ذا فويس",
+    "answer": ".",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 31,
+    "exp_name": "exp3_base_ar",
+    "query": ": كم من الوقت استغرق بناء البرجين التوأمين",
+    "answer": ".",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 32,
+    "exp_name": "exp3_base_ar",
+    "query": "كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز",
+    "answer": ".",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 33,
+    "exp_name": "exp3_base_ar",
+    "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية",
+    "answer": "عبد الرزاق",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 34,
+    "exp_name": "exp4_k3",
+    "query": "من أين جاءت علامة الستاربكس",
+    "answer": "<extra_id_0>",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 35,
+    "exp_name": "exp3_base_ar",
+    "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي",
+    "answer": "الغناء",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 36,
+    "exp_name": "exp3_base_ar",
+    "query": "من أين جاءت العبارة \"great scott\"",
+    "answer": ".",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 37,
+    "exp_name": "exp2_ar_cross",
+    "query": "كم عدد مواسم ملكات الصراخ",
+    "answer": "<extra_id_0>",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 38,
+    "exp_name": "exp1_bgem3_ar",
+    "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية",
+    "answer": "1964",
+    "faithfulness": 3,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 39,
+    "exp_name": "exp2_ar_cross",
+    "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية",
+    "answer": "<extra_id_0> pertama.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 40,
+    "exp_name": "exp2_ar_mono",
+    "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية",
+    "answer": "<extra_id_0> عبد الرزاق",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 41,
+    "exp_name": "exp1_bgem3_ar",
+    "query": ": كم من الوقت استغرق بناء البرجين التوأمين",
+    "answer": "البحرين",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 42,
+    "exp_name": "exp3_base_ar",
+    "query": "من الذي يغني أحبك مثل لا يوجد غدا",
+    "answer": "الله.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 43,
+    "exp_name": "exp3_base_ar",
+    "query": "متى بدأ وانتهى الغرب المتوحش؟",
+    "answer": ".",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 44,
+    "exp_name": "exp1_bm25_ar",
+    "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي",
+    "answer": "البحرين",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 45,
+    "exp_name": "exp2_ar_cross",
+    "query": "من مبدع مسلسل ذا فويس",
+    "answer": "<extra_id_0>:",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 46,
+    "exp_name": "exp2_ar_cross",
+    "query": "متى بدأ وانتهى الغرب المتوحش؟",
+    "answer": "<extra_id_0>.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 47,
+    "exp_name": "exp1_bgem3_ar",
+    "query": "من أين جاءت علامة الستاربكس",
+    "answer": "البحرين",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 48,
+    "exp_name": "exp2_ar_cross",
+    "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي",
+    "answer": "<extra_id_0>.",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 49,
+    "exp_name": "exp1_bgem3_ar",
+    "query": "من أين جاءت العبارة \"great scott\"",
+    "answer": "البحرين",
+    "faithfulness": 2,
+    "adequacy": 1,
+    "comment": ""
+  },
+  {
+    "item_id": 50,
+    "exp_name": "exp2_ar_mono",
+    "query": "من أين جاءت علامة الستاربكس",
+    "answer": "<extra_id_0> [SEP]",
+    "faithfulness": 1,
+    "adequacy": 1,
+    "comment": ""
+  }
+]

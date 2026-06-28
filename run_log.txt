@@ -1,0 +1,56 @@
+2026-06-27 23:54:55,810 [INFO] __main__ — FULL MODE: 1000 samples per language (publication quality).
+2026-06-27 23:54:55,810 [INFO] __main__ — Loading MKQA (max_samples=1000) …
+2026-06-27 23:54:55,810 [INFO] data.load_mkqa — Using cached MKQA: ./indexes/mkqa.jsonl.gz
+2026-06-27 23:54:55,845 [INFO] data.load_mkqa —   ar: 1000 QA pairs loaded
+2026-06-27 23:54:55,845 [INFO] data.load_mkqa —   ms: 1000 QA pairs loaded
+2026-06-27 23:54:55,845 [INFO] data.load_mkqa —   ar: train=500  dev=0  test=1000
+2026-06-27 23:54:55,845 [INFO] data.load_mkqa —   ms: train=500  dev=0  test=1000
+2026-06-27 23:54:55,845 [INFO] __main__ — Loading Wikipedia corpora …
+2026-06-27 23:54:55,845 [INFO] data.load_wikipedia — Loading cached corpus from ./indexes/corpus_ar.json
+2026-06-27 23:54:56,082 [INFO] data.load_wikipedia —   ar: 50000 passages loaded from cache
+2026-06-27 23:54:56,082 [INFO] data.load_wikipedia — Loading cached corpus from ./indexes/corpus_ms.json
+2026-06-27 23:54:56,248 [INFO] data.load_wikipedia —   ms: 50000 passages loaded from cache
+2026-06-27 23:54:56,248 [INFO] __main__ — Running 19 experiment configurations …
+
+2026-06-27 23:54:56,248 [INFO] __main__ — Skipping exp1_bm25_ar (results already exist: ./results/exp1_bm25_ar_results.json)
+2026-06-27 23:54:56,249 [INFO] __main__ — Skipping exp1_labse_ar (results already exist: ./results/exp1_labse_ar_results.json)
+2026-06-27 23:54:56,250 [INFO] __main__ — Skipping exp1_me5_ar (results already exist: ./results/exp1_me5_ar_results.json)
+2026-06-27 23:54:56,250 [INFO] __main__ — Skipping exp1_bm25_ms (results already exist: ./results/exp1_bm25_ms_results.json)
+2026-06-27 23:54:56,251 [INFO] __main__ — Skipping exp1_labse_ms (results already exist: ./results/exp1_labse_ms_results.json)
+2026-06-27 23:54:56,251 [INFO] __main__ — Skipping exp1_me5_ms (results already exist: ./results/exp1_me5_ms_results.json)
+2026-06-27 23:54:56,251 [INFO] __main__ — Skipping exp2_ar_mono (results already exist: ./results/exp2_ar_mono_results.json)
+2026-06-27 23:54:56,252 [INFO] __main__ — Skipping exp2_ar_cross (results already exist: ./results/exp2_ar_cross_results.json)
+2026-06-27 23:54:56,252 [INFO] __main__ — Skipping exp2_ms_mono (results already exist: ./results/exp2_ms_mono_results.json)
+2026-06-27 23:54:56,252 [INFO] __main__ — Skipping exp2_ms_cross (results already exist: ./results/exp2_ms_cross_results.json)
+2026-06-27 23:54:56,253 [INFO] __main__ — Skipping exp3_base_ar (results already exist: ./results/exp3_base_ar_results.json)
+2026-06-27 23:54:56,253 [INFO] __main__ — Skipping exp3_lora_ar (results already exist: ./results/exp3_lora_ar_results.json)
+2026-06-27 23:54:56,254 [INFO] __main__ — Skipping exp3_base_ms (results already exist: ./results/exp3_base_ms_results.json)
+2026-06-27 23:54:56,254 [INFO] __main__ — Skipping exp3_lora_ms (results already exist: ./results/exp3_lora_ms_results.json)
+2026-06-27 23:54:56,254 [INFO] __main__ — Skipping exp4_k3 (results already exist: ./results/exp4_k3_results.json)
+2026-06-27 23:54:56,255 [INFO] __main__ — Skipping exp4_k5 (results already exist: ./results/exp4_k5_results.json)
+2026-06-27 23:54:56,255 [INFO] __main__ — Skipping exp4_k10 (results already exist: ./results/exp4_k10_results.json)
+2026-06-27 23:54:56,256 [INFO] __main__ — Skipping exp5_ar_to_ms (results already exist: ./results/exp5_ar_to_ms_results.json)
+2026-06-27 23:54:56,256 [INFO] __main__ — Skipping exp5_ms_to_ar (results already exist: ./results/exp5_ms_to_ar_results.json)
+2026-06-27 23:54:56,260 [INFO] __main__ — 
+Summary table saved → ./results/summary_table.csv
+
+   experiment   BLEU-4  ROUGE-L  BERTScore_F  Faithfulness  Recall@5      MRR
+ exp1_bm25_ar 0.000000 0.000000     0.571772      0.112000  0.002961 0.029933
+exp1_labse_ar 0.000000 0.000000     0.574027      0.096500  0.004043 0.025883
+  exp1_me5_ar 0.000000 0.000000     0.572944      0.196000  0.007820 0.053650
+ exp1_bm25_ms 0.000167 0.037444     0.503859      0.197339  0.014295 0.056750
+exp1_labse_ms 0.000167 0.040370     0.498855      0.177995  0.000863 0.018750
+  exp1_me5_ms 0.000175 0.037982     0.504211      0.227619  0.014210 0.071133
+ exp2_ar_mono 0.000053 0.044876     0.500101      0.156731  0.004043 0.025883
+exp2_ar_cross 0.000090 0.039906     0.496451      0.186681  0.000177 0.012217
+ exp2_ms_mono 0.000167 0.040370     0.498855      0.177995  0.000863 0.018750
+exp2_ms_cross 0.000093 0.042104     0.501074      0.122150  0.000055 0.007283
+ exp3_base_ar 0.000054 0.044876     0.499795      0.149731  0.004043 0.025883
+ exp3_lora_ar 0.000053 0.044876     0.500101      0.156731  0.004043 0.025883
+ exp3_base_ms 0.000168 0.040586     0.498993      0.172405  0.000863 0.018750
+ exp3_lora_ms 0.000167 0.040370     0.498855      0.177995  0.000863 0.018750
+      exp4_k3 0.000054 0.044943     0.499754      0.148431  0.002453 0.023333
+      exp4_k5 0.000053 0.044876     0.500101      0.156731  0.004043 0.025883
+     exp4_k10 0.000053 0.044810     0.500233      0.164814  0.004043 0.029046
+exp5_ar_to_ms 0.000090 0.039906     0.496451      0.186681  0.000177 0.012217
+exp5_ms_to_ar 0.000093 0.042104     0.501074      0.122150  0.000055 0.007283
