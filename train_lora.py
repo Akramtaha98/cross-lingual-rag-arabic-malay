@@ -4,8 +4,14 @@ train_lora.py — Fine-tune mT5-small on MKQA (ar + ms) with LoRA.
 Saves the adapter to LORA_MODEL_PATH (./models/mt5_lora) so that
 run_all_experiments.py can load it with use_lora=True.
 
+Train/test split: MKQA is loaded in deterministic order. The first
+EVAL_HELD_OUT=1000 queries per language are strictly reserved for
+evaluation (matching run_all_experiments.py which uses max_samples=1000).
+Training uses only items[1000:] — approximately 9,000 queries per language,
+18,000 pairs total — with no overlap between train and eval sets.
+
 Usage:
-    python3 train_lora.py               # full training
+    python3 train_lora.py               # full training (~2–3 h on M4 Pro)
     python3 train_lora.py --dev         # quick smoke-test (100 samples, 1 epoch)
 """
 
@@ -32,6 +38,11 @@ from data.load_mkqa import load_mkqa
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s [%(levelname)s] %(name)s — %(message)s")
 logger = logging.getLogger(__name__)
+
+# ── Split configuration ──────────────────────────────────────────────────────
+# The first EVAL_HELD_OUT queries per language are reserved for evaluation.
+# Training uses only items[EVAL_HELD_OUT:] to prevent data contamination.
+EVAL_HELD_OUT   = 1000   # must match max_samples used in run_all_experiments.py
 
 # ── LoRA hyper-parameters ────────────────────────────────────────────────────
 LORA_R          = 8
@@ -62,18 +73,37 @@ class MKQADataset(Dataset):
 
 
 def build_pairs(max_samples: int = None) -> list:
-    """Load MKQA for all languages and return (input_text, answer) pairs."""
-    # load_mkqa returns {"ar": [{"query": ..., "answer": ...}, ...], "ms": [...]}
-    data = load_mkqa(languages=MKQA_LANGUAGES, max_samples=max_samples)
+    """
+    Load MKQA for all languages and return (input_text, answer) pairs
+    for the TRAINING split only.
+
+    The first EVAL_HELD_OUT items per language are strictly excluded —
+    they are the evaluation set used by run_all_experiments.py.
+    Training uses only items[EVAL_HELD_OUT:] (~9,000 per language).
+
+    In dev mode, max_samples caps the total loaded before slicing.
+    """
+    # Load more than EVAL_HELD_OUT so slicing leaves training data.
+    # In dev mode, load a small number for a quick smoke-test.
+    load_limit = max_samples if max_samples else None
+    data = load_mkqa(languages=MKQA_LANGUAGES, max_samples=load_limit)
+
     pairs = []
     for lang in MKQA_LANGUAGES:
-        for item in data.get(lang, []):
+        all_items  = data.get(lang, [])
+        # Skip the held-out evaluation set (first EVAL_HELD_OUT items).
+        train_items = all_items[EVAL_HELD_OUT:] if not max_samples else all_items
+        logger.info(f"  [{lang}] total loaded: {len(all_items)}, "
+                    f"held-out: {min(EVAL_HELD_OUT, len(all_items))}, "
+                    f"training: {len(train_items)}")
+        for item in train_items:
             question    = item.get("query", "").strip()
             answer_text = item.get("answer", "").strip()
             if question and answer_text:
                 input_text = f"question: {question} context:"
                 pairs.append((input_text, answer_text))
-    logger.info(f"Total training pairs: {len(pairs)}")
+
+    logger.info(f"Total training pairs (no eval overlap): {len(pairs)}")
     return pairs
 
 
