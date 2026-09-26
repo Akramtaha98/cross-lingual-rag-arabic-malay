@@ -1,0 +1,22 @@
+{
+  "experiment": "exp1_bm25camel_ar",
+  "retriever": "bm25_camel_stemmed",
+  "query_lang": "ar",
+  "corpus_lang": "ar",
+  "top_k": 5,
+  "metrics": {
+    "Recall@3": 0.037,
+    "Recall@5": 0.047,
+    "Recall@10": 0.068,
+    "Precision@3": 0.015,
+    "Precision@5": 0.0148,
+    "Precision@10": 0.0129,
+    "MRR": 0.028066666666666667,
+    "NDCG@10": 0.015457176251333497
+  },
+  "ci": {
+    "Recall@5": 0.013117511410324748,
+    "MRR": 0.010236929872747765,
+    "NDCG@10": 0.007646073286675567
+  }
+}
