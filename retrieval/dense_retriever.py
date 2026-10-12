@@ -32,7 +32,10 @@ _ME5_FAMILY = {"me5", "me5large"}
 # BGE-M3 is ~570M params with colbert heads; mE5-large is ~560M params
 _MODEL_BATCH_SIZES = {
     "labse":    128,
-    "me5":      128,
+    "me5":       64,   # reduced from 128: leaked allocations from prior
+                        # experiments in the same process could push this
+                        # over the MPS ceiling at 128 (see run_all_experiments.py
+                        # cleanup fix — this is a belt-and-suspenders margin)
     "me5large":  16,   # 1024-dim, large; reduce to avoid MPS OOM
     "bgem3":     8,    # largest model; colbert heads add memory overhead
 }
@@ -56,7 +59,7 @@ class DenseRetriever:
         # Force CPU for bgem3 and me5large to avoid RuntimeError: MPS backend out of memory.
         # CPU is slower (~20 min for 50k passages) but avoids the OOM crash entirely.
         if device is None:
-            if model_name in {"bgem3", "me5large"}:
+            if model_name in {"bgem3", "me5large", "me5"}:
                 device = "cpu"
                 logger.info(
                     f"{model_name}: forcing device=cpu (model too large for MPS; "
@@ -82,13 +85,35 @@ class DenseRetriever:
 
     def encode(self, texts: List[str], is_query: bool = False) -> np.ndarray:
         prefixed = self._prefix(texts, is_query)
-        embeddings = self.model.encode(
-            prefixed,
-            batch_size=self.batch_size,
-            show_progress_bar=len(texts) > 200,
-            normalize_embeddings=True,
-            convert_to_numpy=True,
-        )
+        device_str = str(self.model.device)
+        if len(texts) > 200 and device_str.startswith("mps"):
+            # Long encoding passes (thousands of passages) can accumulate MPS
+            # allocator fragmentation over many internal batches; encode in
+            # chunks and release the cache between them so a long pass can't
+            # slowly climb toward the OOM ceiling the way a single huge
+            # .encode() call can.
+            import torch
+            chunk = 2000
+            out = []
+            for i in range(0, len(prefixed), chunk):
+                part = self.model.encode(
+                    prefixed[i:i + chunk],
+                    batch_size=self.batch_size,
+                    show_progress_bar=True,
+                    normalize_embeddings=True,
+                    convert_to_numpy=True,
+                )
+                out.append(part)
+                torch.mps.empty_cache()
+            embeddings = np.concatenate(out, axis=0)
+        else:
+            embeddings = self.model.encode(
+                prefixed,
+                batch_size=self.batch_size,
+                show_progress_bar=len(texts) > 200,
+                normalize_embeddings=True,
+                convert_to_numpy=True,
+            )
         return embeddings.astype(np.float32)
 
     def index_corpus(

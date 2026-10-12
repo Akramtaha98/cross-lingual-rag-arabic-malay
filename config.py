@@ -51,11 +51,36 @@ DEFAULT_TOP_K = 5
 # ──────────────────────────────────────────────
 MAX_INPUT_LENGTH  = 512
 MAX_TARGET_LENGTH = 128
+# BUG FIX (peer review, Sept 2026): beam_search (num_beams=4) on mT5-small+LoRA
+# was mode-collapsing to a tiny handful of memorized/frequent tokens almost
+# independent of the input query, for BOTH languages (e.g. 9/10 stored Arabic
+# samples in exp3_lora_ar were the literal identical word "نوفمبر"; Malay
+# outputs mixed in Arabic-script tokens like "مايكرو"/"نوفمبر"). This explains
+# much of the near-zero BLEU-4/Faithfulness reported throughout the paper --
+# it is largely a decoding artifact, not (only) a genuine model/language
+# mismatch. Switching to greedy decoding (num_beams=1) plus basic repetition
+# guards; ALL generation-dependent experiments must be rerun after this change.
+# BUG FIX v2 (peer review, Sept 2026): diagnostic (verify_decoding_fix2.py)
+# showed BOTH beam=4 and greedy (num_beams=1, do_sample=False) collapse the
+# mT5-small+LoRA checkpoint onto a single dominant token regardless of input
+# (1/10 unique outputs on a 10-query smoke test either way), while sampling
+# (do_sample=True, temperature=0.9, top_p=0.9) recovers 9/10 unique outputs
+# on the same smoke test. This means the checkpoint's argmax path is
+# pathologically peaked, but the underlying distribution is not degenerate --
+# sampling exposes real, varied probability mass that greedy/beam decoding
+# never reaches. We therefore decode by sampling with a fixed seed (below)
+# for reproducibility, and report this decoding choice explicitly in the
+# paper (Section 2.4) rather than silently switching without disclosure.
 GENERATION_KWARGS = {
     "max_new_tokens": 128,
-    "num_beams": 4,
-    "early_stopping": True,
+    "do_sample": True,
+    "temperature": 0.9,
+    "top_p": 0.9,
+    "num_beams": 1,
+    "repetition_penalty": 1.3,
+    "no_repeat_ngram_size": 3,
 }
+GENERATION_SEED = 42   # fixed seed for reproducible sampling-based decoding
 
 # ──────────────────────────────────────────────
 # Experiment matrix (EXP 1–5)
@@ -108,4 +133,14 @@ EXPERIMENTS: List[ExperimentConfig] = [
     # ── EXP 5: Transfer direction gap ──
     ExperimentConfig("exp5_ar_to_ms",  "labse", "ar", "ms", 5, True),
     ExperimentConfig("exp5_ms_to_ar",  "labse", "ms", "ar", 5, True),
+
+    # ── EXP 2b / EXP 5b: mE5-large reruns (peer-review item: LaBSE is the
+    # worst retriever in EXP1; rerun the cross-lingual comparisons with the
+    # best retriever for a fair test of the transfer-asymmetry claim) ──
+    ExperimentConfig("exp2_ar_mono_me5large",   "me5large", "ar", "ar", 5, True),
+    ExperimentConfig("exp2_ar_cross_me5large",  "me5large", "ar", "ms", 5, True),
+    ExperimentConfig("exp2_ms_mono_me5large",   "me5large", "ms", "ms", 5, True),
+    ExperimentConfig("exp2_ms_cross_me5large",  "me5large", "ms", "ar", 5, True),
+    ExperimentConfig("exp5_ar_to_ms_me5large",  "me5large", "ar", "ms", 5, True),
+    ExperimentConfig("exp5_ms_to_ar_me5large",  "me5large", "ms", "ar", 5, True),
 ]

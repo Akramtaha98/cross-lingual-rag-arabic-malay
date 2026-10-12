@@ -18,10 +18,12 @@ Summary table:    ./results/summary_table.csv
 """
 
 import os
+import gc
 import json
 import argparse
 import logging
 import pandas as pd
+import torch
 from tqdm import tqdm
 from datetime import datetime
 from config import EXPERIMENTS, OUTPUT_DIR, MKQA_MAX_SAMPLES
@@ -39,7 +41,16 @@ DEV_SAMPLES  = 10    # pipeline smoke-test only
 
 def parse_args():
     p = argparse.ArgumentParser()
-    p.add_argument("--exp", default=None, help="Filter experiments by name prefix")
+    p.add_argument(
+        "--exp",
+        default=None,
+        action="append",
+        help=(
+            "Filter experiments by name prefix. Repeatable "
+            "(--exp exp2_ar_mono_me5large --exp exp5_ar_to_ms_me5large) "
+            "to run several exact/prefix-matched experiments in one invocation."
+        ),
+    )
     p.add_argument(
         "--dev",
         action="store_true",
@@ -108,7 +119,7 @@ def main():
     # ── Select experiments ─────────────────────────────────
     configs = EXPERIMENTS
     if args.exp:
-        configs = [c for c in configs if c.name.startswith(args.exp)]
+        configs = [c for c in configs if any(c.name.startswith(p) for p in args.exp)]
     if args.top_k:
         for c in configs:
             c.top_k = args.top_k
@@ -202,6 +213,18 @@ def main():
         # Collect for summary table
         row = {"experiment": cfg.name, **cfg.__dict__, **metrics}
         all_rows.append(row)
+
+        # ── Free GPU/MPS memory before the next experiment ──
+        # Each iteration builds a fresh pipeline (retriever + generator models).
+        # Without this, model weights and MPS allocator pools from every prior
+        # experiment stay resident, and a later experiment (often an unrelated
+        # model like mE5-base) OOMs on memory that earlier experiments leaked.
+        del pipeline, results
+        gc.collect()
+        if torch.backends.mps.is_available():
+            torch.mps.empty_cache()
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
 
     # ── Summary table ───────────────────────────────────────
     df = pd.DataFrame(all_rows)

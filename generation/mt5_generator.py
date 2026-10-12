@@ -30,6 +30,7 @@ from config import (
     MAX_INPUT_LENGTH,
     MAX_TARGET_LENGTH,
     GENERATION_KWARGS,
+    GENERATION_SEED,
 )
 
 # Regex to strip T5 span-filling sentinel tokens from decoded text
@@ -76,6 +77,13 @@ class MT5Generator:
         self.model = self.model.to(self.device)
         self.model.eval()
 
+        # Fixed seed for reproducible sampling-based decoding (see config.py
+        # GENERATION_KWARGS comment: greedy/beam decoding mode-collapses this
+        # checkpoint, so we sample, and fix the seed so results are stable
+        # across reruns).
+        self._base_seed = GENERATION_SEED
+        self._call_count = 0
+
     def generate(
         self,
         query: str,
@@ -111,6 +119,14 @@ class MT5Generator:
             "decoder_start_token_id": self.tokenizer.pad_token_id,
             **kwargs,
         }
+
+        # Deterministic-but-varied sampling: seed derived from the fixed base
+        # seed plus a per-call counter, so the same query always gets the
+        # same sampled output on rerun, but different queries in the same
+        # run do not all sample identically.
+        if gen_kwargs.get("do_sample"):
+            torch.manual_seed(self._base_seed + self._call_count)
+            self._call_count += 1
 
         with torch.no_grad():
             outputs = self.model.generate(

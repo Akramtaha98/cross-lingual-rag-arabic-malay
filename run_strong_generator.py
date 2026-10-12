@@ -428,7 +428,7 @@ def main():
                       "lang": args.lang, "n": len(outputs), "k": args.k},
         "metrics":   {**bs, **{k: v for k, v in judge_metrics.items()
                                 if k != "annotations"}},
-        "samples":   outputs[:10],
+        "samples":   outputs,
         "timestamp": time.strftime("%Y-%m-%dT%H:%M:%S"),
     }
     with open(out_file, "w", encoding="utf-8") as f:

@@ -1,0 +1,1679 @@
+{
+  "config": {
+    "backend": "ollama",
+    "model": "qwen2.5:7b",
+    "lang": "ms",
+    "n": 200,
+    "k": 5
+  },
+  "metrics": {
+    "BERTScore_P": 0.6627480983734131,
+    "BERTScore_R": 0.6703218221664429,
+    "BERTScore_F": 0.6645022630691528,
+    "Faithfulness_mean": 1.28,
+    "Faithfulness_std": 0.9905677613348409,
+    "Adequacy_mean": 1.26,
+    "Adequacy_std": 0.9648939880439018
+  },
+  "samples": [
+    {
+      "query": "menara berkembar petronas mengambil masa berapa lama untuk siap dibina",
+      "reference": "11.0 tahun",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat mengenai masa yang diambil untuk menara Berkembar PETRONAS disiapkan dibina.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menyanyi lagu love you like there's no tomorrow",
+      "reference": "Chris Young ",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "berapa musim yang scream queens ada",
+      "reference": "2.0",
+      "answer": "Scream Queens ada 4 musim. Ini boleh dilihat daripada petikan yang menyatakan \"Musim terbaru siri ini akan keudara pada musim luruh 2006\" dan senarai episod musim ke-4 yang terdapat.",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakak kali terakhir the lakers masuk ke playoffs",
+      "reference": "2013",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "berapa banyak episod dalam satu musim stranger things",
+      "reference": "3.0",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang menyanyi i hear you knocking but you can't come in",
+      "reference": "Dave Edmunds",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa datang dalam rancangan the voice",
+      "reference": "John de Mol",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyebutkan tentang rancangan The Voice atau pelawakannya. Petikan pertama membincangkan kumpulan Voice, manakala petikan kedua membincangkan Velvet Lawrence yang terlibat dalam Akademi Fantasia, tetapi tidak menyentuh topik The Voice.",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah wild west dimulakan dan berakhir",
+      "reference": "1865",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat spesifik mengenai bilakah Wild West dimulakan dan berakhir.",
+      "lang": "ms"
+    },
+    {
+      "query": "pasukan rams berlawan dengan pasukan yang mana di super bowl",
+      "reference": "1999",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa penyanyi lagu oh what a night",
+      "reference": "The Four Seasons",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa penyanyi i want to be with you everywhere",
+      "reference": "Fleetwood Mac",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah pelakon watak mary magdalene dalam jesus christ superstar",
+      "reference": "Yvonne Elliman",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa penulis buku ratapan dalam alkitab",
+      "reference": "Yeremia",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa mempunyai pengikut instagram terbanyak",
+      "reference": "Cristiano Ronaldo",
+      "answer": "Ronaldo mempunyai pengikut Instagram terbanyak sehingga Mei 2020, dengan lebih dari 231 juta pengikut.",
+      "lang": "ms"
+    },
+    {
+      "query": "episod the office yang manakah menceritakan  panggang",
+      "reference": "melegakan tekanan",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa menghasilkan pistachios paling banyak di dunia",
+      "reference": "Iran",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah nama stadium arizona cardinals",
+      "reference": "University of Phoenix Stadium",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menyanyi lagu i've never been to me",
+      "reference": "Charlene",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "berapakah negeri diliputi gunung-gunung rocky",
+      "reference": "6.0",
+      "answer": "Dari petikan yang diberikan, kita dapat melihat bahawa gunung-gunung Rocky meliputi Colorado. Oleh itu, jawapan untuk soalan \"Berapakah negeri diliputi gunung-gunung Rocky?\" ialah:\n\n1 negeri",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menyanyikan let's go all the way",
+      "reference": "Sly Fox",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah juara america's got talent pada 2015",
+      "reference": "Paul Zerdin",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah had umur untuk pengakap perempuan",
+      "reference": "5.0 18.0 tahun",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bila kali terakhir the steelers bertanding dengan the panthers",
+      "reference": "2019-08-29",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah kali terakhir rupublikan memenangi undi popular",
+      "reference": "2004",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah kali terakhir pasukan the cubs memenangi siri dunia",
+      "reference": "2016",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat tentang pasukan The Cubs atau kapan mereka memenangi siri dunia. Petikan pertama membincangkan Honda Cub, manakala petikan kedua membincangkan sejarah besbol dan Klasik Besbol Dunia, tetapi tidak merujuk kepada pasukan The Cubs.",
+      "lang": "ms"
+    },
+    {
+      "query": "pada bila wang syiling 1 pound baru keluar",
+      "reference": "2017-03-28",
+      "answer": "Tidak tahu\n\nPenjelasan: Maklumat mengenai syiling 1 pound baru tidak diberikan dalam petikan yang diberikan. Petikan fokus pada syiling ringgit dan sen, tanpa menyebutkan maklumat tentang syiling 1 pound.",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah michael jordan disusun ke dalam nba",
+      "reference": "1984",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah kali terakhir perlembagaan dipinda",
+      "reference": "1992",
+      "answer": "Berdasarkan petikan yang diberikan, tidak disebutkan bilakah kali terakhir Perlembagaan Malaysia dipinda. Oleh itu, saya jawab dengan kata \"Tidak tahu\".",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah watak-watak dalam singing in the rain",
+      "reference": "Donald O'Connor",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyebutkan watak-watak dalam filem \"Singing in the Rain\". Petikan tersebut merujuk kepada filem-filem lain seperti \"Sang Rang Bulan\" dan \"Dae Jang Geum\".",
+      "lang": "ms"
+    },
+    {
+      "query": "berapa panjang untuk kereta biasa kereta api pengangkutan",
+      "reference": "55.0 67.0 Kaki",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah penyanyi lagu i'll make a man out of you",
+      "reference": "Donny Osmond",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bila pertama kali tom brady memenangi superbowl ring",
+      "reference": "2002",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "di mana piala dunia akan diadakan",
+      "reference": "Qatar",
+      "answer": "Petikan yang diberikan tidak memberikan maklumat spesifik mengenai negara tuan rumah untuk Piala Dunia FIFA yang akan datang. Oleh itu, saya jawab dengan kata \"Tidak tahu\".",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah nama bagi karakter tweenies",
+      "reference": "Judy",
+      "answer": "Tidak tahu\n\nJawapan tidak dapat ditemui dalam petikan yang diberikan. Petikan hanya membincangkan tentang watak-watak dalam siri kartun bayi Tommy Pickles dan Totally Spies, tetapi tidak menyebutkan watak-watak untuk usia tweenies.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang memainkan black panther di filem black panther",
+      "reference": "Chadwick Boseman",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat tentang siapa yang memainkan Black Panther dalam filem Black Panther. Maklumat tersebut tidak termasuk dalam petikan yang diberikan.",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah nombor saluran cw di directv",
+      "reference": "385.0",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah the amazing world of gumball berakhir",
+      "reference": "2019-06-24",
+      "answer": "Tidak tahu\n\nPenjelasan: Maklumat dalam petikan tidak menyebutkan apabila siri \"The Amazing World of Gumball\" berakhir. Petikan tersebut merujuk kepada siri lain yang popular di Disney Channel.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa penyanyi what is love baby don't hurt me",
+      "reference": "Haddaway",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah bahan aktif yang ada dalam semua pembersih tangan yang diluluskan oleh FDA",
+      "reference": "Etanol",
+      "answer": "Tidak tahu\n\nPenjelasan: Petikan yang diberikan tidak menyediakan maklumat tentang bahan aktif dalam semua pembersih tangan yang diluluskan oleh FDA. Petikan tersebut hanya membincangkan tentang detergen umum dan beberapa produk farmasi, tetapi tidak memberikan maklumat spesifik tentang bahan aktif dalam pembersih tangan yang diluluskan oleh FDA.",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah lagu genie in a bottle dibebaskan",
+      "reference": "1999",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa berlakon dalam filem bridge over the river kwai",
+      "reference": "William Holden",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apa nama kesatria meja bulat",
+      "reference": "Lancelot",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa adalah pengacara america has talent",
+      "reference": "Simon Cowell",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang menyanyi lord its hard to be humble",
+      "reference": "Mac Davis",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa penyanyi lagu take me to church",
+      "reference": "Hozier",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah filem need for speed the movie dikeluarkan",
+      "reference": "2014-03-14",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah model-model di dalam price is right",
+      "reference": "James O'Halloran",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang mengetuai utara di dalam peperangan saudara",
+      "reference": "Abraham Lincoln",
+      "answer": "Lincoln mengetuai utara di dalam peperangan saudara tersebut.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang bermain snow white dalam once upon a time",
+      "reference": "Ginnifer Goodwin",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah orang yang paling tua and masih hidup pada masa kini",
+      "reference": "Jeanne Calment",
+      "answer": "Puan Kane Tanaka adalah orang yang paling tua dan masih hidup pada masa kini berdasarkan rekod Guinness World Records. Dia berusia 116 tahun 66 hari pada 9 Mac 2019 Masihi.",
+      "lang": "ms"
+    },
+    {
+      "query": "berapakah jumlah kemenangan piala dunia cricket pasukan australia",
+      "reference": "5.0",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa nyanyi i will always love you dulu dolly parton atau whitney houston",
+      "reference": "Dolly Parton",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat tentang siapa yang menyanyi lagu \"I Will Always Love You\" pertama kali. Petikan tersebut membincangkan senarai artis Melayu yang mungkin terlibat dalam sesuatu konteks lain, tetapi tidak merujuk kepada lagu \"I Will Always Love You\" atau artis-artis Dolly Parton atau Whitney Houston.",
+      "lang": "ms"
+    },
+    {
+      "query": "apa nama presiden amerika syarikat yang pertama",
+      "reference": "George Washington",
+      "answer": "Presiden Amerika Syarikat yang pertama ialah George Washington.",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah nama kolej dalam animal house",
+      "reference": "kolej faber",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "pelakon dalam filem  gone in 60 seconds",
+      "reference": "Angelina Jolie",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "berapa musim ada di dalam cosby show",
+      "reference": "8.0 Musim",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan adalah tentang siri \"That's So Raven\" dan tidak menyebutkan tentang siri \"The Cosby Show\" jadi tidak ada maklumat tentang bilangan musim dalam siri \"The Cosby Show\".",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah piala dunia kriket pertama diadakan",
+      "reference": "1975",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah tuhan bawah dunia dalam mitologi Yunani",
+      "reference": "Hades",
+      "answer": "Dalam mitologi Yunani, tidak terdapat sebutkan langsung tentang tuhan bawah dunia. Walau bagaimanapun, ular sering dikaitkan dengan ikatan kepada bumi, tetapi tidak bermaksud ular melambangkan tuhan bawah dunia. Sebaliknya, ular dalam mitologi Yunani biasanya dikaitkan dengan dewi Bumi, Gaia.",
+      "lang": "ms"
+    },
+    {
+      "query": "bila keluarnya don't smile at me",
+      "reference": "2017-08-11",
+      "answer": "Tidak tahu\n\nJawapan tidak dapat ditemui dalam petikan yang diberikan. Petikan tidak mengandungi baris atau ayat yang merujuk kepada \"don't smile at me\".",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa berlakon charlene darling dalam the andy griffith show",
+      "reference": "Maggie Peterson",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa tang merupakan kapten  west indies dalam cricket",
+      "reference": "Jason Holder",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah tasik paling besar di new zealand",
+      "reference": "Tasik Taupo",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah  pengarang  a long way gone",
+      "reference": "Ishmael Beah",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah us meninggalkan perang vietnam",
+      "reference": "1973-03-29",
+      "answer": "Berdasarkan petikan yang diberikan, us meninggalkan perang Vietnam adalah pada 30 April 1975, apabila askar Marin terakhir meninggalkan Kedutaan Amerika di Saigon.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang bermain sebagai  harley quinn dalam the suicide squad",
+      "reference": "Margot Robbie",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat tentang siapa yang bermain sebagai Harley Quinn dalam The Suicide Squad.",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah populasi negeri maine",
+      "reference": "1338000.0",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyebutkan populasi negeri Maine. Petikan tersebut membincangkan tentang populasi negeri Michigan dan tidak mengandungi maklumat tentang negeri Maine.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang memainkan watak tj dalam head of the class",
+      "reference": "Billy Connolly",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang memainkan watak peter quill dalam filem guardian of the galaxy",
+      "reference": "Chris Pratt",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah samsung galaxy s6 edge dikeluarkan",
+      "reference": "2015-04-10",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "pelakon-pelakon 100 things to do before high school",
+      "reference": "Jack DeSena",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang menyanyi someone that i used to know",
+      "reference": "Gotye",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "dalam satu tong wiski ada berapa galon",
+      "reference": "53.0 Gelen",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang amerika syarikat berlawan semasa peperangan revolusi",
+      "reference": "Great Britain",
+      "answer": "Semasa Peperangan Revolusi Amerika, Amerika Syarikat berlawan dengan British.",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah bennie and the jets dikeluarkan",
+      "reference": "2000",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah kali terakhir amerika syarikat bebas hutang",
+      "reference": "1835-01-08",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang menyanyi lagu you're my everything",
+      "reference": "The Temptations",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menyanyikan lagu i love the nightlife",
+      "reference": "alicia bridges",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "pasukan yang belum memenangkan sekali world series",
+      "reference": "Seattle Mariners",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang dikenali sebagai maid of orleans",
+      "reference": "Jeanne d'Arc",
+      "answer": "Jeanne d'Arc dikenali sebagai maid of Orleans.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang pertama berlari sub four minute mile",
+      "reference": "Roger Bannister",
+      "answer": "Roger Bannister menjadi orang pertama berlari satu batu dalam masa kurang daripada 4 minit pada 27 Jun 1954 di Oxford.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa penyanyi lagu  i've got spurs that jingle jangle jingle",
+      "reference": "Gene Autry",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyebutkan siapa penyanyi lagu \"i've got spurs that jingle jangle jingle\". Petikan tersebut membincangkan tentang beberapa artis dan penyanyi, tetapi tidak merujuk kepada lagu yang dimaksudkan dalam soalan.",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah pertarungan pertama di dalam peperangan vietnam",
+      "reference": "Pertempuran Ia Drang",
+      "answer": "Pertarungan pertama dalam peperangan Vietnam yang disebutkan dalam petikan ialah Pertempuran di Ap Bac yang berlaku pada 2 Januari 1963.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapaka yang bermain dalam super bowl tahun ini",
+      "reference": "Los Angeles Rams",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah surgeon general terkini amerika syarikat",
+      "reference": "Jerome Adams",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang memainkan rachel di dalam original blade runner",
+      "reference": "Sean Young",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "di manakah jambatan terpanjang di amerika syarikat",
+      "reference": "Louisiana",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang memikirkan idea hari bapa",
+      "reference": "Sonora Smart Dodd",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "Nama keluarga 'guzman' berasal dari mana?",
+      "reference": "Sepanyol",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menyanyi lagu please don't go",
+      "reference": "KC and the Sunshine Band",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang mencatat rekod paling banyak rushing yards dalam satu permainan",
+      "reference": "Adrian Peterson",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah orang terkaya yang pernah hidup",
+      "reference": "mansa musa",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah youtuber dengan langganan paling tinggi di dunia",
+      "reference": "T-Series",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat tentang YouTuber dengan langganan paling tinggi di dunia. Petikan tersebut merujuk kepada Cristiano Ronaldo dan akun TikTok beliau, serta mengandungi maklumat tentang teknologi internet.",
+      "lang": "ms"
+    },
+    {
+      "query": "times square terletak di mana dalam new york city",
+      "reference": "Amerika Syarikat",
+      "answer": "Tidak tahu.\n\nDalam petikan yang diberikan, tidak disebutkan letak spesifik Times Square dalam New York City. Petikan tersebut membincangkan tentang pelancongan dan sektor perkhidmatan kewangan di New York City, tetapi tidak memberikan maklumat tentang lokasi Times Square.",
+      "lang": "ms"
+    },
+    {
+      "query": "adakah full house mengatasi straight dalam poker",
+      "reference": "yes",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah stesen radio yang pittsburgh menyalin",
+      "reference": "KDKA-FM",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah jurulatih toronto raptors",
+      "reference": "Nick Nurse",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat tentang jurulatih Toronto Raptors. Maklumat yang diberikan adalah senarai nama-nama pelatih asisten dan pelatih lain tanpa maklumat tentang jurulatih utama tim bola basket Toronto Raptors.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang menulis lagu  you were always on my mind",
+      "reference": "Johnny Christopher",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah pelakon yang bermain john wick",
+      "reference": "Keanu Reeves",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah penyanyi lagu take a look at me now",
+      "reference": "Phil Collins",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa penyanyi lagu  back in the high life again",
+      "reference": "Steve Winwood",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang menyanyikan going to the chapel and we're gonna get married",
+      "reference": "The Dixie Cups",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bendera amerika dibuat daripada apa",
+      "reference": "Nilon",
+      "answer": "Tidak tahu\n\nDalam petikan yang diberikan, tidak disebutkan bahawa bendera Amerika dibuat daripada bahan apa-apa. Petikan tersebut membincangkan sejarah lagu kebangsaan Amerika, The Star-Spangled Banner, tetapi tidak memberikan maklumat tentang bendera Amerika.",
+      "lang": "ms"
+    },
+    {
+      "query": "dari manakah asalnya statue of liberty",
+      "reference": "Pulau Liberty",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang bernyanyi come together right now over me",
+      "reference": "The Beatles",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang merupakan pelakon utama dalam rancangan arrow",
+      "reference": "Katie Cassidy",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa mempunyai rekod yang berbaik dalam liga perdana",
+      "reference": "New York Yankees",
+      "answer": "Berdasarkan petikan yang diberikan, Manchester United mempunyai rekod yang paling baik dalam Liga Perdana Inggeris dengan 13 kemenangan gelaran. Walau bagaimanapun, petikan juga menyatakan bahawa Liverpool merupakan juara semasa untuk kempen Liga Perdana Inggeris Musim 2019-20. Oleh itu, jawapan yang paling tepat ialah:\n\nManchester United mempunyai rekod yang berbaik dalam Liga Perdana Inggeris dengan 13",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menyanyikan now that we found love what are we gonna do with it",
+      "reference": "Heavy D",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang melakonkan belle dalam beauty and the beast",
+      "reference": "Emma Watson",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bila while my guitar gently weeps ditulis",
+      "reference": "1968",
+      "answer": "While My Guitar Gently Weeps ditulis oleh George Harrison.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang menyanyi lagu fox on the run",
+      "reference": "The Sweet",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah 10 kuasa 10",
+      "reference": "10000000000.0",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak membawa maklumat tentang 10 kuasa 10. Mereka bermula mengenai tahun-tahun tertentu dalam sejarah dan tidak membincangkan matematik atau operasi kuasa.",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah kekuatan gempa bumi northridge",
+      "reference": "6.7",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang menyanyi bartender I really did it this time",
+      "reference": "Rehab",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah populasi terkini phoenix arizona",
+      "reference": "1626000.0",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak memberikan maklumat tentang populasi terkini Phoenix, Arizona. Petikan pertama memberikan maklumat tentang lokasi dan beberapa fakta tentang Arizona, manakala petikan ketiga memberikan demografi umum tentang suatu desa, tetapi tidak merujuk kepada Phoenix.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa memenangi hadiah grammy paling banyak dalam sejarah",
+      "reference": "Georg Solti",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "berapa jumlah penduduk di albuquerque new mexico",
+      "reference": "558545.0",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menyanyikan lagu i can see clearly now",
+      "reference": "Ray Charles",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah presiden pertama di afrika selatan",
+      "reference": "Nelson Mandela",
+      "answer": "Tidak tahu\n\nDalam petikan yang diberikan, tidak disebutkan siapa presiden pertama di Afrika Selatan. Petikan fokus pada peranan Perdana Menteri sebelum Afrika Selatan menjadi republik dan juga menggambarkan perubahan struktur pemerintahan selepas pilihan raya demokratik pertama di tahun 1994.",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah mereka membina Patung Liberty",
+      "reference": "1875-09",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menuliskan lagu here comes the sun",
+      "reference": "George Harrison",
+      "answer": "Tidak tahu\n\nPenjelasan: Maklumat dalam petikan tidak menyebut siapa yang menulaskan lagu \"Here Comes the Sun\". Petikan yang diberikan merujuk kepada John Lennon sebagai penulis lagu, tetapi tidak menyebutkan spesifik lagu \"Here Comes the Sun\".",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah filem pertama yang berwarna",
+      "reference": "With Our King and Queen Through India",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "my hero academia musim kedua terdapat beberapa episod",
+      "reference": "25.0 ايڤيسود",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat tentang My Hero Academia musim kedua atau jumlah episodnya.",
+      "lang": "ms"
+    },
+    {
+      "query": "bila akan jadual liga perdana keluar",
+      "reference": "2019-06-13",
+      "answer": "Tidak tahu\n\nJawapan tidak dapat ditemui dalam petikan yang diberikan. Petikan membincangkan tentang Liga Perdana Inggeris (EPL) tetapi tidak menyebutkan mengenai jadual liga perdana keluar.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang memainkan lagu sugar pie honey bunch",
+      "reference": "Four Tops",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "dimanakah tempat pertandingan dewan kemasyhuran",
+      "reference": "Amerika Syarikat",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah hadiah dalam kemenangan so you think you can dance",
+      "reference": "250000.0 Dolar Amerika Syarikat",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang menyanyi lagu fly me to the moon",
+      "reference": "Frank Sinatra",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bila  kuasa mistik power rangers muncul",
+      "reference": "2006-02-20",
+      "answer": "Tidak tahu\n\nPenjelasan: Maklumat tentang munculnya kuasa mistik Power Rangers tidak diberikan dalam petikan yang diberikan. Petikan fokus pada perjalanan masa dan peristiwa di masa depan, tetapi tidak menyentuh aspek-aspek khas Power Rangers seperti kuasa mistik atau peran mereka.",
+      "lang": "ms"
+    },
+    {
+      "query": "berapakah banyak permainan nba bagi setiap pasukan",
+      "reference": "82.0",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah pelakon perempuan yang bersembah dalam rancangan fifty shades of grey",
+      "reference": "Dakota Johnson",
+      "answer": "Maggie Grace, seniwati TV realiti British, adalah pelakon dalam rancangan Fifty Shades of Grey berdasarkan petikan yang diberikan. Walau bagaimanapun, petikan tidak menyebutkan persembahan sembah dalam rancangan tersebut. Jadi, berdasarkan petikan yang diberikan, saya tidak dapat memastikan apakah dia bersembah dalam rancangan tersebut. Tidak tahu.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa berlakon kucing dalam cat in the hat",
+      "reference": "Mike Myers",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang memainkan suara vinnie dalam family guy",
+      "reference": "Tony Sirico",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa nyanyi what doesn't kill you makes you stronger",
+      "reference": "Kelly Brianne Clarkson",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyebutkan lagu \"What Doesn't Kill You Makes You Stronger\" atau penyanyi lagu tersebut.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang memenangi siri dunia lima tahun lepas",
+      "reference": "Boston Red Sox",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bila call of duty world at war keluar",
+      "reference": "2008-11-11",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa mencatatkan rekod paling banyak one country hits",
+      "reference": "George Strait",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menyanyikan lagu what condition my condition was in",
+      "reference": "Bettye LaVette",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah pelakon ibu dalam filem that 70s show",
+      "reference": "Debra Jo Rupp",
+      "answer": "Sheila Mambo",
+      "lang": "ms"
+    },
+    {
+      "query": "berapakah jumlah penduduk sumter south carolina",
+      "reference": "39982.0",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bila akan perarakan kebanggaan diadakan di chicago illinois",
+      "reference": "2019-06-30",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa berlakon sebagai gaston dalam filem beauty and the beast",
+      "reference": "Luke Evans",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "berapa holy days of obligation dalam gereja katolik",
+      "reference": "6.0",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menyanyi lagu wild thing you make my heart sing",
+      "reference": "The Troggs",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "adakah taufan yang bernama kathy",
+      "reference": "yes",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang menyanyi lagu have you ever seen the rain",
+      "reference": "Creedence Clearwater Revival",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah declaration of human rights ditulis",
+      "reference": "1948",
+      "answer": "Tidak tahu\n\nPenjelasan: Maklumat mengenai bilakah Declaration of Human Rights ditulis tidak ditemui dalam petikan yang diberikan. Petikan tersebut membincangkan perjanjian-perjanjian antarabangsa tentang hak asasi manusia yang dikuatkuaskan pada tahun 1976, tetapi tidak menyebutkan tentang Declaration of Human Rights yang dimaksudkan.",
+      "lang": "ms"
+    },
+    {
+      "query": "di mana siri tv stranger things dirakamkan",
+      "reference": "Atlanta",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "Apakah nama pasukan-pasukan yang ada dalam persidangan 'Atlantic sun'?",
+      "reference": "Lipscomb Bisons",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa menulis lagu you broke up with me",
+      "reference": "Walker Hayes",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah suhu paling panas dicatatkan di new york",
+      "reference": "108.0 Fahrenheit",
+      "answer": "Suhu paling panas yang dicatatkan di New York pada musim panas biasanya boleh mencapai setinggi dalam beberapa hari.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang mempunyai majoriti di kongres sekarang",
+      "reference": "Parti Republikan",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat tentang majoriti yang ada di Kongres sekarang.",
+      "lang": "ms"
+    },
+    {
+      "query": "di manakah pertempuran gettysburg berlaku",
+      "reference": "Pennsylvania",
+      "answer": "Pertempuran Gettysburg berlaku dekat Gettysburg.",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah chicago cubs menjuarai siri dunia",
+      "reference": "2016",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang naik ke liga perdana tahun lepas",
+      "reference": "Fulham F.C.",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat tentang pasukan yang naik ke liga perdana tahun lepas. Petikan tersebut merujuk kepada sejarah liga kedua di Malaysia dan tidak membincangkan tentang naik ke liga perdana.",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah perkataan dalam  bahasa inggeris mempunyai suku kata yang paling banyak",
+      "reference": "Pneumonoultramicroscopicsilicovolcanoconiosis",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat spesifik mengenai suku kata dalam bahasa Inggeris yang mempunyai paling banyak. Petikan tersebut membincangkan tentang dialek bahasa Inggeris dan nada dalam bahasa Thai, tetapi tidak memberikan maklumat tentang suku kata dalam bahasa Inggeris.",
+      "lang": "ms"
+    },
+    {
+      "query": "dimanakah ibu kota new mexico",
+      "reference": "Santa Fe",
+      "answer": "Ibu pejabat Hutan Negara Cibola terletak di Albuquerque, manakala ibu pejabat Hutan Negara Santa Fe terletak di Santa Fe. Dari petikan yang diberikan, ibu kota New Mexico adalah Santa Fe.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang  memegang rekod dunia untuk bernafas yang terpanjang",
+      "reference": "Tom Sietas",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah watak jahat dalam cerita guardians of the galaxy",
+      "reference": "Ronan the Accuser",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "adakah republik ireland sebahagian daripada united kingdom",
+      "reference": "no",
+      "answer": "Tidak, Republik Ireland tidak sebahagian daripada United Kingdom. Sebaliknya, Ireland Utara yang merupakan sebahagian daripada United Kingdom, manakala Republik Ireland adalah sebuah negara yang terpisah.",
+      "lang": "ms"
+    },
+    {
+      "query": "Bialakah episod pertama Only Fools and Horses dibuat.\\",
+      "reference": "1981-09-08",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah kali terakhir nadal memenangi wimbledon",
+      "reference": "2010",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "Siapa yang memainkan watak Avery dalam Dog with a Blog",
+      "reference": "Genevieve Hannelius",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa penulis puisi twinkle twinkle little star",
+      "reference": "Jane Taylor",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menyanyi never met a girl like you before",
+      "reference": "Edwyn Collins",
+      "answer": "Tidak tahu\n\nPenjelasan: Jawapan untuk soalan ini tiada dalam petikan yang diberikan. Petikan tersebut mengandungi senarai rekod dan lagu oleh Modern Talking, tetapi tiada maklumat mengenai lagu \"Never Met a Girl Like You Before\".",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah  five nights at freddy's dibuat",
+      "reference": "2014-08-08",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bila filem movie black panther ditayangkan",
+      "reference": "2018-02-16",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang memainkan watak johnny cash dalam i walk the line",
+      "reference": "Joaquin Phoenix",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menyanyi lagu all i need is the air that i breathe",
+      "reference": "The Hollies",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa penyanyi lagu didn't i blow your mind this time",
+      "reference": "nilai",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyebutkan penyanyi untuk lagu \"Didn't I Blow Your Mind This Time\".",
+      "lang": "ms"
+    },
+    {
+      "query": "bila  charlie and the chocolate factory  ditayangkan",
+      "reference": "2005-07-10",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah umur sah minum arak di turkey",
+      "reference": "18.0 tahun",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat mengenai umur sah minum arak di Turki.",
+      "lang": "ms"
+    },
+    {
+      "query": "adakah tom cruise bernyanyi di rock of ages",
+      "reference": "yes",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "di manakah  golf hall of fame terletak",
+      "reference": "Amerika Syarikat",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah beauty and the beast berada di broadway",
+      "reference": "1994-04-18",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "di manakah tempat captain america winter soldier berlaku",
+      "reference": "Washington",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang merupakan orang hidup tertua yang pernah direkodkan",
+      "reference": "Jeanne Calment",
+      "answer": "Jeanne Calment merupakan bakal manusia yang hidup paling lama dalam sejarah bercatat, dia hidup sehingga tahun 1997 ketika berumur 122 tahun. Walau bagaimanapun, petikan yang diberikan juga menyebutkan bahawa Puan Kane Tanaka disahkan sebagai manusia tertua dunia berjantina wanita berusia 116 tahun 66 hari pada 9 Mac 2019 menurut laporan Guinness World Records. Oleh ker",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah nama-nama filem matrix",
+      "reference": "The Matrix Reloaded",
+      "answer": "Tidak tahu\n\nDalam petikan yang diberikan, tidak ada sebarang maklumat tentang filem-filem Matrix. Petikan membincangkan tentang siri televisyen Star Trek: The Next Generation, holodeck, dan beberapa filem lain seperti TRON dan The Matrix, tetapi tidak memberikan senarai lengkap untuk filem-filem Matrix.",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah nama anjing dalam toy story",
+      "reference": "Slinky Dog",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "Bilakah kali terakhir letusan gunung berapi berlaku di Amerika Syarikat",
+      "reference": "2018",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa menulis i got you under my skin",
+      "reference": "Cole Porter",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah permainan besbol liga utama paling lama dalam sejarah",
+      "reference": "Permainan besbol profesional terpanjang",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah baseman pertama untuk yankees",
+      "reference": "Edwin Encarnación",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah orang pertama yang berjalan di bulan",
+      "reference": "Neil Armstrong",
+      "answer": "Tidak tahu\n\nDalam petikan yang diberikan, tidak disebutkan siapa orang pertama yang berjalan di bulan. Petikan tersebut membincangkan tentang pelancaran prob ke bulan oleh Soviet dan Amerika Syarikat, termasuk program Apollo 8 yang melakukan pengorbitan bermanusia pertama di bulan, tetapi tidak menyebutkan siapa yang menjadi orang pertama berjalan di bulan.",
+      "lang": "ms"
+    },
+    {
+      "query": "berapa banyak pasukan bola sepak nfl di california",
+      "reference": "4.0",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "bilakah masa manusia mendaki ke bulan",
+      "reference": "Julai 20, 1969",
+      "answer": "Walaupun petikan tidak memberikan maklumat spesifik mengenai tarikh pasti apabila manusia mendaki ke bulan, petikan menyebut bahawa Apollo 8 melakukan pengorbitan bermanusia pertama di bulan pada 27 Disember 1968, yang melatakkan batu asas untuk menghantar manusia ke bulan. Pendaratan manusia di bulan sendiri telah berlaku selepas itu, tetapi petikan tidak memberikan maklumat spesifik mengenai",
+      "lang": "ms"
+    },
+    {
+      "query": "berapakah ivy league schools ada di amerika syarikat",
+      "reference": "8.0",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyebutkan jumlah atau nama sekolah Ivy League di Amerika Syarikat. Petikan fokus pada pelbagai institusi pengajian tinggi di Bandar Raya New York, termasuk beberapa yang dianggap sebagai Ivy League, tetapi tidak memberikan maklumat khusus tentang jumlah Ivy League schools di Amerika Syarikat secara keseluruhan.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang menyanyi lagu walk like a man",
+      "reference": "Frankie Valli",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menuliskan lagu kumpulan eagle take it to the limit",
+      "reference": "Randy Meisner",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "di mana filem tv the kitchen difilem",
+      "reference": "Amerika Syarikat",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah pemain nba yang paling tua dan masih bertanding",
+      "reference": "Vince Carter",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa pelakon pakcik josh dalam girl meets world",
+      "reference": "Uriah Shelton",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah diameter bumi di garisan khatulistiwa",
+      "reference": "7917.5 batu",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat tentang diameter Bumi di garisan khatulistiwa. Petikan tersebut membincangkan tentang garisan khatulistiwa, iklim di khatulistiwa, dan panjang garisan khatulistiwa, tetapi tidak memberikan ukuran diameter Bumi di garisan tersebut.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang bermain chelsea dalam two and a half men",
+      "reference": "Jennifer Taylor",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "apakah kadar kematian askar amerika syarikat dalam peperangan vietnam",
+      "reference": "58220.0",
+      "answer": "Kadar kematian askar Amerika Syarikat dalam peperangan Vietnam boleh dihitung berdasarkan maklumat yang diberikan dalam petikan. Menurut petikan, jumlah kematian tentera Amerika Syarikat disahkan pada 58,226 orang, termasuk mereka yang disenaraikan sebagai hilang semasa bertempur.\n\nJika kita mengira kadar kematian, kita perlu mengetahui jumlah askar Amerika Syarikat yang terlibat. Walau bagaim",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa yang kata neither a borrower or a lender be",
+      "reference": "Polonius",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa orang pertama menyanyi lagu i did it my way",
+      "reference": "Frank Sinatra",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah penyanyi lagu  jim dandy to the rescue",
+      "reference": "Black Oak Arkansas",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "di manakah kedai terbesar di dunia",
+      "reference": "Korea Selatan",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyebutkan kedai terbesar di dunia. Petikan pertama mengenai pusat dagangan dunia di pelbagai kota, manakala petikan kedua mengenai McDonald's, rangkaian restoran makanan segera yang terbesar di dunia, tetapi tidak menyebutkan kedai terbesar di dunia.",
+      "lang": "ms"
+    },
+    {
+      "query": "siapa pemain mlb besbol yang berupah paling tinggi",
+      "reference": "Mike Trout",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    },
+    {
+      "query": "siapakah yang menyanyikan lagu those were the days my friends",
+      "reference": "Mary Hopkin",
+      "answer": "Tidak tahu",
+      "lang": "ms"
+    }
+  ],
+  "timestamp": "2026-09-29T01:54:34",
+  "judge_meta": {
+    "backend": "ollama",
+    "judge_model": "qwen2.5:7b",
+    "n_judged": 50,
+    "n_errors": 0
+  },
+  "judge_annotations": [
+    {
+      "query": "menara berkembar petronas mengambil masa berapa lama untuk siap dibina",
+      "reference": "11.0 tahun",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat mengenai masa yang diambil untuk menara Berkembar PETRONAS disiapkan dibina.",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与提供的上下文一致，但未提供所需信息。"
+    },
+    {
+      "query": "siapakah yang menyanyi lagu love you like there's no tomorrow",
+      "reference": "Chris Young ",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is incorrect and irrelevant."
+    },
+    {
+      "query": "berapa musim yang scream queens ada",
+      "reference": "2.0",
+      "answer": "Scream Queens ada 4 musim. Ini boleh dilihat daripada petikan yang menyatakan \"Musim terbaru siri ini akan keudara pada musim luruh 2006\" dan senarai episod musim ke-4 yang terdapat.",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与提供的上下文不符，应为2季。"
+    },
+    {
+      "query": "bilakak kali terakhir the lakers masuk ke playoffs",
+      "reference": "2013",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题无关且未基于任何信息"
+    },
+    {
+      "query": "berapa banyak episod dalam satu musim stranger things",
+      "reference": "3.0",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题无关且未基于任何信息"
+    },
+    {
+      "query": "siapa yang menyanyi i hear you knocking but you can't come in",
+      "reference": "Dave Edmunds",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is incorrect but relevant to the question."
+    },
+    {
+      "query": "siapa datang dalam rancangan the voice",
+      "reference": "John de Mol",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyebutkan tentang rancangan The Voice atau pelawakannya. Petikan pertama membincangkan kumpulan Voice, manakala petikan kedua membincangkan Velvet Lawrence yang terlibat dalam Akademi Fantasia, tetapi tidak menyentuh topik The Voice.",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与提供的上下文无关，未提及The Voice的相关信息。"
+    },
+    {
+      "query": "bilakah wild west dimulakan dan berakhir",
+      "reference": "1865",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat spesifik mengenai bilakah Wild West dimulakan dan berakhir.",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全不符合问题，未提供任何相关信息。"
+    },
+    {
+      "query": "pasukan rams berlawan dengan pasukan yang mana di super bowl",
+      "reference": "1999",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题无关，未能正确回答谁是rams在1999年超级碗的对手。"
+    },
+    {
+      "query": "siapa penyanyi lagu oh what a night",
+      "reference": "The Four Seasons",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is incorrect but relevant to the question."
+    },
+    {
+      "query": "siapa penyanyi i want to be with you everywhere",
+      "reference": "Fleetwood Mac",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is incorrect but relevant to the question."
+    },
+    {
+      "query": "siapakah pelakon watak mary magdalene dalam jesus christ superstar",
+      "reference": "Yvonne Elliman",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与事实不符，未提供正确信息"
+    },
+    {
+      "query": "siapa penulis buku ratapan dalam alkitab",
+      "reference": "Yeremia",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与参考答案不符，但不是基于错误的检索结果。"
+    },
+    {
+      "query": "siapa mempunyai pengikut instagram terbanyak",
+      "reference": "Cristiano Ronaldo",
+      "answer": "Ronaldo mempunyai pengikut Instagram terbanyak sehingga Mei 2020, dengan lebih dari 231 juta pengikut.",
+      "lang": "ms",
+      "faithfulness": 5,
+      "adequacy": 5,
+      "comment": "Answer is both faithful and adequate."
+    },
+    {
+      "query": "episod the office yang manakah menceritakan  panggang",
+      "reference": "melegakan tekanan",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题完全无关。"
+    },
+    {
+      "query": "siapa menghasilkan pistachios paling banyak di dunia",
+      "reference": "Iran",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，不符合问题要求。"
+    },
+    {
+      "query": "apakah nama stadium arizona cardinals",
+      "reference": "University of Phoenix Stadium",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，未从提供的参考答案中获取信息"
+    },
+    {
+      "query": "siapakah yang menyanyi lagu i've never been to me",
+      "reference": "Charlene",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is not grounded in any context and is incorrect."
+    },
+    {
+      "query": "berapakah negeri diliputi gunung-gunung rocky",
+      "reference": "6.0",
+      "answer": "Dari petikan yang diberikan, kita dapat melihat bahawa gunung-gunung Rocky meliputi Colorado. Oleh itu, jawapan untuk soalan \"Berapakah negeri diliputi gunung-gunung Rocky?\" ialah:\n\n1 negeri",
+      "lang": "ms",
+      "faithfulness": 3,
+      "adequacy": 2,
+      "comment": "Answer is partially correct but not fully grounded in the reference."
+    },
+    {
+      "query": "siapakah yang menyanyikan let's go all the way",
+      "reference": "Sly Fox",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is neither faithful nor adequate as it does not provide the correct information."
+    },
+    {
+      "query": "siapakah juara america's got talent pada 2015",
+      "reference": "Paul Zerdin",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is correct but irrelevant as the system does not know the answer."
+    },
+    {
+      "query": "apakah had umur untuk pengakap perempuan",
+      "reference": "5.0 18.0 tahun",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全偏离了问题和参考答案"
+    },
+    {
+      "query": "bila kali terakhir the steelers bertanding dengan the panthers",
+      "reference": "2019-08-29",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，未基于任何上下文信息"
+    },
+    {
+      "query": "bilakah kali terakhir rupublikan memenangi undi popular",
+      "reference": "2004",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与参考答案一致，但未能提供所需信息。"
+    },
+    {
+      "query": "bilakah kali terakhir pasukan the cubs memenangi siri dunia",
+      "reference": "2016",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat tentang pasukan The Cubs atau kapan mereka memenangi siri dunia. Petikan pertama membincangkan Honda Cub, manakala petikan kedua membincangkan sejarah besbol dan Klasik Besbol Dunia, tetapi tidak merujuk kepada pasukan The Cubs.",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与提供的背景信息无关，且未能正确回答问题。"
+    },
+    {
+      "query": "pada bila wang syiling 1 pound baru keluar",
+      "reference": "2017-03-28",
+      "answer": "Tidak tahu\n\nPenjelasan: Maklumat mengenai syiling 1 pound baru tidak diberikan dalam petikan yang diberikan. Petikan fokus pada syiling ringgit dan sen, tanpa menyebutkan maklumat tentang syiling 1 pound.",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题无关，未提供任何相关信息。"
+    },
+    {
+      "query": "bilakah michael jordan disusun ke dalam nba",
+      "reference": "1984",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与事实不符且未提供任何相关信息"
+    },
+    {
+      "query": "bilakah kali terakhir perlembagaan dipinda",
+      "reference": "1992",
+      "answer": "Berdasarkan petikan yang diberikan, tidak disebutkan bilakah kali terakhir Perlembagaan Malaysia dipinda. Oleh itu, saya jawab dengan kata \"Tidak tahu\".",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案正确反映了给定背景信息的情况"
+    },
+    {
+      "query": "siapakah watak-watak dalam singing in the rain",
+      "reference": "Donald O'Connor",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyebutkan watak-watak dalam filem \"Singing in the Rain\". Petikan tersebut merujuk kepada filem-filem lain seperti \"Sang Rang Bulan\" dan \"Dae Jang Geum\".",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全偏离了问题，未提及任何角色名称。"
+    },
+    {
+      "query": "berapa panjang untuk kereta biasa kereta api pengangkutan",
+      "reference": "55.0 67.0 Kaki",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误且无关"
+    },
+    {
+      "query": "siapakah penyanyi lagu i'll make a man out of you",
+      "reference": "Donny Osmond",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is incorrect and irrelevant."
+    },
+    {
+      "query": "bila pertama kali tom brady memenangi superbowl ring",
+      "reference": "2002",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与参考答案不符，且未提供任何信息。"
+    },
+    {
+      "query": "di mana piala dunia akan diadakan",
+      "reference": "Qatar",
+      "answer": "Petikan yang diberikan tidak memberikan maklumat spesifik mengenai negara tuan rumah untuk Piala Dunia FIFA yang akan datang. Oleh itu, saya jawab dengan kata \"Tidak tahu\".",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与提供的参考答案不符，但符合系统回答的逻辑。"
+    },
+    {
+      "query": "apakah nama bagi karakter tweenies",
+      "reference": "Judy",
+      "answer": "Tidak tahu\n\nJawapan tidak dapat ditemui dalam petikan yang diberikan. Petikan hanya membincangkan tentang watak-watak dalam siri kartun bayi Tommy Pickles dan Totally Spies, tetapi tidak menyebutkan watak-watak untuk usia tweenies.",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与提供的上下文不符，且未能正确回答问题。"
+    },
+    {
+      "query": "siapa yang memainkan black panther di filem black panther",
+      "reference": "Chadwick Boseman",
+      "answer": "Tidak tahu\n\nPetikan yang diberikan tidak menyediakan maklumat tentang siapa yang memainkan Black Panther dalam filem Black Panther. Maklumat tersebut tidak termasuk dalam petikan yang diberikan.",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is correct but does not align with the provided context."
+    },
+    {
+      "query": "apakah nombor saluran cw di directv",
+      "reference": "385.0",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "Answer is correct but irrelevant to the question."
+    },
+    {
+      "query": "bilakah the amazing world of gumball berakhir",
+      "reference": "2019-06-24",
+      "answer": "Tidak tahu\n\nPenjelasan: Maklumat dalam petikan tidak menyebutkan apabila siri \"The Amazing World of Gumball\" berakhir. Petikan tersebut merujuk kepada siri lain yang popular di Disney Channel.",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与提供的上下文无关且不知答案"
+    },
+    {
+      "query": "siapa penyanyi what is love baby don't hurt me",
+      "reference": "Haddaway",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is incorrect and irrelevant."
+    },
+    {
+      "query": "apakah bahan aktif yang ada dalam semua pembersih tangan yang diluluskan oleh FDA",
+      "reference": "Etanol",
+      "answer": "Tidak tahu\n\nPenjelasan: Petikan yang diberikan tidak menyediakan maklumat tentang bahan aktif dalam semua pembersih tangan yang diluluskan oleh FDA. Petikan tersebut hanya membincangkan tentang detergen umum dan beberapa produk farmasi, tetapi tidak memberikan maklumat spesifik tentang bahan aktif dalam pembersih tangan yang diluluskan oleh FDA.",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全基于提供的上下文，并且正确地回答了问题。"
+    },
+    {
+      "query": "bilakah lagu genie in a bottle dibebaskan",
+      "reference": "1999",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题无关且未基于任何上下文。"
+    },
+    {
+      "query": "siapa berlakon dalam filem bridge over the river kwai",
+      "reference": "William Holden",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，不符合问题要求。"
+    },
+    {
+      "query": "apa nama kesatria meja bulat",
+      "reference": "Lancelot",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "Answer is incorrect and irrelevant."
+    },
+    {
+      "query": "siapa adalah pengacara america has talent",
+      "reference": "Simon Cowell",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is incorrect and irrelevant."
+    },
+    {
+      "query": "siapa yang menyanyi lord its hard to be humble",
+      "reference": "Mac Davis",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "Answer is incorrect and irrelevant."
+    },
+    {
+      "query": "siapa penyanyi lagu take me to church",
+      "reference": "Hozier",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is incorrect and irrelevant."
+    },
+    {
+      "query": "bilakah filem need for speed the movie dikeluarkan",
+      "reference": "2014-03-14",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题完全无关"
+    },
+    {
+      "query": "siapakah model-model di dalam price is right",
+      "reference": "James O'Halloran",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题无关"
+    },
+    {
+      "query": "siapakah yang mengetuai utara di dalam peperangan saudara",
+      "reference": "Abraham Lincoln",
+      "answer": "Lincoln mengetuai utara di dalam peperangan saudara tersebut.",
+      "lang": "ms",
+      "faithfulness": 5,
+      "adequacy": 5,
+      "comment": "Answer is both faithful and adequate."
+    },
+    {
+      "query": "siapa yang bermain snow white dalam once upon a time",
+      "reference": "Ginnifer Goodwin",
+      "answer": "Tidak tahu",
+      "lang": "ms",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与事实不符且未提供任何信息"
+    },
+    {
+      "query": "siapakah orang yang paling tua and masih hidup pada masa kini",
+      "reference": "Jeanne Calment",
+      "answer": "Puan Kane Tanaka adalah orang yang paling tua dan masih hidup pada masa kini berdasarkan rekod Guinness World Records. Dia berusia 116 tahun 66 hari pada 9 Mac 2019 Masihi.",
+      "lang": "ms",
+      "faithfulness": 5,
+      "adequacy": 5,
+      "comment": "答案准确且全面地回答了问题"
+    }
+  ]
+}

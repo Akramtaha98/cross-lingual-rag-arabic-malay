@@ -1,0 +1,63 @@
+{
+  "condition": "closed_book",
+  "lang": "ms",
+  "n_total": 1000,
+  "n_scored": 882,
+  "BLEU-4": 0.0045503754284726495,
+  "ROUGE-L": 0.0,
+  "BERTScore_P": 0.6550348401069641,
+  "BERTScore_R": 0.648324728012085,
+  "BERTScore_F": 0.6509984731674194,
+  "sample_predictions": [
+    [
+      "menara berkembar petronas mengambil masa berapa lama untuk siap dibina",
+      "البحرين",
+      "11.0 tahun"
+    ],
+    [
+      "dari mana asal usul frasa great scott",
+      "البحرين",
+      ""
+    ],
+    [
+      "siapakah yang menyanyi lagu love you like there's no tomorrow",
+      "2019-02-1",
+      "Chris Young "
+    ],
+    [
+      "berapa musim yang scream queens ada",
+      "البحرين",
+      "2.0"
+    ],
+    [
+      "bilakak kali terakhir the lakers masuk ke playoffs",
+      "1964",
+      "2013"
+    ],
+    [
+      "berapa banyak episod dalam satu musim stranger things",
+      "2019-02-1",
+      "3.0"
+    ],
+    [
+      "siapa yang menyanyi i hear you knocking but you can't come in",
+      "2019-02-1",
+      "Dave Edmunds"
+    ],
+    [
+      "siapa datang dalam rancangan the voice",
+      "2019-02-1",
+      "John de Mol"
+    ],
+    [
+      "bilakah wild west dimulakan dan berakhir",
+      "البحرين",
+      "1865"
+    ],
+    [
+      "di manakah asal logo starbucks",
+      "البحرين",
+      ""
+    ]
+  ]
+}

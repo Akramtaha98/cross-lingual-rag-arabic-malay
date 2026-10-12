@@ -1,0 +1,62 @@
+{
+  "condition": "closed_book",
+  "lang": "ms",
+  "n": 483,
+  "BLEU-4": 0.0017310317096967632,
+  "ROUGE-L": 0.0,
+  "BERTScore_P": 0.6719242930412292,
+  "BERTScore_R": 0.6694191694259644,
+  "BERTScore_F": 0.6701269745826721,
+  "sample_predictions": [
+    [
+      "menara berkembar petronas mengambil masa berapa lama untuk siap dibina",
+      "1970",
+      "11.0 tahun"
+    ],
+    [
+      "berapa musim yang scream queens ada",
+      "1971",
+      "2.0"
+    ],
+    [
+      "bilakak kali terakhir the lakers masuk ke playoffs",
+      "11.0",
+      "2013"
+    ],
+    [
+      "berapa banyak episod dalam satu musim stranger things",
+      "2016-10-28",
+      "3.0"
+    ],
+    [
+      "bilakah wild west dimulakan dan berakhir",
+      "1973",
+      "1865"
+    ],
+    [
+      "pasukan rams berlawan dengan pasukan yang mana di super bowl",
+      "البحرين",
+      "1999"
+    ],
+    [
+      "siapa penyanyi i want to be with you everywhere",
+      "وتحيس",
+      "Fleetwood Mac"
+    ],
+    [
+      "siapa mempunyai pengikut instagram terbanyak",
+      "2017-11-1",
+      "Cristiano Ronaldo"
+    ],
+    [
+      "episod the office yang manakah menceritakan  panggang",
+      "1962",
+      "melegakan tekanan"
+    ],
+    [
+      "siapa menghasilkan pistachios paling banyak di dunia",
+      "مايكالي",
+      "Iran"
+    ]
+  ]
+}

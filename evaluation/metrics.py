@@ -54,6 +54,24 @@ def precision_at_k(
     return hits / k
 
 
+def hit_at_k(
+    retrieved_ids: List[str],
+    relevant_ids: List[str],
+    k: int,
+) -> float:
+    """Hit@K: 1.0 if at least one relevant doc appears in top K, else 0.0.
+
+    Distinct from Recall@K, which is the FRACTION of all relevant docs
+    found in top K (can be < Hit@K when a query has more than one
+    relevant passage, which happens often here because relevance is
+    labeled by substring match over the full 50K-passage corpus and a
+    common gold-answer string can match many passages)."""
+    if not relevant_ids:
+        return 0.0
+    top_k = set(retrieved_ids[:k])
+    return 1.0 if any(rid in top_k for rid in relevant_ids) else 0.0
+
+
 def reciprocal_rank(
     retrieved_ids: List[str],
     relevant_ids: List[str],
@@ -102,8 +120,33 @@ def compute_retrieval_metrics(
             scores[f"Recall@{k}"].append(recall_at_k(retrieved, relevant, k))
             scores[f"Precision@{k}"].append(precision_at_k(retrieved, relevant, k))
             scores[f"NDCG@{k}"].append(ndcg_at_k(retrieved, relevant, k))
+            scores[f"Hit@{k}"].append(hit_at_k(retrieved, relevant, k))
 
     return {metric: float(np.mean(vals)) for metric, vals in scores.items()}
+
+
+def compute_retrieval_metrics_with_per_query(
+    all_retrieved: List[List[str]],
+    all_relevant: List[List[str]],
+    k_values: List[int] = [3, 5, 10],
+):
+    """Same as compute_retrieval_metrics but also returns the raw
+    per-query score vectors, needed for genuine bootstrap resampling
+    and paired significance tests (Section 4.2)."""
+    scores = defaultdict(list)
+
+    for retrieved, relevant in zip(all_retrieved, all_relevant):
+        scores["MRR"].append(reciprocal_rank(retrieved, relevant))
+        for k in k_values:
+            scores[f"Recall@{k}"].append(recall_at_k(retrieved, relevant, k))
+            scores[f"Precision@{k}"].append(precision_at_k(retrieved, relevant, k))
+            scores[f"NDCG@{k}"].append(ndcg_at_k(retrieved, relevant, k))
+            scores[f"Hit@{k}"].append(hit_at_k(retrieved, relevant, k))
+
+    aggregate = {metric: float(np.mean(vals)) for metric, vals in scores.items()}
+    per_query = {metric: vals for metric, vals in scores.items()}
+    n_relevant = [len(r) for r in all_relevant]
+    return aggregate, per_query, n_relevant
 
 
 # ══════════════════════════════════════════════════════
@@ -121,11 +164,31 @@ def compute_bleu(predictions: List[str], references: List[str]) -> float:
         return 0.0
 
 
+class _UnicodeWhitespaceTokenizer:
+    """Lowercase + Unicode-aware whitespace tokenizer for rouge_score.
+
+    BUG FIX (peer review, Sept 2026): rouge_score's DefaultTokenizer applies
+    re.sub(r"[^a-z0-9]+", " ", text.lower()) before splitting, which strips
+    every character outside [a-z0-9] -- silently deleting all Arabic (and any
+    other non-Latin-script) text and producing tokenize() -> [] for every
+    Arabic string. This made ROUGE-L identically 0.0 for every Arabic row in
+    every table in this study, which is a measurement artifact, not a
+    genuine zero-overlap result. This tokenizer just lowercases and splits on
+    whitespace, so non-Latin scripts are preserved.
+    """
+    def tokenize(self, text):
+        return text.lower().split()
+
+
 def compute_rouge_l(predictions: List[str], references: List[str]) -> float:
-    """ROUGE-L using rouge_score."""
+    """ROUGE-L using rouge_score, with a script-agnostic tokenizer (see
+    _UnicodeWhitespaceTokenizer above) so non-Latin scripts such as Arabic
+    are not silently zeroed out before scoring."""
     try:
         from rouge_score import rouge_scorer
-        scorer = rouge_scorer.RougeScorer(["rougeL"], use_stemmer=False)
+        scorer = rouge_scorer.RougeScorer(
+            ["rougeL"], use_stemmer=False, tokenizer=_UnicodeWhitespaceTokenizer()
+        )
         scores = [
             scorer.score(ref, pred)["rougeL"].fmeasure
             for pred, ref in zip(predictions, references)

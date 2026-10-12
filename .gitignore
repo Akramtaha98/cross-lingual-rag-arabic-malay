@@ -11,3 +11,16 @@ indexes/
 *.safetensors
 results/*.json
 results/*.csv
+# keep result JSON/CSV tracked (needed for reproducibility); ignore scratch
+!results/*.json
+!results/*.csv
+results/_ckpt_*
+results/*.jsonl
+hf_cache/
+venv*/
+scratch/
+graphify-out/
+*.bak
+*_log.txt
+*.log
+lid.176.bin

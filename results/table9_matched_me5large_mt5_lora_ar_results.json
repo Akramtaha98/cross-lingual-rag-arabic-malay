@@ -1,0 +1,1681 @@
+{
+  "config": {
+    "generator": "mt5-small+lora",
+    "retriever": "me5large",
+    "lang": "ar",
+    "n": 200,
+    "k": 5
+  },
+  "metrics": {
+    "BERTScore_P": 0.6893079876899719,
+    "BERTScore_R": 0.6523562669754028,
+    "BERTScore_F": 0.669847846031189,
+    "BLEU-4": 0.0,
+    "ROUGE-L": 0.0,
+    "Faithfulness_lex_mean": 0.08125,
+    "Faithfulness_mean": 1,
+    "Faithfulness_std": 0.0,
+    "Adequacy_mean": 1,
+    "Adequacy_std": 0.0
+  },
+  "samples": [
+    {
+      "query": ": كم من الوقت استغرق بناء البرجين التوأمين",
+      "reference": "11.0 سنة",
+      "answer": "يداك",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي يغني أحبك مثل لا يوجد غدا",
+      "reference": "كريس يونغ",
+      "answer": "1970",
+      "lang": "ar"
+    },
+    {
+      "query": "كم عدد مواسم ملكات الصراخ",
+      "reference": "2.0",
+      "answer": "11.0",
+      "lang": "ar"
+    },
+    {
+      "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية",
+      "reference": "2013",
+      "answer": "1971",
+      "lang": "ar"
+    },
+    {
+      "query": "كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز",
+      "reference": "3.0",
+      "answer": "الكوتس",
+      "lang": "ar"
+    },
+    {
+      "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي",
+      "reference": "ديف إدموندز",
+      "answer": "الجديد",
+      "lang": "ar"
+    },
+    {
+      "query": "من مبدع مسلسل ذا فويس",
+      "reference": "جون دي مول",
+      "answer": "1964",
+      "lang": "ar"
+    },
+    {
+      "query": "متى بدأ وانتهى الغرب المتوحش؟",
+      "reference": "1865",
+      "answer": "1963",
+      "lang": "ar"
+    },
+    {
+      "query": "متى لعب الرام في السوبر بوا؟",
+      "reference": "1999",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي غنى الأغنية يا له من ليلة",
+      "reference": "The Four Seasons",
+      "answer": "1973",
+      "lang": "ar"
+    },
+    {
+      "query": "i want to be with you everywhere من غني اغنيه",
+      "reference": "فليتوود ماك",
+      "answer": "مايشيكا",
+      "lang": "ar"
+    },
+    {
+      "query": "من لعب دور ماغدلين في يسوع المسيح سوبر ستار؟",
+      "reference": "إيفون إليمان",
+      "answer": "1965",
+      "lang": "ar"
+    },
+    {
+      "query": "؟lamentations in the bibleمن الذي كتب كتاب",
+      "reference": "إرميا",
+      "answer": "1964",
+      "lang": "ar"
+    },
+    {
+      "query": "من لديه اكثر عدد معجبين علي انستاجرام",
+      "reference": "كريستيانو رونالدو",
+      "answer": "لندن",
+      "lang": "ar"
+    },
+    {
+      "query": "ما الحلقة من المكتب هي الشواء؟",
+      "reference": "تخفيف التوتر",
+      "answer": "المصلي",
+      "lang": "ar"
+    },
+    {
+      "query": "من أكبر منتج للفستق في العالم",
+      "reference": "إيران",
+      "answer": "1820",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هو اسم ملعب أريزونا كاردينالز",
+      "reference": "ملعب جامعة فينيكس",
+      "answer": "1958",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي غنى لم أكن أبدا لي",
+      "reference": "شارلن",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "كم عدد الدول التي تغطيها الجبال الصخرية؟",
+      "reference": "6.0",
+      "answer": "Adams",
+      "lang": "ar"
+    },
+    {
+      "query": "من غنى \"ليتس جو اول ذا واى\"؟",
+      "reference": "سلاي فوكس",
+      "answer": "مايشريك",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي فاز أمريكا حصلت على المواهب في عام 2015",
+      "reference": "بول زيردين",
+      "answer": "ميلان",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هو الحد الأدنى لسن الكشافة؟",
+      "reference": "5.0 18.0 سنة",
+      "answer": "باب مالك",
+      "lang": "ar"
+    },
+    {
+      "query": "متى كانت اخر مرة لعب فيها the steelers مع  the panthers",
+      "reference": "2019-08-29",
+      "answer": "لندن",
+      "lang": "ar"
+    },
+    {
+      "query": "متى كانت آخر مرة فاز فيها الجمهوريون في التصويت الشعبي",
+      "reference": "2004",
+      "answer": "1973",
+      "lang": "ar"
+    },
+    {
+      "query": "متى كانت آخر مرة فاز فيها الأشبال بدوري العالم؟",
+      "reference": "2016",
+      "answer": "Jeff Bruce",
+      "lang": "ar"
+    },
+    {
+      "query": "متى تم اصدار عملة الجنيه الجديدة",
+      "reference": "2017-03-28",
+      "answer": "برن نيل",
+      "lang": "ar"
+    },
+    {
+      "query": "nbaمتى تمت صياغة مايكل جوردان لل",
+      "reference": "1984",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "متى تكون آخر مرة تم فيها تعديل الدستور",
+      "reference": "1992",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "من هى الشخصيات فى الغناء تحت المطر",
+      "reference": "دونالد أوكونور",
+      "answer": "1977",
+      "lang": "ar"
+    },
+    {
+      "query": "كم يبلغ متوسط طول عربة القطار",
+      "reference": "55.0 67.0 قدم",
+      "answer": "مايروم",
+      "lang": "ar"
+    },
+    {
+      "query": "i'll make a man out of you من غني اغنيه",
+      "reference": "دوني أوزموند",
+      "answer": "محمد",
+      "lang": "ar"
+    },
+    {
+      "query": "متى فاز توم برادي بحلقته الأولى؟",
+      "reference": "2002",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "أين ستقام بطولة كأس العام ؟",
+      "reference": "قطر",
+      "answer": "وتحيس",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هي أسماء شخصيات توينيس",
+      "reference": "جودي",
+      "answer": "1962",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي يلعب دور بلاك بانثر في فلم بلاك بانثر",
+      "reference": "تشادويك بوسمان",
+      "answer": "1960",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هو رقم قناة \"ذا سى دابليو\" فى دايركت تى فى",
+      "reference": "385.0",
+      "answer": "11.0",
+      "lang": "ar"
+    },
+    {
+      "query": "متى سينتهي المسلسل الكرتوني ذا أمازينج ورلد أوف غومبل",
+      "reference": "2019-06-24",
+      "answer": "Jeff Freight",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذى غنى \"what is love baby don't hurt me\"",
+      "reference": "هادواي",
+      "answer": "بيايس",
+      "lang": "ar"
+    },
+    {
+      "query": "ما المكون الفعال لغسيل الأيدي في جميع إدارات الدواء والغذاء",
+      "reference": "إيثانول",
+      "answer": "ماي قلب",
+      "lang": "ar"
+    },
+    {
+      "query": "متى ظهر الجني في القارورة ؟",
+      "reference": "1999",
+      "answer": "محمد يوسف",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي تألق في فلم بريدج أوفر ذا ريفر كواي",
+      "reference": "ويليام هولدن",
+      "answer": "البحرين",
+      "lang": "ar"
+    },
+    {
+      "query": "ماذا كانت أسماء فرسان المائدة المستديرة",
+      "reference": "جالاهاد",
+      "answer": "1964",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو المضيف في america has talent",
+      "reference": "سايمون كاول",
+      "answer": "1973",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي يغني لورد اتس هارد تو بي همبل",
+      "reference": "ماك ديفيس",
+      "answer": "1963",
+      "lang": "ar"
+    },
+    {
+      "query": "من قام بغناء اغنية \" take me to church \"",
+      "reference": "هوزير",
+      "answer": "1820",
+      "lang": "ar"
+    },
+    {
+      "query": "متى تم اصدار فيلم الحاجة للسرعة",
+      "reference": "2014-03-14",
+      "answer": "1964",
+      "lang": "ar"
+    },
+    {
+      "query": "من هم نجوم برنامج ذا برايس إز رايت",
+      "reference": "ميليسا أوردواي",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي قاد الشمال في الحرب الأهلية",
+      "reference": "أبراهام لينكون",
+      "answer": "1957",
+      "lang": "ar"
+    },
+    {
+      "query": "من لعبت دور snow white فى once upon a time",
+      "reference": "جينيفر غودين",
+      "answer": "1962",
+      "lang": "ar"
+    },
+    {
+      "query": "من أقدم رجل عاش من أي وقت مضى",
+      "reference": "جين كالمينت",
+      "answer": "البحرين",
+      "lang": "ar"
+    },
+    {
+      "query": "كم مرة فازت استراليا بكأس العالم للكريكيت",
+      "reference": "5.0",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "من غنى اولاُ سأظل أحبك دائمًا دولي بارتون او ويتني هوستون؟",
+      "reference": "بورتر واغونر",
+      "answer": "ما صالح",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هو اسم أول رئيس لأمريكا",
+      "reference": "جورج واشنطن",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "ما اسم الكلية في فلم أنيمال هاوس",
+      "reference": "ما هو اسم الكلية في بيت الحيوان",
+      "answer": "برن",
+      "lang": "ar"
+    },
+    {
+      "query": "ممثليين في فيلم رحل في 60 ثانية؟",
+      "reference": "أنجلينا جولي",
+      "answer": "محمد جاك",
+      "lang": "ar"
+    },
+    {
+      "query": "كم عدد مواسم \"عرض كوسبى\"؟",
+      "reference": "8.0 فصل من فصول السنة",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "متى عقد اول كأس كريكت في العالم ؟",
+      "reference": "1975",
+      "answer": "لندن",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو إله العالم السفلي في الأساطير اليونانية؟",
+      "reference": "هاديس",
+      "answer": "11.0",
+      "lang": "ar"
+    },
+    {
+      "query": "متى عرضت اغنية لا تبتسم لي",
+      "reference": "2017-08-11",
+      "answer": "الفيروس",
+      "lang": "ar"
+    },
+    {
+      "query": "من لعب دور تشارلين حبيبي في برنامج أندي غريفيث",
+      "reference": "ماجي بيترسون",
+      "answer": "1957",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو كابتن فريق كريكيت جزر الهند الغربية",
+      "reference": "جاسون هولدر",
+      "answer": "1964",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هي أكبر بحيرة في نيوزيلندا",
+      "reference": "بحيرة تابو",
+      "answer": "1957",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو المؤلف لكتاب ألونغ واي قن",
+      "reference": "إسماعيل بيه",
+      "answer": "لندن",
+      "lang": "ar"
+    },
+    {
+      "query": "متى غادرت الولايات المتحدة الحرب الفيتنامية",
+      "reference": "1973-03-29",
+      "answer": "1964",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي لعب هارلي كوين في فرقة الانتحار",
+      "reference": "مارجو روبي",
+      "answer": "1973",
+      "lang": "ar"
+    },
+    {
+      "query": "ما التعداد السكاني لولاية مين",
+      "reference": "1338000.0",
+      "answer": "1973",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي لعب تي جي على رأس الفصل",
+      "reference": "بيلي كونولي",
+      "answer": "1971",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي لعب دور  بيتر كويل في فلم جاريانز أوف ذا جالكسي",
+      "reference": "كريس برات",
+      "answer": "1958",
+      "lang": "ar"
+    },
+    {
+      "query": "متى تم إصدار سامسونج جالاكسي اس6 ايدج",
+      "reference": "2015-04-10",
+      "answer": "محمد أم الريك الاث",
+      "lang": "ar"
+    },
+    {
+      "query": "فريق تمثيل 100 ثينجز تو دو بيفور هاي سكول",
+      "reference": "إيزابيلا مونير",
+      "answer": "نوفمبر سليم",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي يغني سمون ذات آي يوزد تو نو",
+      "reference": "غوتييه",
+      "answer": "2006.",
+      "lang": "ar"
+    },
+    {
+      "query": "كم غالون في برميل ويسكي",
+      "reference": "53.0 الجالون",
+      "answer": "25.0",
+      "lang": "ar"
+    },
+    {
+      "query": "ضد من كانت امريكا تقاتل فى الحرب الثوريه؟",
+      "reference": "بريطانيا العظمى",
+      "answer": "2003.",
+      "lang": "ar"
+    },
+    {
+      "query": "متى خرجت بيني و الجيتس؟",
+      "reference": "2000",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "متى كانت اخرة مرة الولايات المتحدة الامريكية بدون ديون",
+      "reference": "1835-01-08",
+      "answer": "2006.",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي غنى أغنية يور ماي إيفريثنج",
+      "reference": "سانتا إزميرالدا",
+      "answer": "Adams",
+      "lang": "ar"
+    },
+    {
+      "query": "من غنى الأغنية أحب الحياة الليلية",
+      "reference": "أليسيا بريدغز",
+      "answer": "للريكز",
+      "lang": "ar"
+    },
+    {
+      "query": "فرق لم تفز بنهائيات كأس العالم",
+      "reference": "سياتل مارينرز",
+      "answer": "ماي فرانسسكو",
+      "lang": "ar"
+    },
+    {
+      "query": "من هي المعروفة بخادمة اورليانز",
+      "reference": "جان دارك",
+      "answer": "محمد ألبي",
+      "lang": "ar"
+    },
+    {
+      "query": "من اول من ركض دون الاربعة دقائق ميل؟",
+      "reference": "روجر بانستر",
+      "answer": "1993",
+      "lang": "ar"
+    },
+    {
+      "query": "i've got spurs that jingle jangle jingle من الذي غني",
+      "reference": "جين أوتري",
+      "answer": "1960",
+      "lang": "ar"
+    },
+    {
+      "query": "ما أول معركة في الحرب الفيتنامية",
+      "reference": "معركة أيا درانج",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي لعب في سوبر بول هذا العام",
+      "reference": "لوس أنجيليس رامز",
+      "answer": "11.0",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو كبير الأطباء الحالي  للولايات المتحدة ؟",
+      "reference": "جيروم آدامز",
+      "answer": "محمد",
+      "lang": "ar"
+    },
+    {
+      "query": "من لعب دور (ريتشل) في فيلم (بليد رنر) الاصلي",
+      "reference": "شون يونغ",
+      "answer": "11.0",
+      "lang": "ar"
+    },
+    {
+      "query": "اين يقع اطول جسر في الولايات المتحدة",
+      "reference": "جسر بحيرة بونتشارترين",
+      "answer": "البحري",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو صاحب فكرة يوم الأب",
+      "reference": "سونورا سمارت دود",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "من أين ينشأ اسم غوزمان الأخير",
+      "reference": "إسبانيا",
+      "answer": "1963",
+      "lang": "ar"
+    },
+    {
+      "query": "please don't go من غنى",
+      "reference": "كيه سي آند فرقة الشمس",
+      "answer": "1964",
+      "lang": "ar"
+    },
+    {
+      "query": "من اللاعب الذي لديه أكبر سجل ياردات مقطوعة في لعبة منفردة",
+      "reference": "أدريان بيترسون",
+      "answer": "Adamson",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو أغنى شخص قد عاش فى أي وقت مضى",
+      "reference": "منسا موسى",
+      "answer": "برنارد",
+      "lang": "ar"
+    },
+    {
+      "query": "من اليوتيوبر الذي لديه أكبر مشتركين في العالم",
+      "reference": "تي سيريز",
+      "answer": "1970",
+      "lang": "ar"
+    },
+    {
+      "query": "اين يقع ميدان التايمز في مدينة نيويورك ؟",
+      "reference": "الولايات المتحدة",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "لا بيت كامل فاز مباشرة في لعبة البوكر",
+      "reference": "yes",
+      "answer": "1953",
+      "lang": "ar"
+    },
+    {
+      "query": "ما القناة السمعية التى يشارك فيها فريق بيتسبرج بايرتس",
+      "reference": "KDKA-FM",
+      "answer": "1964",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو مدرب تورونتو رابتورز",
+      "reference": "نيك نيرس",
+      "answer": "2003.",
+      "lang": "ar"
+    },
+    {
+      "query": "من كتب اغنيه لقد كنت دائما في بالي",
+      "reference": "واين كارسون",
+      "answer": "محمدا خالد أفيل",
+      "lang": "ar"
+    },
+    {
+      "query": "من الممثل الذي قام بدور جون ويك",
+      "reference": "كيانو ريفز",
+      "answer": "برن",
+      "lang": "ar"
+    },
+    {
+      "query": "take a look at me now من يغني اغنيه",
+      "reference": "فيل كولنز",
+      "answer": "برنامي",
+      "lang": "ar"
+    },
+    {
+      "query": "من غاد للغناء فى سن متقدمه؟",
+      "reference": "ستيف وينوود",
+      "answer": "الجديد",
+      "lang": "ar"
+    },
+    {
+      "query": "going to the chapel and we're gonna get married من يغني",
+      "reference": "ذا ديكسى كابس",
+      "answer": "1971",
+      "lang": "ar"
+    },
+    {
+      "query": "مما صنع العلم الأمريكي",
+      "reference": "نايلون",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "من أين يأتي تمثال الحرية",
+      "reference": "جزيرة الحرية",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "من غنى come together right now over me",
+      "reference": "البيتلز",
+      "answer": "البحرين",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو الممثل الرئيسي في سهم المعرض",
+      "reference": "كايتي كاسيدي",
+      "answer": "لندن",
+      "lang": "ar"
+    },
+    {
+      "query": "من لديه أفضل سجل في الدوري الرئيسي",
+      "reference": "نيويورك يانكيز",
+      "answer": "1950",
+      "lang": "ar"
+    },
+    {
+      "query": "من غنى \" الآن وجدنا الحب ماذا سنفعل به\"؟",
+      "reference": "دي هافي",
+      "answer": "الفلان",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذين لعبوا حسناء في الجمال والوحش",
+      "reference": "إيما واتسون",
+      "answer": "مايلين",
+      "lang": "ar"
+    },
+    {
+      "query": "متى تمت كتابة \"while my guitar gently weeps\"",
+      "reference": "1968",
+      "answer": "11.0",
+      "lang": "ar"
+    },
+    {
+      "query": "fox on the run من غنى",
+      "reference": "ذا سويت",
+      "answer": "المصيلي",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هو 10 لقوة 10",
+      "reference": "10000000000.0",
+      "answer": "1964",
+      "lang": "ar"
+    },
+    {
+      "query": "ماذا كانت قوة زلزال نورثريدج",
+      "reference": "6.7",
+      "answer": "المصورين",
+      "lang": "ar"
+    },
+    {
+      "query": "bartender i really did it this time من غنى",
+      "reference": "رحاب",
+      "answer": "1962",
+      "lang": "ar"
+    },
+    {
+      "query": "ما آخر تعداد سكاني لفونيكس أريزونا",
+      "reference": "1626000.0",
+      "answer": "مايليون",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي لديه معظم غرام في كل العصور",
+      "reference": "جورج سولتي",
+      "answer": "ماي ليونين",
+      "lang": "ar"
+    },
+    {
+      "query": "ماهو آخر تعداد سكاني للباكركي نيو مكسيكو",
+      "reference": "558545.0",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "الذي غنى الأغنية أستطيع أن أرى بوضوح الآن",
+      "reference": "ري تشارلز",
+      "answer": "مايزيد",
+      "lang": "ar"
+    },
+    {
+      "query": "من كان أول رئيس في جنوب أفريقيا",
+      "reference": "نيلسون مانديلا",
+      "answer": "ماي كريمين",
+      "lang": "ar"
+    },
+    {
+      "query": "متى بنوا تمثال الحرية",
+      "reference": "1875-09",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "here comes the sun من هو مؤلف اغنية",
+      "reference": "جورج هاريسون",
+      "answer": "برنيس",
+      "lang": "ar"
+    },
+    {
+      "query": "ما أول فلم ملون",
+      "reference": "مع ملكنا وملكتنا عبر الهند",
+      "answer": "وتحس الولادر",
+      "lang": "ar"
+    },
+    {
+      "query": "كم عدد حلقات الجزء الثاني من سلسلة ماي هيرو أكاديميا",
+      "reference": "25.0 حلقة",
+      "answer": "محمد مملك",
+      "lang": "ar"
+    },
+    {
+      "query": "متى خرج جدول الدوري الممتاز؟",
+      "reference": "2019-06-13",
+      "answer": "وتحديدا",
+      "lang": "ar"
+    },
+    {
+      "query": "من غني اغنيه حفنة عسل السكر",
+      "reference": "الأربعة قمم",
+      "answer": "المصيلي",
+      "lang": "ar"
+    },
+    {
+      "query": "أين سيتم لعب مباراة ذا هول أوف فيم",
+      "reference": "الولايات المتحدة",
+      "answer": "مايستيس",
+      "lang": "ar"
+    },
+    {
+      "query": "ماهي جائزة الفائزفي إذا تعتقد أنك تستطيع الرقص.؟",
+      "reference": "250000.0 دولار أمريكي",
+      "answer": "المصاير",
+      "lang": "ar"
+    },
+    {
+      "query": "fly me to the moon من غنى",
+      "reference": "فرانك سيناترا",
+      "answer": "1983",
+      "lang": "ar"
+    },
+    {
+      "query": "متى صدرت سلسلة باور رانجرز ميستيك فورس",
+      "reference": "2006-02-20",
+      "answer": "1951",
+      "lang": "ar"
+    },
+    {
+      "query": "كم عدد مباريات ان بي اى  التي يلعبها كل فريق؟",
+      "reference": "82.0",
+      "answer": "يني",
+      "lang": "ar"
+    },
+    {
+      "query": "من هي الفتاه التي تمثل في فلم فيفتي شادز أوف غراي",
+      "reference": "داكوتا جونسون",
+      "answer": "مايروس",
+      "lang": "ar"
+    },
+    {
+      "query": "من تلعب دور القطه فى \"cat in the hat\"",
+      "reference": "مايك مايرز",
+      "answer": "1973",
+      "lang": "ar"
+    },
+    {
+      "query": "family guy من هو صاحب صوت شخصية فيينى فى مسلسل",
+      "reference": "توني سيريكو",
+      "answer": "1930",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي غنى ما لا يقتلك يجعلك أقوى",
+      "reference": "كيلي كلاركسون",
+      "answer": "Adams",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي فاز بالسلسلة العالمية في السنوات الخمس الماضية",
+      "reference": "هيوستن أسترو",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "متى صدرت \" call of duty world at war\"",
+      "reference": "2008-11-11",
+      "answer": "1820",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي لديه أكثر بلد  يضرب",
+      "reference": "جورج سترايت",
+      "answer": "2006.",
+      "lang": "ar"
+    },
+    {
+      "query": "من غنى أغنية وات كوندشن ماي كوندشن واز إن",
+      "reference": "بيتي لافيت",
+      "answer": "المصيرية",
+      "lang": "ar"
+    },
+    {
+      "query": "من لعب دور الأم في مسلسل ذات سفنتيز شو",
+      "reference": "ديبرا جو راب",
+      "answer": "برنينغ",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هو عدد سكان سمتر ساوث كارولينا",
+      "reference": "39982.0",
+      "answer": "مايروك فيلمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "متى كان موكب مثلي الجنس في شيكاغو إلينوي",
+      "reference": "2019-06-30",
+      "answer": "1958",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي لعب دور جاستون في الفلم بيوتي أند ذا بيست",
+      "reference": "لوك إيفانز",
+      "answer": "محمدا محمد",
+      "lang": "ar"
+    },
+    {
+      "query": "كم عدد ايام الالتزام في الكنيسة الكاثوليكية",
+      "reference": "6.0",
+      "answer": "مايزيل",
+      "lang": "ar"
+    },
+    {
+      "query": "من يغني الشيء الوحشي الذي تجعل قلبي يغني",
+      "reference": "The Troggs",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "كان هناك إعصار اسمه كاثي",
+      "reference": "yes",
+      "answer": "ماي كرو",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي غنى الأغنية هل رأيت المطر",
+      "reference": "كريدينس كليرووتر رفايفل",
+      "answer": "2006.",
+      "lang": "ar"
+    },
+    {
+      "query": "متى تم كتابة الإعلان العالمي لحقوق الإنسان",
+      "reference": "1948",
+      "answer": "البحر",
+      "lang": "ar"
+    },
+    {
+      "query": "اين تم تصوير مسلسل اشياء غريبة",
+      "reference": "أتلانتا",
+      "answer": "1820",
+      "lang": "ar"
+    },
+    {
+      "query": "the atlantic sun ما الفرق التي توجد في مؤتمر",
+      "reference": "جامعة ليبرتي",
+      "answer": "مايك",
+      "lang": "ar"
+    },
+    {
+      "query": "من كتب أغنية لقد انفصلت معي؟",
+      "reference": "ووكر هايز",
+      "answer": "2003.",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هي سخونة درجة الحرارة المسجلة في نيويورك",
+      "reference": "108.0 درجة حرارة فارنهايت",
+      "answer": "برنيش",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي لديه الأغلبية في الكونغرس الآن",
+      "reference": "الحزب الجمهوري",
+      "answer": "1973",
+      "lang": "ar"
+    },
+    {
+      "query": "أين وقعت معركة جيتيسبيرغ؟",
+      "reference": "بنسيلفانيا",
+      "answer": "1993",
+      "lang": "ar"
+    },
+    {
+      "query": "متى فازت  chicago cubs بالسلسلة العالمية",
+      "reference": "2016",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "من صعد للدوري الانجليزي الممتاز العام الماضي",
+      "reference": "كارديف سيتي",
+      "answer": "مايكرو",
+      "lang": "ar"
+    },
+    {
+      "query": "ما الكلمة الانجليزية التي تحتوي على أكثر المقاطع الصوتية",
+      "reference": "بنیومانواولترامایكروسكوبیكسیلیكوولكینوكانایوسیس",
+      "answer": "Nw",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هي عاصمة ولاية المكسيك الجديدة",
+      "reference": "سانتا فيه، نيومكسيكو",
+      "answer": "1951",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي يحمل الرقم القياسي في حبس أطول نفس على الإطلاق",
+      "reference": "توم سيتاس",
+      "answer": "2003.",
+      "lang": "ar"
+    },
+    {
+      "query": "من كان الشخص الشرير فى حراس المجرة",
+      "reference": "رونان المتهم",
+      "answer": "المصيلي",
+      "lang": "ar"
+    },
+    {
+      "query": "هل جمهورية أيرلندا جزء من المملكة المتحدة؟",
+      "reference": "no",
+      "answer": "بيا",
+      "lang": "ar"
+    },
+    {
+      "query": "متى تم عمل اول حلقة من \"فقط الحمقى و الاحصنة\"؟",
+      "reference": "1981-09-08",
+      "answer": "ما دينا",
+      "lang": "ar"
+    },
+    {
+      "query": "متى كانت أخر مرة فاز نادال بالومبيلدون",
+      "reference": "2010",
+      "answer": "برنيزا",
+      "lang": "ar"
+    },
+    {
+      "query": "من لعب دور  avery فى dog with a blog",
+      "reference": "جينيفيف هانيليوس",
+      "answer": "Adams",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذى كتب \"the poem twinkle twinkle little star\"",
+      "reference": "جاين تايلور",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي يغني أبدا لن التقى فتاة مثلك من قبل",
+      "reference": "إدوين كولينز",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "متي صنع خمس ليال في فريدي",
+      "reference": "2014-08-08",
+      "answer": "1977",
+      "lang": "ar"
+    },
+    {
+      "query": "متى اصدر فيلم النمر الأسود",
+      "reference": "2018-02-16",
+      "answer": "1964",
+      "lang": "ar"
+    },
+    {
+      "query": "johnny cash in i walk the line من هو ممثل فيلم",
+      "reference": "خواكين فينيكس",
+      "answer": "برن",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذي يغني أول آي نيد إز ذا إير ذات آي بريث",
+      "reference": "The Hollies",
+      "answer": "مايشوش",
+      "lang": "ar"
+    },
+    {
+      "query": "didn't i blow your mind this time من صاحب اغنيه",
+      "reference": "The Delfonics",
+      "answer": "2000.",
+      "lang": "ar"
+    },
+    {
+      "query": "متى خرج تشارلي ومصنع الشوكولاتة؟",
+      "reference": "2005-07-10",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هو عمر الشرب القانوني في تركيا",
+      "reference": "18.0 سنة",
+      "answer": "1970",
+      "lang": "ar"
+    },
+    {
+      "query": "هل غنى توم كروز في فلم روك أوف أيجيز",
+      "reference": "yes",
+      "answer": "الكونغ",
+      "lang": "ar"
+    },
+    {
+      "query": "أين تقع قاعة مشاهير الجولف",
+      "reference": "الولايات المتحدة",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "متى كان افتتاح الجميلة و الوحش  في برودواي؟",
+      "reference": "1994-04-18",
+      "answer": "البحر زكية",
+      "lang": "ar"
+    },
+    {
+      "query": "أين وقعت أحداث فلم كابتن أميركا وينتر سولجر",
+      "reference": "واشنطن",
+      "answer": "برنارد سي",
+      "lang": "ar"
+    },
+    {
+      "query": "من أطول الناس عمرا تم تسجيله على الإطلاق",
+      "reference": "جين كالمينت",
+      "answer": "محمد كامل",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هي أسماء أفلام الماتريكس",
+      "reference": "الماتريكس 2",
+      "answer": "1983",
+      "lang": "ar"
+    },
+    {
+      "query": "ماهو اسم الكلب في   قصة لعبة؟",
+      "reference": "كلب سلنكي ",
+      "answer": "1963",
+      "lang": "ar"
+    },
+    {
+      "query": "متى كان آخر انفجار بركاني في الولايات المتحدة",
+      "reference": "2018",
+      "answer": "ارجين",
+      "lang": "ar"
+    },
+    {
+      "query": "من كتب حصلت عليك تحت بشرتي؟",
+      "reference": "كول بورتر",
+      "answer": "Adams",
+      "lang": "ar"
+    },
+    {
+      "query": "ما كان أطول لعبة البيسبول في الدوري الممتاز في التاريخ",
+      "reference": "أطول لعبة في البيسبول الاحترافي",
+      "answer": "الكولون",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو اول رجل قاعده لليانكيز",
+      "reference": "إدوين إنكارناثيون",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "من كان أول شخص يمشي على القمر",
+      "reference": "نيل آرمسترونغ",
+      "answer": "1993",
+      "lang": "ar"
+    },
+    {
+      "query": "كم عدد فرق الدوري الوطني لكرة القدم في ولاية كاليفورنيا",
+      "reference": "4.0",
+      "answer": "مايزيل",
+      "lang": "ar"
+    },
+    {
+      "query": "متى استطاع الإنسان السير على سطح القمر",
+      "reference": "تموز / يوليو 20, 1969",
+      "answer": "للمرة",
+      "lang": "ar"
+    },
+    {
+      "query": "كم عدد الجامعات في رابطة اللباب في الولايات المتحدة",
+      "reference": "8.0",
+      "answer": "2006.",
+      "lang": "ar"
+    },
+    {
+      "query": "walk like a man من غني اغنيه",
+      "reference": "فرانكي فالي",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو كاتب \" take it to the limit by the eagles \"",
+      "reference": "غلين فراي",
+      "answer": "Adams",
+      "lang": "ar"
+    },
+    {
+      "query": "اين تم تصوير العرض التلفزيوني the kitchen",
+      "reference": "الولايات المتحدة",
+      "answer": "برنلين",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو أقدم لاعب في الدوري الاميركي للمحترفين الذى لا يزال يلعب",
+      "reference": "فينس كارتر",
+      "answer": "نوفمبر",
+      "lang": "ar"
+    },
+    {
+      "query": "girl meets world في uncle josh من اللذي لعب دور",
+      "reference": "أوريا شيلتون",
+      "answer": "1958",
+      "lang": "ar"
+    },
+    {
+      "query": "ما هو قطر الأرض عند خط الاستواء",
+      "reference": "7917.5 أميال",
+      "answer": "برن",
+      "lang": "ar"
+    },
+    {
+      "query": "من لعب دور تشيلسا في رجلان ونصف؟",
+      "reference": "جنيفر بيني تايلور",
+      "answer": "مايزر",
+      "lang": "ar"
+    },
+    {
+      "query": "كم من القوات الامريكية توفي في حرب فيتنام",
+      "reference": "58220.0",
+      "answer": "1983",
+      "lang": "ar"
+    },
+    {
+      "query": "؟ a Borrower Nor a Lender Be من صاحب عباره",
+      "reference": "بولونيوس",
+      "answer": "غلر",
+      "lang": "ar"
+    },
+    {
+      "query": "من الذى قام بغناء i did it my way first",
+      "reference": "فرانك سيناترا",
+      "answer": "محمد دينا",
+      "lang": "ar"
+    },
+    {
+      "query": "من غنى أغنية جيم داندي لإنقاذ",
+      "reference": "بلاك أوك أركنساس",
+      "answer": "1970",
+      "lang": "ar"
+    },
+    {
+      "query": "اين يوجد اكبر حجر بالعالم",
+      "reference": "كوريا الجنوبية",
+      "answer": "محمد النبي أريك",
+      "lang": "ar"
+    },
+    {
+      "query": "من هو أعلى لاعب مدفوع الأجر في البيسبول",
+      "reference": "مايك تروت",
+      "answer": "1970",
+      "lang": "ar"
+    },
+    {
+      "query": "من صاحب أغنية ذوس ور ا دايز ماي فريند",
+      "reference": "من غنى تلك كانت أيام صديقي",
+      "answer": "2003.",
+      "lang": "ar"
+    }
+  ],
+  "judge_meta": {
+    "backend": "ollama",
+    "judge_model": "qwen2.5:7b",
+    "n_judged": 50,
+    "n_errors": 0
+  },
+  "judge_annotations": [
+    {
+      "query": ": كم من الوقت استغرق بناء البرجين التوأمين",
+      "reference": "11.0 سنة",
+      "answer": "يداك",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题和参考答案完全无关"
+    },
+    {
+      "query": "من الذي يغني أحبك مثل لا يوجد غدا",
+      "reference": "كريس يونغ",
+      "answer": "1970",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is neither faithful nor adequate as it provides an incorrect year instead of the singer's name."
+    },
+    {
+      "query": "كم عدد مواسم ملكات الصراخ",
+      "reference": "2.0",
+      "answer": "11.0",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与提供的参考答案不符"
+    },
+    {
+      "query": "متى كانت اخر مرة خاض فريق الليكرز المباريات الاقصائية",
+      "reference": "2013",
+      "answer": "1971",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与提供的参考答案不符，且未基于任何上下文信息。"
+    },
+    {
+      "query": "كم عدد الحلقات في جزء من مسلسل سرينجر ثينجز",
+      "reference": "3.0",
+      "answer": "الكوتس",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，与问题无关。"
+    },
+    {
+      "query": "من يغني أسمعك يطرق لكنك لا تستطيع أن تأتي",
+      "reference": "ديف إدموندز",
+      "answer": "الجديد",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题和参考答案完全不符"
+    },
+    {
+      "query": "من مبدع مسلسل ذا فويس",
+      "reference": "جون دي مول",
+      "answer": "1964",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题和参考答案完全无关。"
+    },
+    {
+      "query": "متى بدأ وانتهى الغرب المتوحش؟",
+      "reference": "1865",
+      "answer": "1963",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题和参考答案均不匹配"
+    },
+    {
+      "query": "متى لعب الرام في السوبر بوا؟",
+      "reference": "1999",
+      "answer": "نوفمبر",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题不符，未能正确回答关于具体年份的问题。"
+    },
+    {
+      "query": "من الذي غنى الأغنية يا له من ليلة",
+      "reference": "The Four Seasons",
+      "answer": "1973",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is neither faithful nor adequate to the question."
+    },
+    {
+      "query": "i want to be with you everywhere من غني اغنيه",
+      "reference": "فليتوود ماك",
+      "answer": "مايشيكا",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is neither faithful nor adequate as it does not match the expected response."
+    },
+    {
+      "query": "من لعب دور ماغدلين في يسوع المسيح سوبر ستار؟",
+      "reference": "إيفون إليمان",
+      "answer": "1965",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题和参考答案不符"
+    },
+    {
+      "query": "؟lamentations in the bibleمن الذي كتب كتاب",
+      "reference": "إرميا",
+      "answer": "1964",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题和参考答案完全无关。"
+    },
+    {
+      "query": "من لديه اكثر عدد معجبين علي انستاجرام",
+      "reference": "كريستيانو رونالدو",
+      "answer": "لندن",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题完全无关。"
+    },
+    {
+      "query": "ما الحلقة من المكتب هي الشواء؟",
+      "reference": "تخفيف التوتر",
+      "answer": "المصلي",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题完全无关"
+    },
+    {
+      "query": "من أكبر منتج للفستق في العالم",
+      "reference": "إيران",
+      "answer": "1820",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题不符，无法评价其正确性。"
+    },
+    {
+      "query": "ما هو اسم ملعب أريزونا كاردينالز",
+      "reference": "ملعب جامعة فينيكس",
+      "answer": "1958",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，未根据问题提供相关信息"
+    },
+    {
+      "query": "من الذي غنى لم أكن أبدا لي",
+      "reference": "شارلن",
+      "answer": "نوفمبر",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与参考答案不符"
+    },
+    {
+      "query": "كم عدد الدول التي تغطيها الجبال الصخرية؟",
+      "reference": "6.0",
+      "answer": "Adams",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题无关，未提供正确信息"
+    },
+    {
+      "query": "من غنى \"ليتس جو اول ذا واى\"؟",
+      "reference": "سلاي فوكس",
+      "answer": "مايشريك",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，不符合问题和参考答案"
+    },
+    {
+      "query": "من الذي فاز أمريكا حصلت على المواهب في عام 2015",
+      "reference": "بول زيردين",
+      "answer": "ميلان",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题和参考答案不符"
+    },
+    {
+      "query": "ما هو الحد الأدنى لسن الكشافة؟",
+      "reference": "5.0 18.0 سنة",
+      "answer": "باب مالك",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题完全无关"
+    },
+    {
+      "query": "متى كانت اخر مرة لعب فيها the steelers مع  the panthers",
+      "reference": "2019-08-29",
+      "answer": "لندن",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，未回答问题。"
+    },
+    {
+      "query": "متى كانت آخر مرة فاز فيها الجمهوريون في التصويت الشعبي",
+      "reference": "2004",
+      "answer": "1973",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与提供的参考答案不符，不符合事实。"
+    },
+    {
+      "query": "متى كانت آخر مرة فاز فيها الأشبال بدوري العالم؟",
+      "reference": "2016",
+      "answer": "Jeff Bruce",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题和参考答案完全无关。"
+    },
+    {
+      "query": "متى تم اصدار عملة الجنيه الجديدة",
+      "reference": "2017-03-28",
+      "answer": "برن نيل",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，与问题无关。"
+    },
+    {
+      "query": "nbaمتى تمت صياغة مايكل جوردان لل",
+      "reference": "1984",
+      "answer": "نوفمبر",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题和参考答案完全不符"
+    },
+    {
+      "query": "متى تكون آخر مرة تم فيها تعديل الدستور",
+      "reference": "1992",
+      "answer": "نوفمبر",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案不准确，未提供具体年份。"
+    },
+    {
+      "query": "من هى الشخصيات فى الغناء تحت المطر",
+      "reference": "دونالد أوكونور",
+      "answer": "1977",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题不符，完全错误"
+    },
+    {
+      "query": "كم يبلغ متوسط طول عربة القطار",
+      "reference": "55.0 67.0 قدم",
+      "answer": "مايروم",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，与问题和参考答案无关。"
+    },
+    {
+      "query": "i'll make a man out of you من غني اغنيه",
+      "reference": "دوني أوزموند",
+      "answer": "محمد",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is neither faithful nor adequate to the question."
+    },
+    {
+      "query": "متى فاز توم برادي بحلقته الأولى؟",
+      "reference": "2002",
+      "answer": "نوفمبر",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，未提供具体年份且表述不清晰。"
+    },
+    {
+      "query": "أين ستقام بطولة كأس العام ؟",
+      "reference": "قطر",
+      "answer": "وتحيس",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误且无关"
+    },
+    {
+      "query": "ما هي أسماء شخصيات توينيس",
+      "reference": "جودي",
+      "answer": "1962",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题不符，未在检索到的上下文中找到依据。"
+    },
+    {
+      "query": "من الذي يلعب دور بلاك بانثر في فلم بلاك بانثر",
+      "reference": "تشادويك بوسمان",
+      "answer": "1960",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，与问题无关。"
+    },
+    {
+      "query": "ما هو رقم قناة \"ذا سى دابليو\" فى دايركت تى فى",
+      "reference": "385.0",
+      "answer": "11.0",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与参考答案不符，但至少与问题相关。"
+    },
+    {
+      "query": "متى سينتهي المسلسل الكرتوني ذا أمازينج ورلد أوف غومبل",
+      "reference": "2019-06-24",
+      "answer": "Jeff Freight",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，未根据问题提供相关信息。"
+    },
+    {
+      "query": "من الذى غنى \"what is love baby don't hurt me\"",
+      "reference": "هادواي",
+      "answer": "بيايس",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is incorrect and irrelevant."
+    },
+    {
+      "query": "ما المكون الفعال لغسيل الأيدي في جميع إدارات الدواء والغذاء",
+      "reference": "إيثانول",
+      "answer": "ماي قلب",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，与问题无关。"
+    },
+    {
+      "query": "متى ظهر الجني في القارورة ؟",
+      "reference": "1999",
+      "answer": "محمد يوسف",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题完全无关"
+    },
+    {
+      "query": "من الذي تألق في فلم بريدج أوفر ذا ريفر كواي",
+      "reference": "ويليام هولدن",
+      "answer": "البحرين",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，与问题无关。"
+    },
+    {
+      "query": "ماذا كانت أسماء فرسان المائدة المستديرة",
+      "reference": "جالاهاد",
+      "answer": "1964",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题完全无关。"
+    },
+    {
+      "query": "من هو المضيف في america has talent",
+      "reference": "سايمون كاول",
+      "answer": "1973",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "The answer is neither faithful nor adequate for the question."
+    },
+    {
+      "query": "من الذي يغني لورد اتس هارد تو بي همبل",
+      "reference": "ماك ديفيس",
+      "answer": "1963",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题不符，未正确回答歌曲演唱者。"
+    },
+    {
+      "query": "من قام بغناء اغنية \" take me to church \"",
+      "reference": "هوزير",
+      "answer": "1820",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题和参考答案完全无关。"
+    },
+    {
+      "query": "متى تم اصدار فيلم الحاجة للسرعة",
+      "reference": "2014-03-14",
+      "answer": "1964",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与提供的参考答案不符，两者相差近四十年。"
+    },
+    {
+      "query": "من هم نجوم برنامج ذا برايس إز رايت",
+      "reference": "ميليسا أوردواي",
+      "answer": "نوفمبر",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，与问题无关。"
+    },
+    {
+      "query": "من الذي قاد الشمال في الحرب الأهلية",
+      "reference": "أبراهام لينكون",
+      "answer": "1957",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案与问题和参考答案完全无关。"
+    },
+    {
+      "query": "من لعبت دور snow white فى once upon a time",
+      "reference": "جينيفر غودين",
+      "answer": "1962",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，未回答问题。"
+    },
+    {
+      "query": "من أقدم رجل عاش من أي وقت مضى",
+      "reference": "جين كالمينت",
+      "answer": "البحرين",
+      "lang": "ar",
+      "faithfulness": 1,
+      "adequacy": 1,
+      "comment": "答案完全错误，不符合问题和参考答案。"
+    }
+  ]
+}
