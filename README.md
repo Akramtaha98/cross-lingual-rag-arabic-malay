@@ -17,6 +17,7 @@ A diagnostic benchmark for cross-lingual RAG on **Arabic (AR)** and **Malay (MS)
 - mE5-large is the strongest retriever; Arabic normalization gives no gain once the relevance check is held fixed.
 - Under *matched* retrieval (mE5-large, n=200), Qwen2.5-7B's BERTScore-F advantage over mT5+LoRA shrinks from about 14% to under 3%, and LLM-judged adequacy stays near floor for all generators.
 - Supplying the gold passage (oracle context) does not improve mT5 output, so answer extraction is also limiting.
+- No generator produces correct answers: exact match is 0 for every mT5 and Qwen configuration (BERTScore-F is moderate but does not measure correctness).
 - The Arabic→Malay vs. Malay→Arabic transfer asymmetry is not statistically significant (paired bootstrap, p≈0.13).
 
 ---
@@ -57,6 +58,9 @@ cross_lingual_rag/
 ├── paired_oracle_sig.py         # paired bootstrap significance tests
 ├── precompute_matched_retrieval.py + gen_from_cached_retrieval.py  # matched-retriever Table 9
 ├── judge_ollama.py              # local LLM judge (Ollama, qwen2.5:7b)
+├── answer_level_metrics.py      # normalized EM / token F1 / Contains-gold
+├── crosslingual_parallel_relevance.py  # cross-lingual retrieval re-scored with corpus-language gold answers
+├── run_qwen_oracle.py           # Qwen2.5-7B closed-book vs. oracle context
 ├── recompute_rouge.py           # ROUGE-L with Unicode-aware tokenization
 ├── update_paper_tables.py
 └── requirements.txt
@@ -99,7 +103,7 @@ pip install -r requirements.txt
 
 ## Dataset
 
-[MKQA](https://github.com/apple/mkqa) — the only existing multilingual QA benchmark with parallel Arabic and Malay tracks. Retrieval corpora are built from language-specific Wikipedia snapshots (November 2023), chunked into overlapping 200-word passages and indexed with FAISS.
+[MKQA](https://github.com/apple/mkqa) — to our knowledge the only open-domain QA benchmark with parallel Arabic and Malay tracks. Retrieval corpora are built from language-specific Wikipedia snapshots (November 2023), chunked into overlapping 200-word passages and indexed with FAISS.
 
 ---
 
@@ -165,3 +169,8 @@ FAISS indexes (`indexes/`, ~2 GB), model weights and the fastText `lid.176.bin` 
 ## Acknowledgements
 
 Built on [MKQA](https://github.com/apple/mkqa), [Hugging Face Transformers](https://github.com/huggingface/transformers), [Sentence-Transformers](https://github.com/UKPLab/sentence-transformers), [FAISS](https://github.com/facebookresearch/faiss), [PEFT](https://github.com/huggingface/peft), [CAMeL Tools](https://github.com/CAMeL-Lab/camel_tools), [rank-bm25](https://github.com/dorianbrown/rank_bm25), and [SacreBLEU](https://github.com/mjpost/sacrebleu).
+
+## Latest results (corrected)
+- Cross-lingual retrieval is rescored with corpus-language gold answers (`crosslingual_parallel_relevance.py`, results in `results/xl_parallel_*.json`). ar→ms and ms→ar are tied (mE5-large MRR 0.059 vs 0.059; LaBSE 0.027 vs 0.027; paired bootstrap p ≥ 0.93).
+- Qwen2.5-7B closed-book vs oracle (`run_qwen_oracle_hf.py`, `results/qwen_oracle_*.json`, n=100/lang): the answer-string "oracle" passage does not help and is often off-topic, so it does not isolate retrieval from generation.
+- Answer-level metrics (EM / F1 / Contains): `answer_level_metrics.py`.

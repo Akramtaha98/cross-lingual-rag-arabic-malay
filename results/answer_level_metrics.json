@@ -1,0 +1,62 @@
+{
+  "mt5_base_matched_ar": {
+    "n": 200,
+    "EM": 0.0,
+    "F1": 0.0009090909090909091,
+    "Contains": 0.0
+  },
+  "mt5_lora_matched_ar": {
+    "n": 200,
+    "EM": 0.0,
+    "F1": 0.0,
+    "Contains": 0.0
+  },
+  "qwen_matched_ar": {
+    "n": 200,
+    "EM": 0.0,
+    "F1": 0.006454830325826968,
+    "Contains": 0.02
+  },
+  "closed_book_ar": {
+    "n": 444,
+    "EM": 0.0,
+    "F1": 0.0015015015015015015,
+    "Contains": 0.0022522522522522522
+  },
+  "oracle_real_ar": {
+    "n": 444,
+    "EM": 0.0,
+    "F1": 0.0,
+    "Contains": 0.0
+  },
+  "mt5_base_matched_ms": {
+    "n": 200,
+    "EM": 0.0,
+    "F1": 0.0009090909090909091,
+    "Contains": 0.0
+  },
+  "mt5_lora_matched_ms": {
+    "n": 200,
+    "EM": 0.0,
+    "F1": 0.0025,
+    "Contains": 0.0
+  },
+  "qwen_matched_ms": {
+    "n": 200,
+    "EM": 0.0,
+    "F1": 0.009778282184362257,
+    "Contains": 0.03
+  },
+  "closed_book_ms": {
+    "n": 483,
+    "EM": 0.0,
+    "F1": 0.0013802622498274672,
+    "Contains": 0.0
+  },
+  "oracle_real_ms": {
+    "n": 483,
+    "EM": 0.0,
+    "F1": 0.0017253278122843338,
+    "Contains": 0.0
+  }
+}
