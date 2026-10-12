@@ -1,0 +1,9 @@
+RELEVANCE AUDIT - INSTRUCTIONS (about 1.5 hours per rater; do NOT discuss labels with the other rater until both are done)
+For each row you see a question, its gold answer (from MKQA, may be in digit form such as "11.0 years"), and a Wikipedia passage.
+Choose one label in the "Judgment" column:
+  SUPPORTS      = the passage states the answer to THIS question (the fact asked about is in the passage, in any wording or script, e.g. "eleven" for 11).
+  MENTIONS_ONLY = the passage contains the gold answer text (a number, year or name) but about something else; it does not answer this question.
+  NO            = the passage neither supports nor contains the answer.
+Rules: judge only the passage shown. Use your own knowledge only to understand the question, not to fill gaps. If unsure between SUPPORTS and MENTIONS_ONLY, pick MENTIONS_ONLY and add a note.
+Language: AR sheet = Arabic raters (MSA); MS sheet = Malay. A rater fluent in only one language fills only that sheet.
+Return the completed .xlsx file unchanged in layout. Rater 1 file = all rows (about 100 per language). Rater 2 file = a subset (50 per language) for agreement.
