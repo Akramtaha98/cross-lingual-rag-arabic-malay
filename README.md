@@ -1,6 +1,6 @@
 # Cross-Lingual RAG: Arabic ↔ Malay
 
-**Diagnosing the retrieval bottleneck in cross-lingual Retrieval-Augmented Generation for two typologically distant, resource-asymmetric languages.**
+**Diagnosing retrieval and evaluation failures in cross-lingual Retrieval-Augmented Generation for two typologically distant, resource-asymmetric languages (Arabic and Malay).**
 
 [![Python 3.10+](https://img.shields.io/badge/python-3.10%2B-blue)](https://www.python.org/)
 [![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
@@ -147,7 +147,7 @@ Everything needed to reproduce every table and figure in the paper is here: sour
 ```bibtex
 @article{najm2026crosslingualrag,
   author={Najm, Sarah Mohammed and Salman, Aymen D. and Al-Dujaili, Ayad and Humaidi, Amjad J.},
-  title={Diagnosing the Retrieval Bottleneck in Cross-Lingual Retrieval-Augmented Generation for Arabic and Malay},
+  title={Diagnosing Retrieval and Evaluation Failures in Cross-Lingual Retrieval-Augmented Generation for Arabic and Malay},
   journal={Computers (MDPI)},
   year={2026},
   note={Under review}
