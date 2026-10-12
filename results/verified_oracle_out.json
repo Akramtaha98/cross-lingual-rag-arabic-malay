@@ -1,0 +1,1453 @@
+[
+ {
+  "n": 0,
+  "lang": "ar",
+  "cond": "closed_book",
+  "query": "أين ستقام بطولة كأس العام ؟",
+  "gold": [
+   "قطر",
+   "دولة قطر",
+   "إمارة قطر"
+  ],
+  "pred": "قطر",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 0,
+  "lang": "ar",
+  "cond": "retrieved",
+  "query": "أين ستقام بطولة كأس العام ؟",
+  "gold": [
+   "قطر",
+   "دولة قطر",
+   "إمارة قطر"
+  ],
+  "pred": "لم يتم ذكر معلومات عن كأس العام في المقطع، لكن المقطع يتحدث عن استضافة كأس الأمم الأوروبية لكرة القدم 2012 في استادين.",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 0,
+  "lang": "ar",
+  "cond": "verified",
+  "query": "أين ستقام بطولة كأس العام ؟",
+  "gold": [
+   "قطر",
+   "دولة قطر",
+   "إمارة قطر"
+  ],
+  "pred": "قطر",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 1,
+  "lang": "ar",
+  "cond": "closed_book",
+  "query": "اين يقع  ميدان التايمز فى نيويورك ؟",
+  "gold": [
+   "وسط مانهاتن"
+  ],
+  "pred": "يقع ميدان تايمز في منطقة تايم سكوير في نيويورك.",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 1,
+  "lang": "ar",
+  "cond": "verified",
+  "query": "اين يقع  ميدان التايمز فى نيويورك ؟",
+  "gold": [
+   "وسط مانهاتن"
+  ],
+  "pred": "لا يوجد ذكر لميدان التايمز في في المقطع.",
+  "em": false,
+  "contains": false,
+  "refusal": true
+ },
+ {
+  "n": 2,
+  "lang": "ar",
+  "cond": "closed_book",
+  "query": "اين يقع ميدان التايمز في مدينة نيويورك ؟",
+  "gold": [
+   "الولايات المتحدة",
+   "أمريكا",
+   "و م أ"
+  ],
+  "pred": "يقع ميدان التايمز في منطقة تايمس سكوير في مدينة نيويورك.",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 2,
+  "lang": "ar",
+  "cond": "retrieved",
+  "query": "اين يقع ميدان التايمز في مدينة نيويورك ؟",
+  "gold": [
+   "الولايات المتحدة",
+   "أمريكا",
+   "و م أ"
+  ],
+  "pred": "المقطع لا يذكر ميدان التايمز في نيويورك، لذا لا يمكن الإجابة على السؤال بناءً على المعلومات المعطاة.",
+  "em": false,
+  "contains": true,
+  "refusal": true
+ },
+ {
+  "n": 2,
+  "lang": "ar",
+  "cond": "verified",
+  "query": "اين يقع ميدان التايمز في مدينة نيويورك ؟",
+  "gold": [
+   "الولايات المتحدة",
+   "أمريكا",
+   "و م أ"
+  ],
+  "pred": "لا يوجد ذكر لميدان التايمز أو شارع تايمز في المقطع، فقط ذكر شارع بروードواي.",
+  "em": false,
+  "contains": false,
+  "refusal": true
+ },
+ {
+  "n": 3,
+  "lang": "ar",
+  "cond": "closed_book",
+  "query": "كم عدد فرق الدوري الوطني لكرة القدم في ولاية كاليفورنيا",
+  "gold": [
+   "4.0",
+   "4"
+  ],
+  "pred": "5",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 3,
+  "lang": "ar",
+  "cond": "retrieved",
+  "query": "كم عدد فرق الدوري الوطني لكرة القدم في ولاية كاليفورنيا",
+  "gold": [
+   "4.0",
+   "4"
+  ],
+  "pred": "لا يوجد ذكر لعدد فرق الدوري الوطني لكرة القدم في ولاية كاليفورنيا في هذا المقطع.",
+  "em": false,
+  "contains": false,
+  "refusal": true
+ },
+ {
+  "n": 3,
+  "lang": "ar",
+  "cond": "verified",
+  "query": "كم عدد فرق الدوري الوطني لكرة القدم في ولاية كاليفورنيا",
+  "gold": [
+   "4.0",
+   "4"
+  ],
+  "pred": "4",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 4,
+  "lang": "ar",
+  "cond": "closed_book",
+  "query": "ماذا يسمون ميكي ماوس في فرنسا؟",
+  "gold": [
+   "ميكي ماوس",
+   "ميكي ماوس",
+   "ميكي ماوس"
+  ],
+  "pred": "ميشيل Mouse",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 4,
+  "lang": "ar",
+  "cond": "verified",
+  "query": "ماذا يسمون ميكي ماوس في فرنسا؟",
+  "gold": [
+   "ميكي ماوس",
+   "ميكي ماوس",
+   "ميكي ماوس"
+  ],
+  "pred": "Mickey Mouse في فرنسا يُعرف باسم ميكي ماوس أيضًا، فلا يوجد ترجمة خاصة له في فرنسا.",
+  "em": false,
+  "contains": true,
+  "refusal": true
+ },
+ {
+  "n": 5,
+  "lang": "ar",
+  "cond": "closed_book",
+  "query": "متى تم كتابة الإعلان العالمي لحقوق الإنسان",
+  "gold": [
+   "1948",
+   "1948"
+  ],
+  "pred": "تم كتابته في عام 1948.",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 5,
+  "lang": "ar",
+  "cond": "retrieved",
+  "query": "متى تم كتابة الإعلان العالمي لحقوق الإنسان",
+  "gold": [
+   "1948",
+   "1948"
+  ],
+  "pred": "1948년 12월 1일",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 5,
+  "lang": "ar",
+  "cond": "verified",
+  "query": "متى تم كتابة الإعلان العالمي لحقوق الإنسان",
+  "gold": [
+   "1948",
+   "1948"
+  ],
+  "pred": "10امكانون الأول\\ديسمبر 1948",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 6,
+  "lang": "ar",
+  "cond": "closed_book",
+  "query": "متى كانت أخر مرة فاز نادال بالومبيلدون",
+  "gold": [
+   "2010",
+   "2010"
+  ],
+  "pred": "20년 전",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 6,
+  "lang": "ar",
+  "cond": "retrieved",
+  "query": "متى كانت أخر مرة فاز نادال بالومبيلدون",
+  "gold": [
+   "2010",
+   "2010"
+  ],
+  "pred": "لا يوجد ذكر لنادال أو معلومات عن فوزه بملombيلدون في المقطع المقدم.",
+  "em": false,
+  "contains": false,
+  "refusal": true
+ },
+ {
+  "n": 6,
+  "lang": "ar",
+  "cond": "verified",
+  "query": "متى كانت أخر مرة فاز نادال بالومبيلدون",
+  "gold": [
+   "2010",
+   "2010"
+  ],
+  "pred": "2011",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 7,
+  "lang": "ar",
+  "cond": "closed_book",
+  "query": "ممثليين في فيلم رحل في 60 ثانية؟",
+  "gold": [
+   "أنجلينا جولي",
+   "أنجلينا جولي فويت",
+   "أنجلينا جولي بيت"
+  ],
+  "pred": "لا أستطيع الإجابة بدون معلومات إضافية. تحتاج إلى ذكر اسم الفيلم أو تقديم مزيد من التفاصيل.",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 7,
+  "lang": "ar",
+  "cond": "retrieved",
+  "query": "ممثليين في فيلم رحل في 60 ثانية؟",
+  "gold": [
+   "أنجلينا جولي",
+   "أنجلينا جولي فويت",
+   "أنجلينا جولي بيت"
+  ],
+  "pred": "أنجلينا جولي",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 7,
+  "lang": "ar",
+  "cond": "verified",
+  "query": "ممثليين في فيلم رحل في 60 ثانية؟",
+  "gold": [
+   "أنجلينا جولي",
+   "أنجلينا جولي فويت",
+   "أنجلينا جولي بيت"
+  ],
+  "pred": "جون فويت، إيان غلين",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 8,
+  "lang": "ar",
+  "cond": "closed_book",
+  "query": "من كان أول شخص يمشي على القمر",
+  "gold": [
+   "نيل آرمسترونغ"
+  ],
+  "pred": "نيل أرمسترونغ",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 8,
+  "lang": "ar",
+  "cond": "retrieved",
+  "query": "من كان أول شخص يمشي على القمر",
+  "gold": [
+   "نيل آرمسترونغ"
+  ],
+  "pred": "رائد الفضاء الأمريكي نيل أرمسترونج من مission أبولو 11.",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 8,
+  "lang": "ar",
+  "cond": "verified",
+  "query": "من كان أول شخص يمشي على القمر",
+  "gold": [
+   "نيل آرمسترونغ"
+  ],
+  "pred": "نيل أرمسترونغ",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 9,
+  "lang": "ar",
+  "cond": "closed_book",
+  "query": "من هو إله العالم السفلي في الأساطير اليونانية؟",
+  "gold": [
+   "هاديس",
+   "هيدز",
+   "هادس"
+  ],
+  "pred": "هادسون",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 9,
+  "lang": "ar",
+  "cond": "retrieved",
+  "query": "من هو إله العالم السفلي في الأساطير اليونانية؟",
+  "gold": [
+   "هاديس",
+   "هيدز",
+   "هادس"
+  ],
+  "pred": "إله العالم السفلي في الأساطير اليونانية هو هاديس.",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 9,
+  "lang": "ar",
+  "cond": "verified",
+  "query": "من هو إله العالم السفلي في الأساطير اليونانية؟",
+  "gold": [
+   "هاديس",
+   "هيدز",
+   "هادس"
+  ],
+  "pred": "هاديس",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 10,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "adakah kacang kuda sebuah kacang pea atau kacang bean",
+  "gold": [
+   "Kacang"
+  ],
+  "pred": "Kacang kuda adalah kacang bean.",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 10,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "adakah kacang kuda sebuah kacang pea atau kacang bean",
+  "gold": [
+   "Kacang"
+  ],
+  "pred": "Kacang kuda adalah kacang bean.",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 11,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "adakah republik ireland sebahagian daripada united kingdom",
+  "gold": [
+   "no"
+  ],
+  "pred": "Tidak, Republik Ireland tidak sebahagian daripada United Kingdom.",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 11,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "adakah republik ireland sebahagian daripada united kingdom",
+  "gold": [
+   "no"
+  ],
+  "pred": "Tidak, Republik Ireland tidak sebahagian daripada United Kingdom.",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 11,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "adakah republik ireland sebahagian daripada united kingdom",
+  "gold": [
+   "no"
+  ],
+  "pred": "Tidak",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 12,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "apa nama presiden amerika syarikat yang pertama",
+  "gold": [
+   "George Washington",
+   "George Washington"
+  ],
+  "pred": "George Washington",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 12,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "apa nama presiden amerika syarikat yang pertama",
+  "gold": [
+   "George Washington",
+   "George Washington"
+  ],
+  "pred": "George Washington",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 12,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "apa nama presiden amerika syarikat yang pertama",
+  "gold": [
+   "George Washington",
+   "George Washington"
+  ],
+  "pred": "George Washington",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 13,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "apakah nama ibu kota united arab emirates",
+  "gold": [
+   "Abu Dhabi"
+  ],
+  "pred": "Abu Dhabi",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 13,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "apakah nama ibu kota united arab emirates",
+  "gold": [
+   "Abu Dhabi"
+  ],
+  "pred": "Abu Dhabi",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 14,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "berapa banyak episod dalam satu musim stranger things",
+  "gold": [
+   "3.0",
+   "3"
+  ],
+  "pred": "8 episod",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 14,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "berapa banyak episod dalam satu musim stranger things",
+  "gold": [
+   "3.0",
+   "3"
+  ],
+  "pred": "Soalan anda tidak sesuai dengan petikan yang diberikan. Petikal tersebut merujuk kepada \"The Fairly OddParents\" dan \"Disney Channel\", tetapi tidak menyebutkan sebarang maklod tentang \"Stranger Things\". Mohon pastikan soalan anda sesuai",
+  "em": false,
+  "contains": false,
+  "refusal": true
+ },
+ {
+  "n": 14,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "berapa banyak episod dalam satu musim stranger things",
+  "gold": [
+   "3.0",
+   "3"
+  ],
+  "pred": "79",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 15,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "berapa musim yang scream queens ada",
+  "gold": [
+   "2.0",
+   "2"
+  ],
+  "pred": "6 musim",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 15,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "berapa musim yang scream queens ada",
+  "gold": [
+   "2.0",
+   "2"
+  ],
+  "pred": "5 musim",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 15,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "berapa musim yang scream queens ada",
+  "gold": [
+   "2.0",
+   "2"
+  ],
+  "pred": "2",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 16,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "bila while my guitar gently weeps ditulis",
+  "gold": [
+   "1968",
+   "1968"
+  ],
+  "pred": "Paul McCartney ditulis pada 1968.",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 16,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "bila while my guitar gently weeps ditulis",
+  "gold": [
+   "1968",
+   "1968"
+  ],
+  "pred": "Harrison",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 16,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "bila while my guitar gently weeps ditulis",
+  "gold": [
+   "1968",
+   "1968"
+  ],
+  "pred": "Harrisongs",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 17,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "bilakah bennie and the jets dikeluarkan",
+  "gold": [
+   "2000",
+   "2000",
+   "1974-02-04"
+  ],
+  "pred": "1975",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 17,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "bilakah bennie and the jets dikeluarkan",
+  "gold": [
+   "2000",
+   "2000",
+   "1974-02-04"
+  ],
+  "pred": "Petikan tidak menyediakan maklad tentang Bennie and the Jets dikeluarkan.",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 17,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "bilakah bennie and the jets dikeluarkan",
+  "gold": [
+   "2000",
+   "2000",
+   "1974-02-04"
+  ],
+  "pred": "27 November 1991",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 18,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "bilakah declaration of human rights ditulis",
+  "gold": [
+   "1948",
+   "1948"
+  ],
+  "pred": "1948",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 18,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "bilakah declaration of human rights ditulis",
+  "gold": [
+   "1948",
+   "1948"
+  ],
+  "pred": "1948",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 18,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "bilakah declaration of human rights ditulis",
+  "gold": [
+   "1948",
+   "1948"
+  ],
+  "pred": "1948",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 19,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "bilakah kali terakhir pasukan the cubs memenangi siri dunia",
+  "gold": [
+   "2016",
+   "2016"
+  ],
+  "pred": "20世纪30年代",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 19,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "bilakah kali terakhir pasukan the cubs memenangi siri dunia",
+  "gold": [
+   "2016",
+   "2016"
+  ],
+  "pred": "Bilakah kali terakhir pasukan Cubs memenangi siri dunia adalah pada tahun 2016.",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 19,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "bilakah kali terakhir pasukan the cubs memenangi siri dunia",
+  "gold": [
+   "2016",
+   "2016"
+  ],
+  "pred": "Soalan tidak sesuai dengan petikan yang diberikan. Petikan membincangkan tentang Manchester United, bukan The Cubs atau siri dunia.",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 20,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "bilakah model t pertama ford dibuat",
+  "gold": [
+   "1908",
+   "1908",
+   "1908-10-01"
+  ],
+  "pred": "1909",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 20,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "bilakah model t pertama ford dibuat",
+  "gold": [
+   "1908",
+   "1908",
+   "1908-10-01"
+  ],
+  "pred": "Soalan tidak sesuai dengan petikan yang diberikan. Petikan tidak membincangkan pembuatan model t pertama Ford.",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 21,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "di mana piala dunia akan diadakan",
+  "gold": [
+   "Qatar"
+  ],
+  "pred": "Qatar 20 tahun.",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 21,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "di mana piala dunia akan diadakan",
+  "gold": [
+   "Qatar"
+  ],
+  "pred": "Korea Selatan dan Jepun, Jerman",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 21,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "di mana piala dunia akan diadakan",
+  "gold": [
+   "Qatar"
+  ],
+  "pred": "Qatar 2026",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 22,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "dimanakah ibu kota new mexico",
+  "gold": [
+   "Santa Fe",
+   "Santa Fe, New Mexico",
+   "Santa Fe"
+  ],
+  "pred": "Albuquerque",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 22,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "dimanakah ibu kota new mexico",
+  "gold": [
+   "Santa Fe",
+   "Santa Fe, New Mexico",
+   "Santa Fe"
+  ],
+  "pred": "Petikan tidak menyebut ibu kota New Mexico, sehingga tidak dapat memberi jawapan yang tepat.",
+  "em": false,
+  "contains": false,
+  "refusal": true
+ },
+ {
+  "n": 22,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "dimanakah ibu kota new mexico",
+  "gold": [
+   "Santa Fe",
+   "Santa Fe, New Mexico",
+   "Santa Fe"
+  ],
+  "pred": "Albuquerque",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 23,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapa adalah pengacara america has talent",
+  "gold": [
+   "Simon Cowell",
+   "Terry Crews",
+   "Simon Cowell"
+  ],
+  "pred": "Simon Cowell",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 23,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "siapa adalah pengacara america has talent",
+  "gold": [
+   "Simon Cowell",
+   "Terry Crews",
+   "Simon Cowell"
+  ],
+  "pred": "Richael Lawrence Gimbang",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 23,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapa adalah pengacara america has talent",
+  "gold": [
+   "Simon Cowell",
+   "Terry Crews",
+   "Simon Cowell"
+  ],
+  "pred": "Simon Cowell",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 24,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapa mempunyai pengikut instagram terbanyak",
+  "gold": [
+   "Cristiano Ronaldo",
+   "Cristiano Ronaldo dos Santos Aveiro"
+  ],
+  "pred": "Kylie Jenner",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 24,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "siapa mempunyai pengikut instagram terbanyak",
+  "gold": [
+   "Cristiano Ronaldo",
+   "Cristiano Ronaldo dos Santos Aveiro"
+  ],
+  "pred": "Ronaldo",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 24,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapa mempunyai pengikut instagram terbanyak",
+  "gold": [
+   "Cristiano Ronaldo",
+   "Cristiano Ronaldo dos Santos Aveiro"
+  ],
+  "pred": "Petikan tidak menyediakan maklad tentang pengikut Instagram terbanyak Cristiano Ronaldo.",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 25,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapa yang menyanyi when will i see you again",
+  "gold": [
+   "The Three Degrees"
+  ],
+  "pred": "Take That",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 25,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapa yang menyanyi when will i see you again",
+  "gold": [
+   "The Three Degrees"
+  ],
+  "pred": "The Three Degrees",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 26,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapakah orang pertama yang berjalan di bulan",
+  "gold": [
+   "Neil Armstrong"
+  ],
+  "pred": "Neil Armstrong",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 26,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "siapakah orang pertama yang berjalan di bulan",
+  "gold": [
+   "Neil Armstrong"
+  ],
+  "pred": "Neil Armstrong和Buzz Aldrin",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 26,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapakah orang pertama yang berjalan di bulan",
+  "gold": [
+   "Neil Armstrong"
+  ],
+  "pred": "Neil Armstrong dan Buzz Aldrin",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 27,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapakah orang yang paling tua and masih hidup pada masa kini",
+  "gold": [
+   "Jeanne Calment",
+   "Jeanne Calment",
+   "Jiroemon Kimura"
+  ],
+  "pred": "Wang Huiyin",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 27,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "siapakah orang yang paling tua and masih hidup pada masa kini",
+  "gold": [
+   "Jeanne Calment",
+   "Jeanne Calment",
+   "Jiroemon Kimura"
+  ],
+  "pred": "Jeanne Calment",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 27,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapakah orang yang paling tua and masih hidup pada masa kini",
+  "gold": [
+   "Jeanne Calment",
+   "Jeanne Calment",
+   "Jiroemon Kimura"
+  ],
+  "pred": "Jeanne Calment",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 28,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapakah pelakon yang bermain john wick",
+  "gold": [
+   "Keanu Reeves"
+  ],
+  "pred": "Keanu Reeves",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 28,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "siapakah pelakon yang bermain john wick",
+  "gold": [
+   "Keanu Reeves"
+  ],
+  "pred": "búkannya di petikan tersebut disebut siapakah pelakon yang bermain John Wick. Petikan tersebut tidak berkaitalan dengan filem John Wick.",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 28,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapakah pelakon yang bermain john wick",
+  "gold": [
+   "Keanu Reeves"
+  ],
+  "pred": "Keanu Reeves",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 29,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapakah pelakon yang memainkan peranan 'doctor strange'?",
+  "gold": [
+   "Benedict Cumberbatch",
+   "Benedict Cumberbatch"
+  ],
+  "pred": "Benedict Cumberbatch",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 29,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapakah pelakon yang memainkan peranan 'doctor strange'?",
+  "gold": [
+   "Benedict Cumberbatch",
+   "Benedict Cumberbatch"
+  ],
+  "pred": "Petikan tidak menyebut pelakon untuk peranan Doctor Strange.",
+  "em": false,
+  "contains": false,
+  "refusal": true
+ },
+ {
+  "n": 30,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapakah presiden pertama di afrika selatan",
+  "gold": [
+   "Nelson Mandela"
+  ],
+  "pred": "Nelson Mandela",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 30,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "siapakah presiden pertama di afrika selatan",
+  "gold": [
+   "Nelson Mandela"
+  ],
+  "pred": "F.W. de Klerk",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 30,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapakah presiden pertama di afrika selatan",
+  "gold": [
+   "Nelson Mandela"
+  ],
+  "pred": "Nelson Mandela",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 31,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapakah yang amerika syarikat berlawan semasa peperangan revolusi",
+  "gold": [
+   "Great Britain",
+   "Great Britain",
+   "Great Britain"
+  ],
+  "pred": "British Army",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 31,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "siapakah yang amerika syarikat berlawan semasa peperangan revolusi",
+  "gold": [
+   "Great Britain",
+   "Great Britain",
+   "Great Britain"
+  ],
+  "pred": "British",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 31,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapakah yang amerika syarikat berlawan semasa peperangan revolusi",
+  "gold": [
+   "Great Britain",
+   "Great Britain",
+   "Great Britain"
+  ],
+  "pred": "British",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 32,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapakah yang melakonkan belle dalam beauty and the beast",
+  "gold": [
+   "Emma Watson",
+   "Emma Charlotte Duerre Watson"
+  ],
+  "pred": "Emma Watson",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 32,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "siapakah yang melakonkan belle dalam beauty and the beast",
+  "gold": [
+   "Emma Watson",
+   "Emma Charlotte Duerre Watson"
+  ],
+  "pred": "Soalan tersebut tidak dapat dijawab dari petikan yang diberikan. Petikan tidak membincangkan aktris yang melakonkan Belle dalam Beauty and the Beast.",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 32,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapakah yang melakonkan belle dalam beauty and the beast",
+  "gold": [
+   "Emma Watson",
+   "Emma Charlotte Duerre Watson"
+  ],
+  "pred": "Emma Watson",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 33,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapakah yang menyanyikan lagu i fought the law and the law won",
+  "gold": [
+   "The Clash"
+  ],
+  "pred": "The Clash",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 33,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapakah yang menyanyikan lagu i fought the law and the law won",
+  "gold": [
+   "The Clash"
+  ],
+  "pred": "The Clash",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 34,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapakah yang merupakan orang hidup tertua yang pernah direkodkan",
+  "gold": [
+   "Jeanne Calment",
+   "Jeanne Calment"
+  ],
+  "pred": "Jeanne Calment",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 34,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "siapakah yang merupakan orang hidup tertua yang pernah direkodkan",
+  "gold": [
+   "Jeanne Calment",
+   "Jeanne Calment"
+  ],
+  "pred": "Jeanne Calment",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 34,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapakah yang merupakan orang hidup tertua yang pernah direkodkan",
+  "gold": [
+   "Jeanne Calment",
+   "Jeanne Calment"
+  ],
+  "pred": "Jeanne Calment",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 35,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "siapakah yang pertama berlari sub four minute mile",
+  "gold": [
+   "Roger Bannister",
+   "Roger Gilbert Bannister",
+   "Sir Roger Gilbert Bannister"
+  ],
+  "pred": "Roger Bannister",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 35,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "siapakah yang pertama berlari sub four minute mile",
+  "gold": [
+   "Roger Bannister",
+   "Roger Gilbert Bannister",
+   "Sir Roger Gilbert Bannister"
+  ],
+  "pred": "Roger Bannister",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 35,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "siapakah yang pertama berlari sub four minute mile",
+  "gold": [
+   "Roger Bannister",
+   "Roger Gilbert Bannister",
+   "Sir Roger Gilbert Bannister"
+  ],
+  "pred": "Roger Bannister",
+  "em": true,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 36,
+  "lang": "ms",
+  "cond": "closed_book",
+  "query": "times square terletak di mana dalam new york city",
+  "gold": [
+   "Amerika Syarikat",
+   "Amerika",
+   "Bandar Raya New York"
+  ],
+  "pred": "Times Square terletak di Manhattan, New York City.",
+  "em": false,
+  "contains": true,
+  "refusal": false
+ },
+ {
+  "n": 36,
+  "lang": "ms",
+  "cond": "retrieved",
+  "query": "times square terletak di mana dalam new york city",
+  "gold": [
+   "Amerika Syarikat",
+   "Amerika",
+   "Bandar Raya New York"
+  ],
+  "pred": "Central Park",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ },
+ {
+  "n": 36,
+  "lang": "ms",
+  "cond": "verified",
+  "query": "times square terletak di mana dalam new york city",
+  "gold": [
+   "Amerika Syarikat",
+   "Amerika",
+   "Bandar Raya New York"
+  ],
+  "pred": "pusat daerah teater Broadway",
+  "em": false,
+  "contains": false,
+  "refusal": false
+ }
+]
