@@ -1,0 +1,14 @@
+{
+ "ms": {
+  "n": 1000,
+  "mean_len_K3": 533.121,
+  "pct_over512_K3": 0.486,
+  "mean_len_K5": 921.173,
+  "pct_over512_K5": 0.759,
+  "mean_len_K10": 1932.245,
+  "pct_over512_K10": 0.998,
+  "identical_3_vs_5": 486,
+  "identical_3_vs_10": 486,
+  "identical_5_vs_10": 759
+ }
+}
