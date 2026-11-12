@@ -71,7 +71,7 @@ cross_lingual_rag/
 ## Setup
 
 ```bash
-git clone https://github.com/Akramtaha98/cross-lingual-rag-arabic-malay.git
+# download the repository from the anonymous review link, or clone it after acceptance
 cd cross-lingual-rag-arabic-malay
 
 python -m venv .venv
@@ -144,17 +144,13 @@ Everything needed to reproduce every table and figure in the paper is here: sour
 
 ## Citation
 
-```bibtex
-@article{najm2026crosslingualrag,
-  author={Najm, Sarah Mohammed and Salman, Aymen D. and Al-Dujaili, Ayad and Humaidi, Amjad J.},
-  title={Diagnosing Retrieval and Evaluation Failures in Cross-Lingual Retrieval-Augmented Generation for Arabic and Malay},
-  journal={Computers (MDPI)},
-  year={2026},
-  note={Under review}
-}
-```
+Citation details are withheld during anonymous peer review and will be added after acceptance.
 
 ---
+
+## Second-generator study (`second_gen/`)
+
+`second_gen/run_second_generator.py` runs additional instruction-tuned generators (Qwen2.5-3B/7B/14B-Instruct) on the 200 matched questions per language and on the 37-question verified-evidence pilot, with bootstrap intervals for BERTScore-F. Inputs are in `second_gen/second_gen_inputs.json.gz`; run from inside `second_gen/` (single GPU), results are written to `second_gen/results_second_gen/<model>.json`.
 
 ## License
 

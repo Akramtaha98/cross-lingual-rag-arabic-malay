@@ -25,3 +25,5 @@ graphify-out/
 *.log
 lid.176.bin
 audit/audit_KEY_do_not_share.json
+
+graphify-out/
