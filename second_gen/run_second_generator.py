@@ -68,8 +68,12 @@ def generate(tok, model, prompts):
 
 def bertscore(preds, refs, lang):
     from bert_score import score as bs
-    _, _, F = bs(preds, refs, model_type="bert-base-multilingual-cased", lang=lang, verbose=False)
-    return F.numpy()
+    keep = [i for i, p in enumerate(preds) if str(p).strip()]
+    out = np.zeros(len(preds), dtype=np.float32)  # an empty output scores 0
+    if keep:
+        _, _, F = bs([preds[i] for i in keep], [refs[i] for i in keep], model_type="bert-base-multilingual-cased", lang=lang, verbose=False)
+        out[keep] = F.numpy()
+    return out
 
 
 def ci(x, rng, B=2000):
