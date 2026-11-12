@@ -94,7 +94,7 @@ def train_lora_seed(seed, path):
 
 def bert_f(preds, refs, lang):
     from bert_score import score as bs
-    keep = [i for i, p in enumerate(preds) if str(p).strip()]
+    keep = [i for i, (p, r) in enumerate(zip(preds, refs)) if str(p).strip() and str(r).strip()]  # empty prediction or reference -> 0
     f = np.zeros(len(preds), dtype=np.float32)          # empty output scores 0, as in the second-generator study
     if keep:
         _, _, F = bs([preds[i] for i in keep], [refs[i] for i in keep], model_type="bert-base-multilingual-cased", lang=lang, verbose=False)
