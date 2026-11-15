@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-"""Matched verified-evidence comparison (answers Reviewer 1, round 2).
-Same 29 questions (those with retrieved top-5), same model (Qwen2.5-7B-Instruct, HF bf16, greedy, batch size 1), same prompts.
-Every window rule is GOLD-FREE: windows are taken from the start of a passage or chosen by overlap with the QUESTION, never with the answer.
-Overall context budget = 2000 characters for both retrieved (5 passages x 400) and verified (1 passage x 2000), plus a tight 400-character variant.
-Also records, for every question and condition, whether a gold answer/alias occurs in the text actually shown (evidence_in_context).
+"""Matched verified-evidence comparison (Reviewer 1, round 2, revised).
+Same 29 questions (those with retrieved top-5), same model, same prompts, greedy decoding.
+ONE construction for the retrieved and the verified condition: 400-character windows, selected only by overlap with the QUESTION, at most 5 windows
+(total limit 2,000 characters), shown in passage order. Retrieved: windows pooled over the five retrieved passages. Verified: windows from the single
+human-confirmed passage (a short passage cannot fill the limit). The gold answer is never used to position a window.
+Reference rows reproduce the first version (retrieved: first 400 characters of each passage; verified: answer-centered 1,200 characters).
+Also records whether a gold answer/alias occurs in the text actually shown (evidence_in_context) and keeps the shown text for human review.
 Usage (repo root): python3 revision_experiments/run_verified_matched.py [--ollama] [--dry]   (--ollama: local ollama server; --dry: no model)"""
 import json, re, sys, time, unicodedata
 DRY = "--dry" in sys.argv
@@ -23,34 +25,38 @@ REF = re.compile(r"لا (?:يحتوي|يذكر|تحتوي|تذكر|توجد|يو
 def score(pred, golds):
     p = norm(pred); gs = [norm(g) for g in golds if norm(g)]
     return dict(em=any(p == g for g in gs), contains=any(re.search(r"(?<!\w)" + re.escape(g) + r"(?!\w)", p) for g in gs), refusal=bool(REF.search(pred.lower())))
-def start(text, w): return text[:w]
-def qwin(text, q, w, step=25):
-    """window of w characters with the largest number of distinct question words (length>=3); earliest on ties. Uses the question only."""
-    if len(text) <= w: return text
+def windows_pool(passages, q, W=400, K=5, step=100):
+    """ONE construction for every context condition: cut every passage into W-character windows (step characters apart), score each window by the
+    number of distinct question words (length>=3) it contains, keep the K highest-scoring non-overlapping windows (ties: earlier passage, earlier
+    position), and show them in passage order. The answer is never used. Total limit = K*W characters (2,000)."""
     qs = {t for t in norm(q).split() if len(t) >= 3}
-    best, bs = 0, -1
-    for s in range(0, len(text) - w + 1, step):
-        win = set(norm(text[s:s + w]).split()); sc = len(qs & win)
-        if sc > bs: best, bs = s, sc
-    return text[best:best + w]
-def centered(text, golds, w=600):   # the OLD rule (uses the gold answer) - kept only for reference
+    cands = []
+    for i, text in enumerate(passages):
+        starts = [0] if len(text) <= W else list(range(0, len(text) - W + 1, step))
+        if len(text) > W and starts[-1] != len(text) - W: starts.append(len(text) - W)
+        for s0 in starts:
+            w = text[s0:s0 + W]; cands.append((-len(qs & set(norm(w).split())), i, s0, w))
+    cands.sort(); picked = []
+    for sc, i, s0, w in cands:
+        if len(picked) == K: break
+        if all(not (i == j and abs(s0 - t0) < W) for _, j, t0, _ in picked): picked.append((sc, i, s0, w))
+    picked.sort(key=lambda x: (x[1], x[2]))
+    return "\n\n".join(f"[{n+1}] {w}" for n, (_, i, s0, w) in enumerate(picked))
+def centered(text, golds, w=600):   # first version's answer-centered window (uses the gold answer) - reference only
     t = text.lower(); k = -1
     for g in golds:
         k = t.find(str(g).lower().strip())
         if k >= 0: break
-    s = max(0, k - w) if k >= 0 else 0; return text[s:s + 2 * w]
+    s0 = max(0, k - w) if k >= 0 else 0; return text[s0:s0 + 2 * w]
 def joined(ps): return "\n\n".join(f"[{i+1}] {p}" for i, p in enumerate(ps))
 def contexts(x):
     q, vp, t5 = x["query"], x["verified_passage"], x["top5"]
     return {
       "closed_book": "",
-      "retrieved_start_5x400": joined([start(t, 400) for t in t5]),
-      "retrieved_qwin_5x400": joined([qwin(t, q, 400) for t in t5]),
-      "verified_start_2000": start(vp, 2000),
-      "verified_qwin_2000": qwin(vp, q, 2000),
-      "verified_start_400": start(vp, 400),
-      "verified_qwin_400": qwin(vp, q, 400),
-      "verified_centered_1200_OLD_uses_gold": centered(vp, x["gold"]),
+      "retrieved_matched": windows_pool(t5, q),
+      "verified_matched": windows_pool([vp], q),
+      "ref_retrieved_first_version_start_5x400": joined([p[:400] for p in t5]),
+      "ref_verified_first_version_centered_1200": centered(vp, x["gold"]),
     }
 jobs = []
 for n, x in enumerate(items):

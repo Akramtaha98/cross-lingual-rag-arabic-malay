@@ -7,7 +7,23 @@
   "evidence_in_context": 0,
   "mean_chars": 0
  },
- "AR|retrieved_start_5x400": {
+ "AR|retrieved_matched": {
+  "n": 8,
+  "contains": 6,
+  "em": 4,
+  "refusals": 2,
+  "evidence_in_context": 8,
+  "mean_chars": 2028
+ },
+ "AR|verified_matched": {
+  "n": 8,
+  "contains": 6,
+  "em": 4,
+  "refusals": 2,
+  "evidence_in_context": 7,
+  "mean_chars": 962
+ },
+ "AR|ref_retrieved_first_version_start_5x400": {
   "n": 8,
   "contains": 4,
   "em": 0,
@@ -15,47 +31,7 @@
   "evidence_in_context": 5,
   "mean_chars": 2022
  },
- "AR|retrieved_qwin_5x400": {
-  "n": 8,
-  "contains": 4,
-  "em": 1,
-  "refusals": 2,
-  "evidence_in_context": 7,
-  "mean_chars": 2022
- },
- "AR|verified_start_2000": {
-  "n": 8,
-  "contains": 4,
-  "em": 4,
-  "refusals": 2,
-  "evidence_in_context": 8,
-  "mean_chars": 1205
- },
- "AR|verified_qwin_2000": {
-  "n": 8,
-  "contains": 4,
-  "em": 4,
-  "refusals": 2,
-  "evidence_in_context": 8,
-  "mean_chars": 1205
- },
- "AR|verified_start_400": {
-  "n": 8,
-  "contains": 5,
-  "em": 3,
-  "refusals": 3,
-  "evidence_in_context": 3,
-  "mean_chars": 400
- },
- "AR|verified_qwin_400": {
-  "n": 8,
-  "contains": 7,
-  "em": 4,
-  "refusals": 2,
-  "evidence_in_context": 6,
-  "mean_chars": 400
- },
- "AR|verified_centered_1200_OLD_uses_gold": {
+ "AR|ref_verified_first_version_centered_1200": {
   "n": 8,
   "contains": 5,
   "em": 5,
@@ -71,7 +47,23 @@
   "evidence_in_context": 0,
   "mean_chars": 0
  },
- "MS|retrieved_start_5x400": {
+ "MS|retrieved_matched": {
+  "n": 21,
+  "contains": 8,
+  "em": 7,
+  "refusals": 2,
+  "evidence_in_context": 13,
+  "mean_chars": 2028
+ },
+ "MS|verified_matched": {
+  "n": 21,
+  "contains": 10,
+  "em": 10,
+  "refusals": 2,
+  "evidence_in_context": 18,
+  "mean_chars": 1003
+ },
+ "MS|ref_retrieved_first_version_start_5x400": {
   "n": 21,
   "contains": 9,
   "em": 7,
@@ -79,47 +71,7 @@
   "evidence_in_context": 12,
   "mean_chars": 2013
  },
- "MS|retrieved_qwin_5x400": {
-  "n": 21,
-  "contains": 9,
-  "em": 9,
-  "refusals": 2,
-  "evidence_in_context": 15,
-  "mean_chars": 2013
- },
- "MS|verified_start_2000": {
-  "n": 21,
-  "contains": 12,
-  "em": 9,
-  "refusals": 1,
-  "evidence_in_context": 20,
-  "mean_chars": 1305
- },
- "MS|verified_qwin_2000": {
-  "n": 21,
-  "contains": 12,
-  "em": 9,
-  "refusals": 2,
-  "evidence_in_context": 20,
-  "mean_chars": 1305
- },
- "MS|verified_start_400": {
-  "n": 21,
-  "contains": 7,
-  "em": 5,
-  "refusals": 2,
-  "evidence_in_context": 9,
-  "mean_chars": 400
- },
- "MS|verified_qwin_400": {
-  "n": 21,
-  "contains": 9,
-  "em": 7,
-  "refusals": 5,
-  "evidence_in_context": 12,
-  "mean_chars": 400
- },
- "MS|verified_centered_1200_OLD_uses_gold": {
+ "MS|ref_verified_first_version_centered_1200": {
   "n": 21,
   "contains": 11,
   "em": 8,
@@ -135,7 +87,23 @@
   "evidence_in_context": 0,
   "mean_chars": 0
  },
- "matched_29|retrieved_start_5x400": {
+ "matched_29|retrieved_matched": {
+  "n": 29,
+  "contains": 14,
+  "em": 11,
+  "refusals": 4,
+  "evidence_in_context": 21,
+  "mean_chars": 2028
+ },
+ "matched_29|verified_matched": {
+  "n": 29,
+  "contains": 16,
+  "em": 14,
+  "refusals": 4,
+  "evidence_in_context": 25,
+  "mean_chars": 992
+ },
+ "matched_29|ref_retrieved_first_version_start_5x400": {
   "n": 29,
   "contains": 13,
   "em": 7,
@@ -143,47 +111,7 @@
   "evidence_in_context": 17,
   "mean_chars": 2016
  },
- "matched_29|retrieved_qwin_5x400": {
-  "n": 29,
-  "contains": 13,
-  "em": 10,
-  "refusals": 4,
-  "evidence_in_context": 22,
-  "mean_chars": 2016
- },
- "matched_29|verified_start_2000": {
-  "n": 29,
-  "contains": 16,
-  "em": 13,
-  "refusals": 3,
-  "evidence_in_context": 28,
-  "mean_chars": 1277
- },
- "matched_29|verified_qwin_2000": {
-  "n": 29,
-  "contains": 16,
-  "em": 13,
-  "refusals": 4,
-  "evidence_in_context": 28,
-  "mean_chars": 1277
- },
- "matched_29|verified_start_400": {
-  "n": 29,
-  "contains": 12,
-  "em": 8,
-  "refusals": 5,
-  "evidence_in_context": 12,
-  "mean_chars": 400
- },
- "matched_29|verified_qwin_400": {
-  "n": 29,
-  "contains": 16,
-  "em": 11,
-  "refusals": 7,
-  "evidence_in_context": 18,
-  "mean_chars": 400
- },
- "matched_29|verified_centered_1200_OLD_uses_gold": {
+ "matched_29|ref_verified_first_version_centered_1200": {
   "n": 29,
   "contains": 16,
   "em": 13,
