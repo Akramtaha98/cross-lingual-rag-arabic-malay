@@ -1,0 +1,194 @@
+{
+ "AR|closed_book": {
+  "n": 8,
+  "contains": 3,
+  "em": 2,
+  "refusals": 0,
+  "evidence_in_context": 0,
+  "mean_chars": 0
+ },
+ "AR|retrieved_start_5x400": {
+  "n": 8,
+  "contains": 4,
+  "em": 0,
+  "refusals": 3,
+  "evidence_in_context": 5,
+  "mean_chars": 2022
+ },
+ "AR|retrieved_qwin_5x400": {
+  "n": 8,
+  "contains": 4,
+  "em": 1,
+  "refusals": 2,
+  "evidence_in_context": 7,
+  "mean_chars": 2022
+ },
+ "AR|verified_start_2000": {
+  "n": 8,
+  "contains": 4,
+  "em": 4,
+  "refusals": 2,
+  "evidence_in_context": 8,
+  "mean_chars": 1205
+ },
+ "AR|verified_qwin_2000": {
+  "n": 8,
+  "contains": 4,
+  "em": 4,
+  "refusals": 2,
+  "evidence_in_context": 8,
+  "mean_chars": 1205
+ },
+ "AR|verified_start_400": {
+  "n": 8,
+  "contains": 5,
+  "em": 3,
+  "refusals": 3,
+  "evidence_in_context": 3,
+  "mean_chars": 400
+ },
+ "AR|verified_qwin_400": {
+  "n": 8,
+  "contains": 7,
+  "em": 4,
+  "refusals": 2,
+  "evidence_in_context": 6,
+  "mean_chars": 400
+ },
+ "AR|verified_centered_1200_OLD_uses_gold": {
+  "n": 8,
+  "contains": 5,
+  "em": 5,
+  "refusals": 1,
+  "evidence_in_context": 8,
+  "mean_chars": 1149
+ },
+ "MS|closed_book": {
+  "n": 21,
+  "contains": 11,
+  "em": 7,
+  "refusals": 0,
+  "evidence_in_context": 0,
+  "mean_chars": 0
+ },
+ "MS|retrieved_start_5x400": {
+  "n": 21,
+  "contains": 9,
+  "em": 7,
+  "refusals": 1,
+  "evidence_in_context": 12,
+  "mean_chars": 2013
+ },
+ "MS|retrieved_qwin_5x400": {
+  "n": 21,
+  "contains": 9,
+  "em": 9,
+  "refusals": 2,
+  "evidence_in_context": 15,
+  "mean_chars": 2013
+ },
+ "MS|verified_start_2000": {
+  "n": 21,
+  "contains": 12,
+  "em": 9,
+  "refusals": 1,
+  "evidence_in_context": 20,
+  "mean_chars": 1305
+ },
+ "MS|verified_qwin_2000": {
+  "n": 21,
+  "contains": 12,
+  "em": 9,
+  "refusals": 2,
+  "evidence_in_context": 20,
+  "mean_chars": 1305
+ },
+ "MS|verified_start_400": {
+  "n": 21,
+  "contains": 7,
+  "em": 5,
+  "refusals": 2,
+  "evidence_in_context": 9,
+  "mean_chars": 400
+ },
+ "MS|verified_qwin_400": {
+  "n": 21,
+  "contains": 9,
+  "em": 7,
+  "refusals": 5,
+  "evidence_in_context": 12,
+  "mean_chars": 400
+ },
+ "MS|verified_centered_1200_OLD_uses_gold": {
+  "n": 21,
+  "contains": 11,
+  "em": 8,
+  "refusals": 2,
+  "evidence_in_context": 20,
+  "mean_chars": 1088
+ },
+ "matched_29|closed_book": {
+  "n": 29,
+  "contains": 14,
+  "em": 9,
+  "refusals": 0,
+  "evidence_in_context": 0,
+  "mean_chars": 0
+ },
+ "matched_29|retrieved_start_5x400": {
+  "n": 29,
+  "contains": 13,
+  "em": 7,
+  "refusals": 4,
+  "evidence_in_context": 17,
+  "mean_chars": 2016
+ },
+ "matched_29|retrieved_qwin_5x400": {
+  "n": 29,
+  "contains": 13,
+  "em": 10,
+  "refusals": 4,
+  "evidence_in_context": 22,
+  "mean_chars": 2016
+ },
+ "matched_29|verified_start_2000": {
+  "n": 29,
+  "contains": 16,
+  "em": 13,
+  "refusals": 3,
+  "evidence_in_context": 28,
+  "mean_chars": 1277
+ },
+ "matched_29|verified_qwin_2000": {
+  "n": 29,
+  "contains": 16,
+  "em": 13,
+  "refusals": 4,
+  "evidence_in_context": 28,
+  "mean_chars": 1277
+ },
+ "matched_29|verified_start_400": {
+  "n": 29,
+  "contains": 12,
+  "em": 8,
+  "refusals": 5,
+  "evidence_in_context": 12,
+  "mean_chars": 400
+ },
+ "matched_29|verified_qwin_400": {
+  "n": 29,
+  "contains": 16,
+  "em": 11,
+  "refusals": 7,
+  "evidence_in_context": 18,
+  "mean_chars": 400
+ },
+ "matched_29|verified_centered_1200_OLD_uses_gold": {
+  "n": 29,
+  "contains": 16,
+  "em": 13,
+  "refusals": 3,
+  "evidence_in_context": 28,
+  "mean_chars": 1105
+ }
+}

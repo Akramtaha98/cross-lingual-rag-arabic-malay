@@ -4,9 +4,10 @@ Same 29 questions (those with retrieved top-5), same model (Qwen2.5-7B-Instruct,
 Every window rule is GOLD-FREE: windows are taken from the start of a passage or chosen by overlap with the QUESTION, never with the answer.
 Overall context budget = 2000 characters for both retrieved (5 passages x 400) and verified (1 passage x 2000), plus a tight 400-character variant.
 Also records, for every question and condition, whether a gold answer/alias occurs in the text actually shown (evidence_in_context).
-Usage: python3 revision_experiments/run_verified_matched.py [--dry]   (run from the repo root; --dry skips the model)"""
+Usage (repo root): python3 revision_experiments/run_verified_matched.py [--ollama] [--dry]   (--ollama: local ollama server; --dry: no model)"""
 import json, re, sys, time, unicodedata
 DRY = "--dry" in sys.argv
+OLLAMA = "--ollama" in sys.argv   # use the local ollama qwen2.5:7b (same pipeline as the stored pilot run); default is Hugging Face on CUDA
 items = [x for x in json.load(open("results/verified_oracle_items.json", encoding="utf-8")) if x["top5"]]
 assert len(items) == 29, len(items)
 def prompt(L, q, ctx):
@@ -54,7 +55,7 @@ def contexts(x):
 jobs = []
 for n, x in enumerate(items):
     for c, ctx in contexts(x).items(): jobs.append((n, x, c, ctx))
-if not DRY:
+if not DRY and not OLLAMA:
     import torch
     from transformers import AutoTokenizer, AutoModelForCausalLM
     name = "Qwen/Qwen2.5-7B-Instruct"; tok = AutoTokenizer.from_pretrained(name)
@@ -62,7 +63,11 @@ if not DRY:
 rows = []; t0 = time.time()
 for k, (n, x, c, ctx) in enumerate(jobs):
     pred = ""
-    if not DRY:
+    if OLLAMA and not DRY:
+        sys.path.insert(0, "."); from run_strong_generator import generate_ollama
+        pred = generate_ollama(prompt(x["lang"], x["query"], ctx), max_tokens=60).strip()
+        if k % 20 == 0: print(k, "/", len(jobs), round(time.time() - t0), "s", flush=True)
+    elif not DRY:
         txt = tok.apply_chat_template([{"role": "user", "content": prompt(x["lang"], x["query"], ctx)}], tokenize=False, add_generation_prompt=True)
         enc = tok([txt], return_tensors="pt").to("cuda:0")
         with torch.no_grad(): g = model.generate(**enc, max_new_tokens=60, do_sample=False)
@@ -71,7 +76,7 @@ for k, (n, x, c, ctx) in enumerate(jobs):
     vp_shown = (c.startswith("retrieved") and any(t[:100] == x["verified_passage"][:100] for t in x["top5"]))
     rows.append(dict(n=n, lang=x["lang"], cond=c, query=x["query"], gold=x["gold"][:5], pred=pred, context=ctx, shown_chars=len(ctx),
                      evidence_in_context=has(ctx, x["gold"]) if ctx else False, verified_passage_among_top5=vp_shown, **(score(pred, x["gold"]) if not DRY else {})))
-out = "results/verified_matched_out.json" if not DRY else "/tmp/verified_matched_dry.json"
+out = ("results/verified_matched_out_ollama.json" if OLLAMA else "results/verified_matched_out.json") if not DRY else "/tmp/verified_matched_dry.json"
 json.dump(rows, open(out, "w", encoding="utf-8"), ensure_ascii=False, indent=1)
 summ = {}
 for scope, sel in (("AR", lambda r: r["lang"] == "ar"), ("MS", lambda r: r["lang"] == "ms"), ("matched_29", lambda r: True)):
